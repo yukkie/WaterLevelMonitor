@@ -1,0 +1,7 @@
+dams:
+  miyagase:
+    name: "宮ヶ瀬ダム"
+    id: "1368030799020"
+    capacity_m3: 183000000 # 有効貯水容量 (m³)
+    url_kind: "3"          # URLのKINDパラメーター
+    url_page: "0"          # URLのPAGEパラメーター
