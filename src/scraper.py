@@ -65,6 +65,10 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     else:
         # 貯水量の抽出 (CSV 4列目)
         parsed_df['volume_m3'] = pd.to_numeric(df[4], errors='coerce')
+        # 流入量 (CSV 5列目), 放流量 (CSV 6列目)
+        parsed_df['inflow_m3s'] = pd.to_numeric(df[5], errors='coerce').fillna(0)
+        parsed_df['outflow_m3s'] = pd.to_numeric(df[6], errors='coerce').fillna(0)
+        
         parsed_df = parsed_df.dropna(subset=['volume_m3'])
         # 単位が「千m3」だと思われるため、1000を掛けてm3に変換
         parsed_df['volume_m3'] = parsed_df['volume_m3'] * 1000
