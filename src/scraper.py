@@ -59,22 +59,11 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     df.loc[is_2400, 'timestamp'] += pd.Timedelta(days=1)
     
     if dam.type == "rain":
-        # 雨量抽出 (CSV 2列目)
-        df['rainfall_mm'] = pd.to_numeric(df[2], errors='coerce')
-        # 全データ残すが、雨量がNaNの行は（時刻行など不要行の可能性があるため）ドロップ
-        df = df.dropna(subset=['rainfall_mm'])
+        # 雨量の列(CSV 2列目)がNaNの行は（時刻行など不要行の可能性があるため）ドロップ
+        df = df.dropna(subset=[2])
     else:
-        # 貯水量の抽出 (CSV 4列目)
-        df['volume_m3'] = pd.to_numeric(df[4], errors='coerce')
-        # skipinitialspace=True とカンマ区切りの仕様上、空の余白列がズレてパースされる
-        # 流入量 (CSV 6列目), 放流量 (CSV 8列目) ※ 5, 7列目は空のパディング列
-        df['inflow_m3s'] = pd.to_numeric(df[6], errors='coerce').fillna(0)
-        df['outflow_m3s'] = pd.to_numeric(df[8], errors='coerce').fillna(0)
-        
-        # ダムのデータがない行はドロップ
-        df = df.dropna(subset=['volume_m3'])
-        # 単位が「千m3」だと思われるため、1000を掛けてm3に変換
-        df['volume_m3'] = df['volume_m3'] * 1000
+        # 貯水量(CSV 4列目)のデータがない行は不要行としてドロップ
+        df = df.dropna(subset=[4])
     
     # string型の列名をすべて string型 に統一する（Pandas警告対策）
     df.columns = df.columns.astype(str)

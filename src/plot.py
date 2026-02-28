@@ -6,6 +6,19 @@ def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConf
     import matplotlib.dates as mdates
     import numpy as np
     
+    # データ抽出と型変換 (グラフ描画用のオンザフライ処理)
+    # 雨量抽出 (CSV 2列目)
+    rain_df['rainfall_mm'] = pd.to_numeric(rain_df['2'], errors='coerce')
+    
+    # ダムデータ抽出
+    dam_df['volume_m3'] = pd.to_numeric(dam_df['4'], errors='coerce') * 1000
+    dam_df['inflow_m3s'] = pd.to_numeric(dam_df['6'], errors='coerce').fillna(0)
+    dam_df['outflow_m3s'] = pd.to_numeric(dam_df['8'], errors='coerce').fillna(0)
+    
+    # 欠損行はプロットから除外
+    rain_df = rain_df.dropna(subset=['rainfall_mm'])
+    dam_df = dam_df.dropna(subset=['volume_m3'])
+    
     # 日本語フォント対策（Windows等）
     plt.rcParams['font.family'] = 'Meiryo'
     
