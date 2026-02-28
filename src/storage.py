@@ -17,10 +17,12 @@ def update_local_csv(dam_id: str, new_df: pd.DataFrame, data_dir="data") -> pd.D
         existing_df = pd.read_csv(csv_path)
         existing_df['timestamp'] = pd.to_datetime(existing_df['timestamp'])
         
-        # 新旧データを結合し、timestamp基準で重複を排除してソート
-        combined_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=['timestamp'])
+        # 新旧データを結合し、timestamp基準で重複を排除
+        # new_df（最新の取得データ）を優先するため、new_df をあとに結合し、keep='last' にする
+        combined_df = pd.concat([existing_df, new_df])
+        combined_df = combined_df.drop_duplicates(subset=['timestamp'], keep='last')
         combined_df = combined_df.sort_values('timestamp').reset_index(drop=True)
-        print(f"既存のデータ({len(existing_df)}件)に新しいデータを合成しました。合計: {len(combined_df)}件")
+        print(f"既存のデータ({len(existing_df)}件)に新しいデータを合成・更新しました。合計: {len(combined_df)}件")
     else:
         combined_df = new_df
         print(f"新規CSVを作成しました: {len(combined_df)}件")
