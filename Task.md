@@ -23,7 +23,11 @@
 - [ ] **対象ダムの追加検証**
   - `dams.yaml` に他のダム（城山ダムなど）を追加し、複数ダムのデータ同時取得およびグラフの並列出力が行えるかテストする。
 
-## フェーズ 3: Webアプリケーション化 (将来構想)
-- [ ] **Streamlit または FastAPI によるWeb UI化**
-  - ローカルでスクリプトを実行してグラフ画像（ポップアップ）を見る現在の方式から、ブラウザ上でインタラクティブに期間やダムを切り替えられる本格的なダッシュボードUIへの進化。
-- [ ] 外部ホスティング（Vercel, Streamlit Community Cloud等）へのデプロイ準備。
+## フェーズ 3: Webアプリケーション化 (Streamlit)
+- [ ] **Streamlit によるWeb UI化**
+  - `src/app.py` を新規作成し、既存の `plot.py` のグラフ描画ロジックを `st.pyplot(fig)` で表示するStreamlitアプリへ移行する。
+  - ダム選択（`st.selectbox`）、表示期間の切り替え（`st.date_input`）などのインタラクティブUIを実装する。
+  - ローカル確認: `streamlit run src/app.py` でブラウザ上で動作確認。
+- [ ] **Streamlit Community Cloud へのデプロイ**
+  - GitHubアカウントでログインし、本リポジトリを連携してデプロイする。
+  - `requirements.txt` にStreamlit等の依存ライブラリを追加する。
