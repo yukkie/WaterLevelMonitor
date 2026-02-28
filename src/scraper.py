@@ -10,15 +10,20 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     指定されたダムの設定からURLを生成し、HTML内にあるDATファイルのリンクを取得して、
     その内部データをPandas DataFrameとして抽出する。
     """
-    url = f"https://www1.river.go.jp/cgi-bin/DspDamData.exe?ID={dam.id}&KIND={dam.url_kind}&PAGE={dam.url_page}"
+    if dam.type == "rain":
+        url = f"https://www1.river.go.jp/cgi-bin/DspRainData.exe?ID={dam.id}&KIND={dam.url_kind}&PAGE={dam.url_page}"
+    else:
+        url = f"https://www1.river.go.jp/cgi-bin/DspDamData.exe?ID={dam.id}&KIND={dam.url_kind}&PAGE={dam.url_page}"
+        
     print(f"[{dam.name}] データ取得中: {url}")
     
     # HTTPアクセス (User-Agent偽装でアクセス制限を回避)
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
     response = requests.get(url, headers=headers)
-    response.encoding = response.apparent_encoding 
     
     # HTMLからDATファイルのダウンロードリンクを探す
+    # 雨量ページはEUC-JP等の場合があるため、バイト列から正規表現で直接抜くかBeautifulSoupに任せる
+    response.encoding = response.apparent_encoding 
     soup = BeautifulSoup(response.text, 'html.parser')
     links = soup.find_all('a', href=True)
     dat_link = next((link['href'] for link in links if link['href'].endswith('.dat')), None)
@@ -53,14 +58,15 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     # 24:00だった行には1日分(24時間)を加算
     parsed_df.loc[is_2400, 'timestamp'] += pd.Timedelta(days=1)
     
-    # 貯水量の抽出 ( '-' 等の欠損値を除外して数値化)
-    # ※単位が千m3であれば1000をかける対応が必要だが、まずはそのまま取得してfloat変換
-    parsed_df['volume_m3'] = pd.to_numeric(df[4], errors='coerce')
-    
-    # 欠損値(NaN)を含む行を削除
-    parsed_df = parsed_df.dropna(subset=['volume_m3'])
-    
-    # 単位が「千m3」だと思われるため、1000を掛けてm3に変換
-    parsed_df['volume_m3'] = parsed_df['volume_m3'] * 1000
+    if dam.type == "rain":
+        # 雨量抽出 (CSV 2列目)
+        parsed_df['rainfall_mm'] = pd.to_numeric(df[2], errors='coerce')
+        parsed_df = parsed_df.dropna(subset=['rainfall_mm'])
+    else:
+        # 貯水量の抽出 (CSV 4列目)
+        parsed_df['volume_m3'] = pd.to_numeric(df[4], errors='coerce')
+        parsed_df = parsed_df.dropna(subset=['volume_m3'])
+        # 単位が「千m3」だと思われるため、1000を掛けてm3に変換
+        parsed_df['volume_m3'] = parsed_df['volume_m3'] * 1000
     
     return parsed_df

@@ -1,14 +1,15 @@
 import yaml
 from pydantic import BaseModel
-from typing import Dict
+from typing import Dict, Optional
 import os
 
 class DamConfig(BaseModel):
     name: str
     id: str
-    capacity_m3: int
+    type: str = "water"
+    capacity_m3: Optional[int] = None
     url_kind: str
-    url_page: str
+    url_page: Optional[str] = "0"
 
 class AppConfig(BaseModel):
     dams: Dict[str, DamConfig]

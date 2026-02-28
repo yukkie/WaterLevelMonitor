@@ -5,3 +5,8 @@ dams:
     capacity_m3: 183000000 # 有効貯水容量 (m³)
     url_kind: "3"          # URLのKINDパラメーター
     url_page: "0"          # URLのPAGEパラメーター
+  miyagase_oizawa_rain:
+    name: "宮ヶ瀬及沢（みやがせおいざわ）"
+    id: "103071283319020"
+    url_kind: "9"          # 雨量データのKIND
+    type: "rain"           # データ種別 (水位/雨量)
