@@ -3,10 +3,19 @@ from config import DamConfig
 
 def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConfig, rain_df: pd.DataFrame):
     import matplotlib.pyplot as plt
+    # データ抽出と型変換 (グラフ描画用のオンザフライ処理)
+    # 日付列(0)と時刻列(1)からtimestamp列を生成
+    for df in [rain_df, dam_df]:
+        df['0'] = df['0'].astype(str)
+        df['1'] = df['1'].astype(str)
+        date_series = pd.to_datetime(df['0'])
+        is_2400 = df['1'] == '24:00'
+        time_series = df['1'].replace('24:00', '00:00')
+        df['timestamp'] = pd.to_datetime(date_series.dt.strftime('%Y-%m-%d') + ' ' + time_series)
+        df.loc[is_2400, 'timestamp'] += pd.Timedelta(days=1)
+        
     import matplotlib.dates as mdates
     import numpy as np
-    
-    # データ抽出と型変換 (グラフ描画用のオンザフライ処理)
     # 雨量抽出 (CSV 2列目)
     rain_df['rainfall_mm'] = pd.to_numeric(rain_df['2'], errors='coerce')
     
