@@ -22,7 +22,12 @@ def main():
         final_rain_df = update_local_csv(rain_station.id, rain_data_df)
         
         # 3. グラフの表示
-        plot_water_level(target_dam, final_dam_df, rain_station, final_rain_df)
+        fig = plot_water_level(target_dam, final_dam_df, rain_station, final_rain_df)
+        
+        # Matplotlibによる描画 (ローカル実行用)
+        import matplotlib.pyplot as plt
+        plt.savefig('test_plot.png')
+        plt.show()
         
     except Exception as e:
         print(f"エラーが発生しました: {e}", file=sys.stderr)

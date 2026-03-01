@@ -85,5 +85,6 @@ def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConf
     fig.autofmt_xdate(rotation=45)
     
     plt.tight_layout()
-    plt.savefig('test_plot.png')
-    plt.show()
+    # 返り値としてfigを返すように変更
+    return fig
+
