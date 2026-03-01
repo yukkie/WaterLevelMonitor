@@ -10,12 +10,14 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.config import load_config
 from src.pipeline import resolve_data_dir, fetch_and_store, load_data
 from src.plot import plot_water_level
+from src.git_push import commit_and_push
 
 
 def check_and_fetch_data(dam_config, data_dir="data", throttle_minutes=10):
     """
     データファイル（CSV）の更新日時を確認し、指定した時間（分）以上経過していれば新規データを取得する。
     Streamlit固有のUI表示を伴うラッパー。
+    Returns: 更新されたCSVファイルのパス（更新なしの場合はNone）
     """
     data_dir = resolve_data_dir(data_dir)
     csv_path = os.path.join(data_dir, f"{dam_config.id}.csv")
@@ -34,8 +36,10 @@ def check_and_fetch_data(dam_config, data_dir="data", throttle_minutes=10):
             try:
                 fetch_and_store(dam_config, data_dir=data_dir)
                 st.toast(f"[{dam_config.name}] データ更新完了", icon="✅")
+                return csv_path
             except Exception as e:
                 st.error(f"データ取得エラー: {e}")
+    return None
 
 
 def main():
@@ -72,8 +76,17 @@ def main():
         return
 
     # 最新データの取得（10分ガード付き）
-    check_and_fetch_data(target_dam)
-    check_and_fetch_data(rain_station)
+    updated_files = []
+    dam_csv = check_and_fetch_data(target_dam)
+    rain_csv = check_and_fetch_data(rain_station)
+    if dam_csv:
+        updated_files.append(dam_csv)
+    if rain_csv:
+        updated_files.append(rain_csv)
+
+    # 更新されたCSVをGitHubへ自動コミット
+    if updated_files:
+        commit_and_push(updated_files, message="Auto-update data files")
 
     # データの読み込み
     dam_df = load_data(target_dam)

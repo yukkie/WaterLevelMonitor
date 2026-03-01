@@ -17,6 +17,7 @@ WaterLevelMonitor/
 │   ├── scraper.py         # 各種データソースからの取得ロジック
 │   ├── storage.py         # ローカルデータ(CSV等)への保存・合成ロジック
 │   ├── pipeline.py        # データパイプライン共通処理（取得・保存・読込）
+│   ├── git_push.py        # GitHub API経由のCSV自動コミット・プッシュ
 │   ├── plot.py            # グラフ描画ロジック（オンザフライ変換含む）
 │   ├── main.py            # CLIエントリーポイント（ローカル実行用）
 │   └── app.py             # Streamlit Webアプリのエントリーポイント
@@ -67,6 +68,11 @@ dams:
 フェーズ3のWebアプリケーション化には **Streamlit** を採用し、`src/app.py` に実装しています。
 現在、MVPとして**宮ヶ瀬湖**のデータ表示に対応しており、将来のダム追加を見据えてプルダウン(SelectBox)を用意しています。
 また、APIの負荷軽減ため、ローカルのCSVファイルの更新日時を確認し、**前回取得から10分以内の場合はスクレイピングをスキップしてキャッシュを利用する**ガード機能(スロットリング)を実装しています。
+
+### CSV自動コミット/プッシュ (`git_push.py`)
+Streamlit Community Cloud 上ではローカルファイルの変更がデプロイごとにリセットされるため、更新されたCSVファイルを **GitHub REST API (Contents API)** 経由で自動的に commit & push します。
+* 認証には **GitHub Personal Access Token** を使用し、Streamlit の Secrets (`st.secrets["GITHUB_TOKEN"]`) で管理します。
+* トークンが未設定の場合（ローカル開発時）はコミット処理をスキップするため、既存の動作に影響しません。
 
 **選定理由:**
 * Pythonのみで完結し、HTML/CSS/JavaScriptの知識が不要。
