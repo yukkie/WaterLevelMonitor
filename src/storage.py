@@ -5,10 +5,6 @@ def update_local_csv(dam_id: str, new_df: pd.DataFrame, data_dir="data") -> pd.D
     """
     既存のCSVを読み込み、新しいデータをマージ（重複排除）して書き出す。
     """
-    # srcからの相対パスではなく、プロジェクトルート基準にするために親ディレクトリを探す
-    if not os.path.exists(data_dir) and os.path.basename(os.getcwd()) == "src":
-        data_dir = os.path.join("..", data_dir)
-        
     os.makedirs(data_dir, exist_ok=True)
     csv_path = os.path.join(data_dir, f"{dam_id}.csv")
     
