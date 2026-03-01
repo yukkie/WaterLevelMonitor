@@ -29,7 +29,7 @@ def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConf
     dam_df = dam_df.dropna(subset=['volume_m3'])
     
     # 日本語フォント対策（Windows等）
-    plt.rcParams['font.family'] = 'Meiryo'
+    import japanize_matplotlib
     
     # 貯水率の計算
     dam_df['storage_rate'] = (dam_df['volume_m3'] / dam.capacity_m3) * 100
