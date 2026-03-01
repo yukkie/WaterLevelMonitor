@@ -33,3 +33,20 @@
 - [x] **Streamlit Community Cloud へのデプロイ**
   - GitHubアカウントでログインし、本リポジトリを連携してデプロイする。
   - `requirements.txt` にStreamlit等の依存ライブラリを追加する。
+
+## フェーズ 4: テストと CI/CD
+- [ ] **pytest によるユニットテストの作成**
+  - `tests/` ディレクトリを作成し、各モジュール (`scraper.py`, `storage.py`, `pipeline.py`, `plot.py`) のテストを実装する。
+  - 外部サイトへのアクセスを伴うテストは `unittest.mock` でモック化する。
+- [ ] **GitHub Actions による CI パイプラインの構築**
+  - `.github/workflows/ci.yml` を作成し、push / PR 時に自動で pytest と lint (flake8等) を実行する。
+  - Branch Protection Rules を設定し、テストが通らないコードの master マージを防止する。
+
+## データ管理の改善
+- [ ] **CSVの1行目に `# last_updated: YYYY-MM-DD HH:MM:SS` を追加する**
+  - `storage.py` の `update_local_csv` でCSV保存時にヘッダーコメントとして最終更新日時を記録する。
+  - Streamlit Cloud 上でファイルのmtimeに頼れない問題への対策。
+  - `pipeline.py` の `load_data` でコメント行を読み飛ばすように修正する。
+- [ ] **git push 機能のデバッグ**
+  - Streamlit Cloud のサンドボックス上でCSVファイルのパス解決が正しく動作しているか確認・修正する。
+

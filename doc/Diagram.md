@@ -1,12 +1,6 @@
----
-id: 7e9e2a89-11c0-41c7-b576-4af5e5618f4c
----
 # WaterLevelMonitor モジュール構成図
 
 ```mermaid
----
-id: 5eaa6125-f467-43ae-a82b-148697951bee
----
 graph TD
     YAML["dams.yaml"]
     CSV["data/*.csv"]
