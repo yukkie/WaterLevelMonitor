@@ -92,5 +92,11 @@ def main():
     else:
         st.warning("データが不足しているためグラフを描画できません。")
 
+    # 免責事項の表示（控えめに）
+    disclaimer_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "doc", "Disclaimer.md")
+    if os.path.exists(disclaimer_path):
+        with open(disclaimer_path, "r", encoding="utf-8") as f:
+            st.caption(f.read())
+
 if __name__ == "__main__":
     main()
