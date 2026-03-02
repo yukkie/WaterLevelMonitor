@@ -38,6 +38,17 @@ def _get_supabase_client() -> Client:
     return create_client(url, key)
 
 
+def _safe_float(val) -> float | None:
+    """値を float に変換する。'-' / '$' / 変換不可 → None。"""
+    s = str(val).strip()
+    if s in ("-", "$", "", "nan", "None"):
+        return None
+    try:
+        return float(s)
+    except (ValueError, TypeError):
+        return None
+
+
 def _parse_timestamp(date_str: str, time_str: str) -> str:
     """
     日付文字列と時刻文字列からISO 8601形式のタイムスタンプを生成する。
@@ -64,29 +75,11 @@ def upsert_dam_data(station_id: str, df: pd.DataFrame) -> int:
 
     records = []
     for _, row in df.iterrows():
-        # 属性カラム(col 3)が '-' の場合は未受信 → スキップ
-        attr = str(row.get("3", "")).strip()
-        if attr == "-" or attr == "$":
-            # ダムデータの場合、col 3 は流域平均雨量属性
-            # '-' は全カラムが未受信の場合に付くので行ごとスキップはしない
-            # ただし個別の値が '-' や '$' なら NULL にする
-            pass
-
-        # 各値カラムを数値に変換（'-' / '$' / 変換不可 → None）
-        def safe_float(val):
-            s = str(val).strip()
-            if s in ("-", "$", "", "nan", "None"):
-                return None
-            try:
-                return float(s)
-            except (ValueError, TypeError):
-                return None
-
-        rainfall = safe_float(row.get("2"))
-        volume = safe_float(row.get("4"))
-        inflow = safe_float(row.get("6"))
-        outflow = safe_float(row.get("8"))
-        storage_rate = safe_float(row.get("10"))
+        rainfall = _safe_float(row.get("2"))
+        volume = _safe_float(row.get("4"))
+        inflow = _safe_float(row.get("6"))
+        outflow = _safe_float(row.get("8"))
+        storage_rate = _safe_float(row.get("10"))
 
         # 主要データ（volume）がNoneの場合は未受信行としてスキップ
         if volume is None:
@@ -138,16 +131,7 @@ def upsert_rain_data(station_id: str, df: pd.DataFrame) -> int:
 
     records = []
     for _, row in df.iterrows():
-        def safe_float(val):
-            s = str(val).strip()
-            if s in ("-", "$", "", "nan", "None"):
-                return None
-            try:
-                return float(s)
-            except (ValueError, TypeError):
-                return None
-
-        rainfall = safe_float(row.get("2"))
+        rainfall = _safe_float(row.get("2"))
 
         # 雨量がNoneの場合は未受信行としてスキップ
         if rainfall is None:
