@@ -1,8 +1,13 @@
+"""
+データパイプライン。
+スクレイピング → DB保存 → DB読み込みの一連の処理を提供する。
+"""
 import os
 import pandas as pd
 from config import DamConfig
 from scraper import fetch_dam_data
-from storage import update_local_csv
+from storage import save_to_db
+from db import load_dam_data, load_rain_data
 
 
 def resolve_data_dir(data_dir="data") -> str:
@@ -12,39 +17,34 @@ def resolve_data_dir(data_dir="data") -> str:
     """
     if os.path.exists(data_dir):
         return data_dir
-    # src/ 内から実行された場合
     if os.path.basename(os.getcwd()) == "src":
         parent = os.path.join("..", data_dir)
         if os.path.exists(parent):
             return parent
-    # プロジェクトルートの data/ を探す
     project_data = os.path.join(os.getcwd(), "data")
     if os.path.exists(project_data):
         return project_data
-    # どこにも見つからなければデフォルトをそのまま返す（後で作成される）
     return data_dir
 
 
 def fetch_and_store(dam_config: DamConfig, data_dir="data") -> pd.DataFrame:
     """
-    データを取得し、ローカルCSVに保存して結果のDataFrameを返す。
+    データを取得し、DBに保存して結果のDataFrameを返す。
     """
-    data_dir = resolve_data_dir(data_dir)
     new_df = fetch_dam_data(dam_config)
-    return update_local_csv(dam_config.id, new_df, data_dir=data_dir)
+    
+    # DB に保存（メイン）
+    save_to_db(dam_config.id, dam_config.type, new_df)
+    
+    # DBから最新データを読み込んで返す
+    return load_data(dam_config)
 
 
-def load_data(dam_config: DamConfig, data_dir="data") -> pd.DataFrame:
+def load_data(dam_config: DamConfig) -> pd.DataFrame:
     """
-    ローカルCSVからデータを読み込んでDataFrameとして返す。
-    ファイルが存在しない場合は空のDataFrameを返す。
+    DBからデータを読み込んでDataFrameとして返す。
     """
-    data_dir = resolve_data_dir(data_dir)
-    csv_path = os.path.join(data_dir, f"{dam_config.id}.csv")
-
-    if os.path.exists(csv_path):
-        df = pd.read_csv(csv_path)
-        df.columns = df.columns.astype(str)
-        return df
+    if dam_config.type == "rain":
+        return load_rain_data(dam_config.id)
     else:
-        return pd.DataFrame()
+        return load_dam_data(dam_config.id)

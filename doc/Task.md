@@ -42,11 +42,29 @@
   - `.github/workflows/ci.yml` を作成し、push / PR 時に自動で pytest と lint (flake8等) を実行する。
   - Branch Protection Rules を設定し、テストが通らないコードの master マージを防止する。
 
-## データ管理の改善
-- [ ] **CSVの1行目に `# last_updated: YYYY-MM-DD HH:MM:SS` を追加する**
-  - `storage.py` の `update_local_csv` でCSV保存時にヘッダーコメントとして最終更新日時を記録する。
-  - Streamlit Cloud 上でファイルのmtimeに頼れない問題への対策。
-  - `pipeline.py` の `load_data` でコメント行を読み飛ばすように修正する。
-- [ ] **git push 機能のデバッグ**
-  - Streamlit Cloud のサンドボックス上でCSVファイルのパス解決が正しく動作しているか確認・修正する。
+## フェーズ 5: データ管理の改善 — Supabase (PostgreSQL) 移行
+- [ ] **Supabase プロジェクトのセットアップ**
+  - `dam_data` / `rain_data` テーブルを作成する。
+  - `service_role` キーと Project URL を Streamlit Secrets / 環境変数に設定する。
+- [ ] **`src/db.py` の新規作成 — DB接続・CRUD層**
+  - `supabase-py` を使った接続、UPSERT、SELECT の共通関数を実装する。
+- [ ] **`src/scraper.py` の改修 — `$`/`-` 属性の処理**
+  - `-`（未受信）の行をフィルタリング（INSERTしない）。
+  - `$`（欠測）の値カラムを `NaN` (→DB上は NULL) に変換する。
+- [ ] **`src/storage.py` の改修 — CSV→DB書き込みへの切り替え**
+  - `update_local_csv` を `upsert_to_db` に置き換える。CSVマージ処理は隔離して残す。
+- [ ] **`src/pipeline.py` / `src/app.py` の改修**
+  - データフローを DB 経由に変更。`git_push` 呼び出しを削除。
+- [ ] **`src/git_push.py` の削除**
+- [ ] **`scripts/migrate_csv_to_db.py` の作成 — 既存CSV→DB移行スクリプト**
+  - `data/*.csv` を読み込み、`-` 行スキップ・`$` を NULL に変換してバルク挿入する。
+- [ ] **`requirements.txt` の更新** — `supabase` パッケージ追加
+
+## リファクタリング (技術的負債)
+- [ ] **`src/plot.py` のリファクタリング — CSV/DB デュアル対応の解消**
+  - 現在、DB由来（`timestamp`, `rainfall` 等の名前付きカラム）とCSV由来（`'0'`, `'2'` 等の数字カラム）の両方に対応する分岐がある。
+  - DB移行完了後、CSV互換コードを削除し、DB由来のカラム名のみに統一する。
+- [ ] **`src/main.py` の `plt.show()` が動作しない不具合の修正**
+  - `FigureCanvasAgg is non-interactive` 警告が出てグラフウィンドウが表示されない。
+  - `supabase` パッケージ追加後に matplotlib のバックエンド解決が変わった可能性あり。PNG保存は正常。
 

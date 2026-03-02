@@ -1,5 +1,5 @@
 from config import load_config
-from pipeline import fetch_and_store
+from pipeline import fetch_and_store, load_data
 from plot import plot_water_level
 import sys
 
@@ -13,20 +13,26 @@ def main():
         target_dam = config.dams["miyagase"]
         rain_station = config.dams["miyagase_oizawa_rain"]
 
-        # 1. データの取得・保存
-        final_dam_df = fetch_and_store(target_dam)
-        final_rain_df = fetch_and_store(rain_station)
+        # 1. データの取得・DB保存
+        fetch_and_store(target_dam)
+        fetch_and_store(rain_station)
 
-        # 2. グラフの表示
-        fig = plot_water_level(target_dam, final_dam_df, rain_station, final_rain_df)
+        # 2. DBからデータ読み込み
+        dam_df = load_data(target_dam)
+        rain_df = load_data(rain_station)
 
-        # Matplotlibによる描画 (ローカル実行用)
+        # 3. グラフの表示
+        fig = plot_water_level(target_dam, dam_df, rain_station, rain_df)
+
         import matplotlib.pyplot as plt
         plt.savefig('test_plot.png')
+        print("グラフを test_plot.png に保存しました。")
         plt.show()
 
     except Exception as e:
         print(f"エラーが発生しました: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
 
 if __name__ == "__main__":

@@ -9,6 +9,9 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     """
     指定されたダムの設定からURLを生成し、HTML内にあるDATファイルのリンクを取得して、
     その内部データをPandas DataFrameとして抽出する。
+    属性フィルタリング:
+      - '-' (未受信) の行はスキップ
+      - '$' (欠測) の値は NaN に変換
     """
     if dam.type == "rain":
         url = f"https://www1.river.go.jp/cgi-bin/DspRainData.exe?ID={dam.id}&KIND={dam.url_kind}&PAGE={dam.url_page}"
@@ -22,7 +25,6 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     response = requests.get(url, headers=headers)
     
     # HTMLからDATファイルのダウンロードリンクを探す
-    # 雨量ページはEUC-JP等の場合があるため、バイト列から正規表現で直接抜くかBeautifulSoupに任せる
     response.encoding = response.apparent_encoding 
     soup = BeautifulSoup(response.text, 'html.parser')
     links = soup.find_all('a', href=True)
@@ -38,7 +40,6 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     dat_res.encoding = dat_res.apparent_encoding
     
     # DATファイルのパース (10行目から実データ)
-    # 構造: 年/月/日, 時刻, 雨量 ... , 貯水量 ...など
     try:
         # header=Noneで読み込むと、列名は 0, 1, 2, ... となる
         # 余分なスペースによる列ズレを防ぐするため skipinitialspace=True を指定
@@ -46,15 +47,35 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     except Exception as e:
         print(f"DATファイルのパースに失敗しました:\n{dat_res.text[:500]}")
         raise e
-        
-    if dam.type == "rain":
-        # 雨量の列(CSV 2列目)がNaNの行は（時刻行など不要行の可能性があるため）ドロップ
-        df = df.dropna(subset=[2])
-    else:
-        # 貯水量(CSV 4列目)のデータがない行は不要行としてドロップ
-        df = df.dropna(subset=[4])
-    
+
     # string型の列名をすべて string型 に統一する（Pandas警告対策）
     df.columns = df.columns.astype(str)
+
+    # --- 属性フィルタリング ---
+    # '-' (未受信) / '$' (欠測) の処理
+    if dam.type == "rain":
+        # 雨量の列(CSV 2列目)で '-' または '$' が入っている行を処理
+        # まず文字列として確認
+        col2_str = df['2'].astype(str).str.strip()
+        # '-' の行は未受信 → 除外
+        df = df[col2_str != '-']
+        # '$' の行は欠測 → NaN に変換
+        df.loc[df['2'].astype(str).str.strip() == '$', '2'] = pd.NA
+        # 数値変換できない行もドロップ（従来互換）
+        df['2'] = pd.to_numeric(df['2'], errors='coerce')
+        df = df.dropna(subset=['2'])
+    else:
+        # ダムデータ: 貯水量(CSV 4列目)で判定
+        col4_str = df['4'].astype(str).str.strip()
+        # '-' の行は未受信 → 除外
+        df = df[col4_str != '-']
+        # '$' のある値カラムを NaN に変換
+        for col in ['2', '4', '6', '8', '10']:
+            if col in df.columns:
+                mask = df[col].astype(str).str.strip() == '$'
+                df.loc[mask, col] = pd.NA
+        # 貯水量が数値変換できない行は除外
+        df['4'] = pd.to_numeric(df['4'], errors='coerce')
+        df = df.dropna(subset=['4'])
         
     return df

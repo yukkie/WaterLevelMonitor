@@ -8,38 +8,42 @@ import matplotlib.pyplot as plt
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.config import load_config
-from src.pipeline import resolve_data_dir, fetch_and_store, load_data
+from src.pipeline import fetch_and_store, load_data
 from src.plot import plot_water_level
-from src.git_push import commit_and_push
 
 
-def check_and_fetch_data(dam_config, data_dir="data", throttle_minutes=10):
+# 最終取得時刻を管理するセッション変数
+_LAST_FETCH_KEY = "last_fetch_times"
+
+
+def check_and_fetch_data(dam_config, throttle_minutes=10):
     """
-    データファイル（CSV）の更新日時を確認し、指定した時間（分）以上経過していれば新規データを取得する。
+    前回取得時刻を確認し、指定した時間（分）以上経過していれば新規データを取得する。
     Streamlit固有のUI表示を伴うラッパー。
-    Returns: 更新されたCSVファイルのパス（更新なしの場合はNone）
     """
-    data_dir = resolve_data_dir(data_dir)
-    csv_path = os.path.join(data_dir, f"{dam_config.id}.csv")
+    if _LAST_FETCH_KEY not in st.session_state:
+        st.session_state[_LAST_FETCH_KEY] = {}
+
+    last_fetch = st.session_state[_LAST_FETCH_KEY].get(dam_config.id)
+    current_time = time.time()
 
     needs_fetch = True
-    if os.path.exists(csv_path):
-        mtime = os.path.getmtime(csv_path)
-        current_time = time.time()
-        elapsed_minutes = (current_time - mtime) / 60
+    if last_fetch:
+        elapsed_minutes = (current_time - last_fetch) / 60
         if elapsed_minutes < throttle_minutes:
             needs_fetch = False
-            st.toast(f"[{dam_config.name}] 最終更新から {elapsed_minutes:.1f}分経過 (10分以内のためキャッシュ利用)")
+            st.toast(f"[{dam_config.name}] 最終取得から {elapsed_minutes:.1f}分経過 (10分以内のためキャッシュ利用)")
 
     if needs_fetch:
         with st.spinner(f"[{dam_config.name}] 最新データを取得中..."):
             try:
-                fetch_and_store(dam_config, data_dir=data_dir)
+                fetch_and_store(dam_config)
+                st.session_state[_LAST_FETCH_KEY][dam_config.id] = current_time
                 st.toast(f"[{dam_config.name}] データ更新完了", icon="✅")
-                return csv_path
+                return True
             except Exception as e:
                 st.error(f"データ取得エラー: {e}")
-    return None
+    return False
 
 
 def main():
@@ -48,21 +52,20 @@ def main():
     st.title("🌊 Water Level Monitor")
     st.markdown("国土交通省 川の防災情報のデータを利用してダムの水位や雨量を可視化します。")
 
-    # configの読み込み (app.pyがsrc/内から実行されるか直下から実行されるかに対応)
+    # configの読み込み
     config_path = "dams.yaml"
     if not os.path.exists(config_path) and os.path.basename(os.getcwd()) == "src":
         config_path = os.path.join("..", "dams.yaml")
     config = load_config(config_path)
 
-    # 対象ダムの選択（とりあえず宮ヶ瀬ダムのみの想定だが、拡張を見据えてセレクトボックス化）
+    # 対象ダムの選択
     dam_options = {k: v.name for k, v in config.dams.items() if v.type != "rain"}
     selected_dam_key = st.selectbox("表示するダムを選択", options=list(dam_options.keys()), format_func=lambda x: dam_options[x])
 
     target_dam = config.dams[selected_dam_key]
-    # 対象ダムに関連する雨量観測所を取得(宮ヶ瀬ダムの場合は"miyagase_oizawa_rain")
-    rain_station_key = f"{selected_dam_key}_oizawa_rain" # 命名規則として仮定
+    # 対象ダムに関連する雨量観測所を取得
+    rain_station_key = f"{selected_dam_key}_oizawa_rain"
     if rain_station_key not in config.dams:
-        # 見つからなければ最初の雨量観測所を使用するか、雨量なしとする
         rain_station_keys = [k for k, v in config.dams.items() if v.type == "rain"]
         if rain_station_keys:
             rain_station_key = rain_station_keys[0]
@@ -76,19 +79,10 @@ def main():
         return
 
     # 最新データの取得（10分ガード付き）
-    updated_files = []
-    dam_csv = check_and_fetch_data(target_dam)
-    rain_csv = check_and_fetch_data(rain_station)
-    if dam_csv:
-        updated_files.append(dam_csv)
-    if rain_csv:
-        updated_files.append(rain_csv)
+    check_and_fetch_data(target_dam)
+    check_and_fetch_data(rain_station)
 
-    # 更新されたCSVをGitHubへ自動コミット
-    if updated_files:
-        commit_and_push(updated_files, message="Auto-update data files")
-
-    # データの読み込み
+    # データの読み込み（DBから）
     dam_df = load_data(target_dam)
     rain_df = load_data(rain_station)
 
@@ -99,7 +93,6 @@ def main():
         with st.spinner("グラフを描画中..."):
             fig = plot_water_level(target_dam, dam_df.copy(), rain_station, rain_df.copy())
             st.pyplot(fig)
-            # st.pyplotに渡した後はメモリリークを防ぐためにclose
             plt.close(fig)
 
     else:
