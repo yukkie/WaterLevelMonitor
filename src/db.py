@@ -66,13 +66,37 @@ def _parse_timestamp(date_str: str, time_str: str) -> str:
     return timestamp.isoformat()
 
 
+def _batch_upsert(table_name: str, station_id: str, records: list[dict]) -> int:
+    """
+    Supabase APIのサイズ制限対策として、レコードのリストを500件ずつのバッチでUPSERTする。
+    """
+    if not records:
+        print(f"[db] {table_name}: 挿入対象レコードなし (station_id={station_id})")
+        return 0
+
+    client = _get_supabase_client()
+    BATCH_SIZE = 500
+    total_count = 0
+    for i in range(0, len(records), BATCH_SIZE):
+        batch = records[i:i + BATCH_SIZE]
+        try:
+            result = client.table(table_name).upsert(batch).execute()
+            count = len(result.data) if result.data else 0
+            total_count += count
+            print(f"[db] {table_name}: バッチ {i//BATCH_SIZE + 1} — {count}件 UPSERT")
+        except Exception as e:
+            print(f"[db] {table_name}: バッチ {i//BATCH_SIZE + 1} エラー: {e}")
+            raise
+
+    print(f"[db] {table_name}: 合計 {total_count}件 UPSERT完了 (station_id={station_id})")
+    return total_count
+
+
 def upsert_dam_data(station_id: str, df: pd.DataFrame) -> int:
     """
     DataFrameをdam_dataテーブルにUPSERTする。
     Returns: 挿入/更新された行数
     """
-    client = _get_supabase_client()
-
     records = []
     for _, row in df.iterrows():
         rainfall = _safe_float(row.get("2"))
@@ -100,26 +124,7 @@ def upsert_dam_data(station_id: str, df: pd.DataFrame) -> int:
             "storage_rate": storage_rate,
         })
 
-    if not records:
-        print(f"[db] dam_data: 挿入対象レコードなし (station_id={station_id})")
-        return 0
-
-    # バッチUPSERT（Supabase APIのサイズ制限対策、500件ずつ）
-    BATCH_SIZE = 500
-    total_count = 0
-    for i in range(0, len(records), BATCH_SIZE):
-        batch = records[i:i + BATCH_SIZE]
-        try:
-            result = client.table("dam_data").upsert(batch).execute()
-            count = len(result.data) if result.data else 0
-            total_count += count
-            print(f"[db] dam_data: バッチ {i//BATCH_SIZE + 1} — {count}件 UPSERT")
-        except Exception as e:
-            print(f"[db] dam_data: バッチ {i//BATCH_SIZE + 1} エラー: {e}")
-            raise
-
-    print(f"[db] dam_data: 合計 {total_count}件 UPSERT完了 (station_id={station_id})")
-    return total_count
+    return _batch_upsert("dam_data", station_id, records)
 
 
 def upsert_rain_data(station_id: str, df: pd.DataFrame) -> int:
@@ -127,8 +132,6 @@ def upsert_rain_data(station_id: str, df: pd.DataFrame) -> int:
     DataFrameをrain_dataテーブルにUPSERTする。
     Returns: 挿入/更新された行数
     """
-    client = _get_supabase_client()
-
     records = []
     for _, row in df.iterrows():
         rainfall = _safe_float(row.get("2"))
@@ -148,65 +151,59 @@ def upsert_rain_data(station_id: str, df: pd.DataFrame) -> int:
             "rainfall": rainfall,
         })
 
-    if not records:
-        print(f"[db] rain_data: 挿入対象レコードなし (station_id={station_id})")
-        return 0
+    return _batch_upsert("rain_data", station_id, records)
 
-    # バッチUPSERT（Supabase APIのサイズ制限対策、500件ずつ）
-    BATCH_SIZE = 500
-    total_count = 0
-    for i in range(0, len(records), BATCH_SIZE):
-        batch = records[i:i + BATCH_SIZE]
-        try:
-            result = client.table("rain_data").upsert(batch).execute()
-            count = len(result.data) if result.data else 0
-            total_count += count
-            print(f"[db] rain_data: バッチ {i//BATCH_SIZE + 1} — {count}件 UPSERT")
-        except Exception as e:
-            print(f"[db] rain_data: バッチ {i//BATCH_SIZE + 1} エラー: {e}")
-            raise
 
-    print(f"[db] rain_data: 合計 {total_count}件 UPSERT完了 (station_id={station_id})")
-    return total_count
+def _fetch_records_paginated(table_name: str, station_id: str):
+    """
+    1000件の取得制限を回避するため、ページネーションでデータを順次取得する（ジェネレータ）。
+    """
+    client = _get_supabase_client()
+    page_size = 1000
+    start = 0
+
+    while True:
+        result = (
+            client.table(table_name)
+            .select("*")
+            .eq("station_id", station_id)
+            .order("timestamp")
+            .range(start, start + page_size - 1)
+            .execute()
+        )
+        if not result.data:
+            break
+            
+        yield from result.data
+        
+        if len(result.data) < page_size:
+            break
+        start += page_size
+
+
+def _load_data_as_dataframe(table_name: str, station_id: str) -> pd.DataFrame:
+    """
+    指定テーブルからデータを全件取得し、DataFrameに変換して返す。
+    """
+    all_data = list(_fetch_records_paginated(table_name, station_id))
+
+    if not all_data:
+        return pd.DataFrame()
+
+    df = pd.DataFrame(all_data)
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+    return df
 
 
 def load_dam_data(station_id: str) -> pd.DataFrame:
     """
     dam_dataテーブルからデータを読み込んでDataFrameとして返す。
     """
-    client = _get_supabase_client()
-    result = (
-        client.table("dam_data")
-        .select("*")
-        .eq("station_id", station_id)
-        .order("timestamp")
-        .execute()
-    )
-
-    if not result.data:
-        return pd.DataFrame()
-
-    df = pd.DataFrame(result.data)
-    df["timestamp"] = pd.to_datetime(df["timestamp"])
-    return df
+    return _load_data_as_dataframe("dam_data", station_id)
 
 
 def load_rain_data(station_id: str) -> pd.DataFrame:
     """
     rain_dataテーブルからデータを読み込んでDataFrameとして返す。
     """
-    client = _get_supabase_client()
-    result = (
-        client.table("rain_data")
-        .select("*")
-        .eq("station_id", station_id)
-        .order("timestamp")
-        .execute()
-    )
-
-    if not result.data:
-        return pd.DataFrame()
-
-    df = pd.DataFrame(result.data)
-    df["timestamp"] = pd.to_datetime(df["timestamp"])
-    return df
+    return _load_data_as_dataframe("rain_data", station_id)

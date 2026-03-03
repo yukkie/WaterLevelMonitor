@@ -67,10 +67,12 @@
 - [ ] **`src/main.py` の `plt.show()` が動作しない不具合の修正**
   - `FigureCanvasAgg is non-interactive` 警告が出てグラフウィンドウが表示されない。
   - `supabase` パッケージ追加後に matplotlib のバックエンド解決が変わった可能性あり。PNG保存は正常。
+- [ ] **`src/app.py` — 10分ガードが同一ユーザーでも効いていない不具合**
+  - `st.session_state` ベースのガードが Streamlit Cloud 上で機能していない。原因調査が必要。
 - [ ] **データ取得・UPSERT の高速化**
   - 毎回全件（2000件以上）をUPSERTしているため、Streamlit アプリの表示が遅い。
   - 差分のみUPSERTする仕組み（DBの最終タイムスタンプ以降のデータのみ挿入）を検討する。
-- [ ] **`src/db.py` — Supabase SELECT の1000件制限対策**
+- [x] **`src/db.py` — Supabase SELECT の1000件制限対策**
   - Supabase REST API のデフォルト返却上限は1000行。データ蓄積でグラフが途中で切れる恐れあり。
   - ページネーションまたは `limit` 設定で全件取得できるようにする。
 - [ ] **`src/db.py` — Supabase クライアントのキャッシュ化**
