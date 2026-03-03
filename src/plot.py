@@ -8,42 +8,19 @@ def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConf
     import japanize_matplotlib
 
     # --- データ準備 ---
-    # DB由来の場合: timestamp カラムが既にある
-    # CSV由来の場合: '0'(日付), '1'(時刻) からtimestamp を生成する
     for df in [rain_df, dam_df]:
-        if 'timestamp' not in df.columns:
-            # CSV互換: オンザフライでtimestamp生成
-            df['0'] = df['0'].astype(str)
-            df['1'] = df['1'].astype(str)
-            date_series = pd.to_datetime(df['0'])
-            is_2400 = df['1'] == '24:00'
-            time_series = df['1'].replace('24:00', '00:00')
-            df['timestamp'] = pd.to_datetime(date_series.dt.strftime('%Y-%m-%d') + ' ' + time_series)
-            df.loc[is_2400, 'timestamp'] += pd.Timedelta(days=1)
-        else:
-            df['timestamp'] = pd.to_datetime(df['timestamp'])
+        df['timestamp'] = pd.to_datetime(df['timestamp'])
 
-    # --- DB由来のカラム名対応 ---
-    # DB: rainfall, volume, inflow, outflow, storage_rate
-    # CSV: '2', '4', '6', '8', '10'
+    # --- データのパースと変換 ---
 
     # 雨量
-    if 'rainfall' in rain_df.columns:
-        rain_df['rainfall_mm'] = pd.to_numeric(rain_df['rainfall'], errors='coerce')
-    else:
-        rain_df['rainfall_mm'] = pd.to_numeric(rain_df['2'], errors='coerce')
+    rain_df['rainfall_mm'] = pd.to_numeric(rain_df['rainfall'], errors='coerce')
 
     # ダムデータ
-    if 'volume' in dam_df.columns:
-        # DB由来: volume は既に千m³単位 → m³に変換
-        dam_df['volume_m3'] = pd.to_numeric(dam_df['volume'], errors='coerce') * 1000
-        dam_df['inflow_m3s'] = pd.to_numeric(dam_df['inflow'], errors='coerce').fillna(0)
-        dam_df['outflow_m3s'] = pd.to_numeric(dam_df['outflow'], errors='coerce').fillna(0)
-    else:
-        # CSV由来
-        dam_df['volume_m3'] = pd.to_numeric(dam_df['4'], errors='coerce') * 1000
-        dam_df['inflow_m3s'] = pd.to_numeric(dam_df['6'], errors='coerce').fillna(0)
-        dam_df['outflow_m3s'] = pd.to_numeric(dam_df['8'], errors='coerce').fillna(0)
+    # volume は千m³単位 → m³に変換
+    dam_df['volume_m3'] = pd.to_numeric(dam_df['volume'], errors='coerce') * 1000
+    dam_df['inflow_m3s'] = pd.to_numeric(dam_df['inflow'], errors='coerce').fillna(0)
+    dam_df['outflow_m3s'] = pd.to_numeric(dam_df['outflow'], errors='coerce').fillna(0)
     
     # 欠損行はプロットから除外
     rain_df = rain_df.dropna(subset=['rainfall_mm'])

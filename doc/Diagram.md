@@ -3,7 +3,7 @@
 ```mermaid
 graph TD
     YAML["dams.yaml"]
-    CSV["data/*.csv"]
+    DB["Supabase DB"]
     WEB["川の防災情報サイト"]
     GRAPH["グラフ出力"]
 
@@ -11,6 +11,7 @@ graph TD
         CONFIG["config.py"]
         SCRAPER["scraper.py"]
         STORAGE["storage.py"]
+        DB_MOD["db.py"]
         PIPELINE["pipeline.py"]
         PLOT["plot.py"]
         MAIN["main.py"]
@@ -23,8 +24,11 @@ graph TD
 
     WEB -- "HTTP GET" --> SCRAPER
     SCRAPER -- "DataFrame（生データ）" --> PIPELINE
-    PIPELINE -- "CSV書き込み" --> CSV
-    CSV -- "CSV読み込み" --> PIPELINE
+    PIPELINE -- "UPSERT" --> STORAGE
+    STORAGE --> DB_MOD
+    DB_MOD -- "DB書き込み" --> DB
+    DB -- "DB読み込み" --> DB_MOD
+    DB_MOD --> PIPELINE
     PIPELINE -- "DataFrame" --> MAIN
     PIPELINE -- "DataFrame" --> APP
 
@@ -35,4 +39,5 @@ graph TD
     style PIPELINE fill:#e8f5e9,stroke:#388e3c
     style APP fill:#e3f2fd,stroke:#1565c0
     style MAIN fill:#fff3e0,stroke:#ef6c00
+    style DB fill:#fce4ec,stroke:#c62828
 ```

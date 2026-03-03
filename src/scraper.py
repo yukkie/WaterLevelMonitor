@@ -54,7 +54,7 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     # --- 属性フィルタリング ---
     # '-' (未受信) / '$' (欠測) の処理
     if dam.type == "rain":
-        # 雨量の列(CSV 2列目)で '-' または '$' が入っている行を処理
+        # 雨量の列(2列目)で '-' または '$' が入っている行を処理
         # まず文字列として確認
         col2_str = df['2'].astype(str).str.strip()
         # '-' の行は未受信 → 除外
@@ -65,7 +65,7 @@ def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
         df['2'] = pd.to_numeric(df['2'], errors='coerce')
         df = df.dropna(subset=['2'])
     else:
-        # ダムデータ: 貯水量(CSV 4列目)で判定
+        # ダムデータ: 貯水量(4列目)で判定
         col4_str = df['4'].astype(str).str.strip()
         # '-' の行は未受信 → 除外
         df = df[col4_str != '-']
