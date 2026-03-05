@@ -6,12 +6,19 @@ import os
 import pandas as pd
 from supabase import create_client, Client
 
+_supabase_client: Client | None = None
+
 
 def _get_supabase_client() -> Client:
     """
-    Supabaseクライアントを取得する。
+    Supabaseクライアントを取得する（シングルトン）。
+    初回呼び出し時にインスタンスを生成し、以降はキャッシュを返す。
     .env / 環境変数 → Streamlit Secrets の順にフォールバック。
     """
+    global _supabase_client
+    if _supabase_client is not None:
+        return _supabase_client
+
     url = None
     key = None
 
@@ -36,7 +43,8 @@ def _get_supabase_client() -> Client:
             "SUPABASE_URL と SUPABASE_KEY を環境変数または Streamlit Secrets に設定してください。"
         )
 
-    return create_client(url, key)
+    _supabase_client = create_client(url, key)
+    return _supabase_client
 
 
 def _safe_float(val) -> float | None:
