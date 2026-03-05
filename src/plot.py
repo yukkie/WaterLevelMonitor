@@ -25,6 +25,14 @@ def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConf
     # 欠損行はプロットから除外
     rain_df = rain_df.dropna(subset=['rainfall_mm'])
     dam_df = dam_df.dropna(subset=['volume_m3'])
+
+    # 1時間積算雨量に集約（10分雨量は値が小さく棒グラフが潰れるため）
+    rain_hourly = (
+        rain_df.set_index('timestamp')['rainfall_mm']
+        .resample('1h').sum()
+        .reset_index()
+    )
+    rain_hourly = rain_hourly[rain_hourly['rainfall_mm'] > 0]  # 0mm の時間帯は非表示
     
     # 貯水率の計算
     dam_df['storage_rate'] = (dam_df['volume_m3'] / dam.capacity_m3) * 100
@@ -44,10 +52,11 @@ def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConf
     ax1.set_ylim(min_rate - margin * 0.3, max_rate + margin * 0.1)
     
     ax2 = ax1.twinx()
-    ax2.bar(rain_df['timestamp'], rain_df['rainfall_mm'], width=0.03, color='c', alpha=0.6, label='雨量 (mm/10min)')
-    ax2.set_ylabel("雨量 (mm)", color='c')
+    ax2.bar(rain_hourly['timestamp'], rain_hourly['rainfall_mm'], width=1/24, color='c', alpha=0.6, label='雨量 (mm/h)')
+    ax2.set_ylabel("雨量 (mm/h)", color='c')
     ax2.tick_params(axis='y', labelcolor='c')
-    ax2.set_ylim(0, 20)
+    rain_max = rain_hourly['rainfall_mm'].max() if not rain_hourly.empty else 10
+    ax2.set_ylim(0, max(rain_max * 4, 5))
     
     lines1, labels1 = ax1.get_legend_handles_labels()
     lines2, labels2 = ax2.get_legend_handles_labels()

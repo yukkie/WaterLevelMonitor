@@ -61,7 +61,7 @@
 - [x] **`requirements.txt` の更新** — `supabase` パッケージ追加
 
 ## 雨量グラフの改善 — 積算雨量表示
-- [ ] **Step 1: 1時間積算雨量の導入**
+- [x] **Step 1: 1時間積算雨量の導入**
   - 現状の10分雨量はほぼ0〜1mmで棒グラフが潰れて視認性が悪い。
   - `plot.py` で `resample('1h')` を使い、1時間ごとの積算雨量に集約して棒グラフ表示する。
   - Y軸ラベルを「雨量 (mm/h)」に変更。棒の幅も調整。
@@ -72,9 +72,10 @@
 ## リファクタリング (技術的負債)
 - [x] **`src/plot.py` のリファクタリング — CSV/DB デュアル対応の解消**
   - CSV互換コードを削除し、DB由来のカラム名のみに統一した。
-- [ ] **`src/main.py` の `plt.show()` が動作しない不具合の修正**
+- [x] **`src/main.py` の `plt.show()` が動作しない不具合の修正**
   - `FigureCanvasAgg is non-interactive` 警告が出てグラフウィンドウが表示されない。
   - `supabase` パッケージ追加後に matplotlib のバックエンド解決が変わった可能性あり。PNG保存は正常。
+  - 調査結果: venv / システムPython ともにバックエンドは `tkagg`。`.env` + `python-dotenv` 対応後、`venv\Scripts\python.exe main.py` で正常動作を確認。
 - [ ] **`src/app.py` — 10分ガードが同一ユーザーでも効いていない不具合**
   - `st.session_state` ベースのガードが Streamlit Cloud 上で機能していない。原因調査が必要。
 - [ ] **データ取得・UPSERT の高速化**

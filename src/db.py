@@ -10,24 +10,25 @@ from supabase import create_client, Client
 def _get_supabase_client() -> Client:
     """
     Supabaseクライアントを取得する。
-    Streamlit Secrets → 環境変数 の順にフォールバック。
+    .env / 環境変数 → Streamlit Secrets の順にフォールバック。
     """
     url = None
     key = None
 
-    # Streamlit Secrets から取得を試みる
-    try:
-        import streamlit as st
-        url = st.secrets.get("SUPABASE_URL")
-        key = st.secrets.get("SUPABASE_KEY")
-    except Exception:
-        pass
+    # 1. .env ファイル / 環境変数から取得を試みる
+    from dotenv import load_dotenv
+    load_dotenv()
+    url = os.environ.get("SUPABASE_URL")
+    key = os.environ.get("SUPABASE_KEY")
 
-    # 環境変数からのフォールバック
-    if not url:
-        url = os.environ.get("SUPABASE_URL")
-    if not key:
-        key = os.environ.get("SUPABASE_KEY")
+    # 2. Streamlit Secrets からのフォールバック
+    if not url or not key:
+        try:
+            import streamlit as st
+            url = url or st.secrets.get("SUPABASE_URL")
+            key = key or st.secrets.get("SUPABASE_KEY")
+        except Exception:
+            pass
 
     if not url or not key:
         raise RuntimeError(
