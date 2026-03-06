@@ -6,7 +6,7 @@ import pandas as pd
 from config import DamConfig
 from scraper import fetch_dam_data
 from storage import save_to_db
-from db import load_dam_data, load_rain_data
+from db import load_dam_data, load_rain_data, get_latest_timestamp
 
 
 def fetch_and_store(dam_config: DamConfig) -> pd.DataFrame:
@@ -20,6 +20,34 @@ def fetch_and_store(dam_config: DamConfig) -> pd.DataFrame:
 
     # DBから最新データを読み込んで返す
     return load_data(dam_config)
+
+
+def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
+    """
+    DBの最終タイムスタンプを確認し、throttle_minutes 以上経過していれば
+    fetch_and_store を実行する。Streamlit非依存。
+
+    Returns:
+        True  : スクレイピングを実行した
+        False : 閾値以内のためスキップした
+    """
+    table_name = "dam_data" if dam_config.type != "rain" else "rain_data"
+    latest_ts = get_latest_timestamp(table_name, dam_config.id)
+
+    if latest_ts is not None:
+        # DBのタイムスタンプはUTC aware で返るので、now も UTC で比較する
+        now = pd.Timestamp.now("UTC")
+        latest_utc = latest_ts.tz_convert("UTC") if latest_ts.tzinfo else latest_ts.tz_localize("UTC")
+        elapsed_minutes = (now - latest_utc).total_seconds() / 60
+        if elapsed_minutes < throttle_minutes:
+            print(
+                f"[{dam_config.name}] DBの最新データ: {elapsed_minutes:.1f}分前"
+                f" ({throttle_minutes}分以内のためスキップ)"
+            )
+            return False
+
+    fetch_and_store(dam_config)
+    return True
 
 
 def load_data(dam_config: DamConfig) -> pd.DataFrame:

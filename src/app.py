@@ -1,6 +1,5 @@
 import streamlit as st
 import os
-import time
 import sys
 import matplotlib.pyplot as plt
 
@@ -8,41 +7,25 @@ import matplotlib.pyplot as plt
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.config import load_config
-from src.pipeline import fetch_and_store, load_data
+from src.pipeline import fetch_and_store, load_data, check_and_fetch
 from src.plot import plot_water_level
 
 
-# 最終取得時刻を管理するセッション変数
-_LAST_FETCH_KEY = "last_fetch_times"
-
-
-def check_and_fetch_data(dam_config, throttle_minutes=10):
+def check_and_fetch_data(dam_config, throttle_minutes=20):
     """
-    前回取得時刻を確認し、指定した時間（分）以上経過していれば新規データを取得する。
-    Streamlit固有のUI表示を伴うラッパー。
+    pipeline.check_and_fetch を呼び出して Streamlit の UI（spinner/toast/error）を追加する薄いラッパー。
+    ガードロジック本体は pipeline.py に一元化されているため、main.py からも同じ関数が使える。
     """
-    if _LAST_FETCH_KEY not in st.session_state:
-        st.session_state[_LAST_FETCH_KEY] = {}
-
-    last_fetch = st.session_state[_LAST_FETCH_KEY].get(dam_config.id)
-    current_time = time.time()
-
-    needs_fetch = True
-    if last_fetch:
-        elapsed_minutes = (current_time - last_fetch) / 60
-        if elapsed_minutes < throttle_minutes:
-            needs_fetch = False
-            st.toast(f"[{dam_config.name}] 最終取得から {elapsed_minutes:.1f}分経過 (10分以内のためキャッシュ利用)")
-
-    if needs_fetch:
-        with st.spinner(f"[{dam_config.name}] 最新データを取得中..."):
-            try:
-                fetch_and_store(dam_config)
-                st.session_state[_LAST_FETCH_KEY][dam_config.id] = current_time
+    with st.spinner(f"[{dam_config.name}] 最新データを確認中..."):
+        try:
+            fetched = check_and_fetch(dam_config, throttle_minutes)
+            if fetched:
                 st.toast(f"[{dam_config.name}] データ更新完了", icon="✅")
-                return True
-            except Exception as e:
-                st.error(f"データ取得エラー: {e}")
+            else:
+                st.toast(f"[{dam_config.name}] 最新データをキャッシュから利用")
+            return fetched
+        except Exception as e:
+            st.error(f"データ取得エラー: {e}")
     return False
 
 

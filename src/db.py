@@ -60,7 +60,8 @@ def _safe_float(val) -> float | None:
 
 def _parse_timestamp(date_str: str, time_str: str) -> str:
     """
-    日付文字列と時刻文字列からISO 8601形式のタイムスタンプを生成する。
+    日付文字列と時刻文字列からUTC基準のISO 8601タイムスタンプを生成する。
+    DATファイルの時刻はJST(UTC+9)のため、UTC変換して返す。
     '24:00' は翌日の '00:00' として扱う。
     """
     date_str = str(date_str).strip()
@@ -71,8 +72,10 @@ def _parse_timestamp(date_str: str, time_str: str) -> str:
         time_str = "00:00"
         dt += pd.Timedelta(days=1)
 
-    timestamp = pd.to_datetime(f"{dt.strftime('%Y-%m-%d')} {time_str}")
-    return timestamp.isoformat()
+    # JST(UTC+9) として localize → UTC に変換
+    jst = pd.to_datetime(f"{dt.strftime('%Y-%m-%d')} {time_str}")
+    utc = jst.tz_localize("Asia/Tokyo").tz_convert("UTC")
+    return utc.isoformat()
 
 
 def _batch_upsert(table_name: str, station_id: str, records: list[dict]) -> int:
@@ -216,3 +219,22 @@ def load_rain_data(station_id: str) -> pd.DataFrame:
     rain_dataテーブルからデータを読み込んでDataFrameとして返す。
     """
     return _load_data_as_dataframe("rain_data", station_id)
+
+
+def get_latest_timestamp(table_name: str, station_id: str) -> pd.Timestamp | None:
+    """
+    指定テーブル・観測所IDの最新タイムスタンプを返す。
+    データが存在しない場合は None を返す。
+    """
+    client = _get_supabase_client()
+    result = (
+        client.table(table_name)
+        .select("timestamp")
+        .eq("station_id", station_id)
+        .order("timestamp", desc=True)
+        .limit(1)
+        .execute()
+    )
+    if result.data:
+        return pd.to_datetime(result.data[0]["timestamp"])
+    return None

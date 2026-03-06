@@ -76,14 +76,15 @@
   - `FigureCanvasAgg is non-interactive` 警告が出てグラフウィンドウが表示されない。
   - `supabase` パッケージ追加後に matplotlib のバックエンド解決が変わった可能性あり。PNG保存は正常。
   - 調査結果: venv / システムPython ともにバックエンドは `tkagg`。`.env` + `python-dotenv` 対応後、`venv\Scripts\python.exe main.py` で正常動作を確認。
-- [ ] **`src/app.py` — 10分ガードが同一ユーザーでも効いていない不具合**
-  - `st.session_state` ベースのガードが Streamlit Cloud 上で機能していない。原因調査が必要。
+- [x] **`src/app.py` — 10分ガードが同一ユーザーでも効いていない不具合**
+  - `st.session_state` ベースのガードがリロードのたびにリセットされるため機能しなかった。
+  - `db.py` に `get_latest_timestamp()` を追加し、DBの最新タイムスタンプを取得して10分以内かどうかを判定する方式に変更。
 - [ ] **データ取得・UPSERT の高速化**
   - 毎回全件（2000件以上）をUPSERTしているため、Streamlit アプリの表示が遅い。
   - 差分のみUPSERTする仕組み（DBの最終タイムスタンプ以降のデータのみ挿入）を検討する。
 - [x] **`src/db.py` — Supabase SELECT の1000件制限対策**
   - Supabase REST API のデフォルト返却上限は1000行。データ蓄積でグラフが途中で切れる恐れあり。
   - ページネーションまたは `limit` 設定で全件取得できるようにする。
-- [ ] **`src/db.py` — Supabase クライアントのキャッシュ化**
+- [x] **`src/db.py` — Supabase クライアントのキャッシュ化**
   - 現在、UPSERT/SELECT のたびに `create_client()` を呼んでいる。1セッション1インスタンスに。
 

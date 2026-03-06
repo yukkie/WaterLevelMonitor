@@ -1,5 +1,5 @@
 from config import load_config
-from pipeline import fetch_and_store, load_data
+from pipeline import check_and_fetch, load_data
 from plot import plot_water_level
 import sys
 
@@ -13,9 +13,9 @@ def main():
         target_dam = config.dams["miyagase"]
         rain_station = config.dams["miyagase_oizawa_rain"]
 
-        # 1. データの取得・DB保存
-        fetch_and_store(target_dam)
-        fetch_and_store(rain_station)
+        # 1. データの取得・DB保存（10分ガード付き）
+        check_and_fetch(target_dam)
+        check_and_fetch(rain_station)
 
         # 2. DBからデータ読み込み
         dam_df = load_data(target_dam)
