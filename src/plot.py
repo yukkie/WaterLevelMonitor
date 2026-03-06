@@ -10,6 +10,8 @@ def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConf
     # --- データ準備 ---
     for df in [rain_df, dam_df]:
         df['timestamp'] = pd.to_datetime(df['timestamp'])
+        if df['timestamp'].dt.tz is not None:
+            df['timestamp'] = df['timestamp'].dt.tz_convert('Asia/Tokyo').dt.tz_localize(None)
 
     # --- データのパースと変換 ---
 
