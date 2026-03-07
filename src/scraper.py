@@ -5,7 +5,7 @@ import urllib.parse
 import io
 from config import DamConfig
 
-def fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
+def _fetch_dam_data(dam: DamConfig) -> pd.DataFrame:
     """
     Extract層: 指定されたダムの設定からURLを生成し、HTML内にあるDATファイルのリンクを取得して、
     その内部データを純粋なPandas DataFrameとして抽出する（未加工RAWデータ）。

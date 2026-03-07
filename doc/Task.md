@@ -42,8 +42,11 @@
   - `tests/e2e/test_pipeline.py` を作成し、ローカルに保存した実際のDATファイル（Fixture）を入力として、出力結果が JSON スナップショットと完全に一致することを保証する仕組みを作った。
 - [ ] **リファクタリング後のユニットテストの作成**
   - ETL分離が完了し、副作用を持たなくなった `scraper.py`, `pipeline.py` のロジックに対して、より細粒度の単体テスト（Unit test）をあとで追加する。
+- [ ] **Linter (flake8) と Formatter (black/isort) の導入**
+  - 未使用のインポートや命名規則違反を自動検知するため、`flake8` を導入する。
+  - コードスタイルを統一するため、`black` や `isort` での自動フォーマットを行えるようにする。
 - [ ] **GitHub Actions による CI パイプラインの構築**
-  - `.github/workflows/ci.yml` を作成し、push / PR 時に自動で pytest と lint (flake8等) を実行する。
+  - `.github/workflows/ci.yml` を作成し、push / PR 時に自動で pytest と lint 実行を確認する。
   - Branch Protection Rules を設定し、テストが通らないコードの master マージを防止する。
 
 ## フェーズ 5: データ管理の改善 — Supabase (PostgreSQL) 移行 -> 完了 🎉

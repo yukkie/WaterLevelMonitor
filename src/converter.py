@@ -5,8 +5,9 @@
 """
 import pandas as pd
 from config import DamConfig
-from scraper import fetch_dam_data
-from storage import save_to_db, get_latest_timestamp, load_data as db_load_data
+from scraper import _fetch_dam_data as fetch_dam_data
+from storage import _save_to_db as save_to_db, _get_latest_timestamp as get_latest_timestamp
+
 
 def _safe_float(val) -> float | None:
     """値を float に変換する。'-' / '$' / 変換不可 → None。"""
@@ -18,7 +19,7 @@ def _safe_float(val) -> float | None:
     except (ValueError, TypeError):
         return None
 
-def transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Timestamp | None = None) -> list[dict]:
+def _transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Timestamp | None = None) -> list[dict]:
     """
     RAWデータをDBに投入可能な形式の辞書リストに変換する。
     """
@@ -78,7 +79,7 @@ def transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Timest
     return records
 
 
-def fetch_and_store(dam_config: DamConfig, latest_ts=None) -> int:
+def _fetch_and_store(dam_config: DamConfig, latest_ts=None) -> int:
     """
     Extract層からデータを取得し、Transform層で変換後、Load層(DB)に保存する。
     latest_tsが与えられた場合、それ以降の差分のみを保存する。
@@ -87,7 +88,7 @@ def fetch_and_store(dam_config: DamConfig, latest_ts=None) -> int:
     """
     raw_df = fetch_dam_data(dam_config)
     
-    records = transform_data(raw_df, dam_config, latest_ts=latest_ts)
+    records = _transform_data(raw_df, dam_config, latest_ts=latest_ts)
 
     count = save_to_db(dam_config.db_table_name, dam_config.id, records)
     return count
@@ -116,7 +117,7 @@ def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
             )
             return False
 
-    fetch_and_store(dam_config, latest_ts=latest_ts)
+    _fetch_and_store(dam_config, latest_ts=latest_ts)
     return True
 
 

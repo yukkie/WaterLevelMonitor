@@ -47,7 +47,7 @@ def _get_supabase_client() -> Client:
     return _supabase_client
 
 
-def save_to_db(table_name: str, station_id: str, records: list[dict]) -> int:
+def _save_to_db(table_name: str, station_id: str, records: list[dict]) -> int:
     """
     Supabase APIのサイズ制限対策として、レコードのリストを500件ずつのバッチでUPSERTする。
     """
@@ -114,7 +114,7 @@ def load_data(table_name: str, station_id: str) -> pd.DataFrame:
     return df
 
 
-def get_latest_timestamp(table_name: str, station_id: str) -> pd.Timestamp | None:
+def _get_latest_timestamp(table_name: str, station_id: str) -> pd.Timestamp | None:
     """
     指定テーブル・観測所IDの最新タイムスタンプを返す。
     データが存在しない場合は None を返す。
