@@ -1,5 +1,7 @@
 from config import load_config
-from pipeline import check_and_fetch, load_data
+from pipeline import check_and_fetch
+from storage import load_data
+
 from plot import plot_water_level
 import sys
 
@@ -18,8 +20,8 @@ def main():
         check_and_fetch(rain_station)
 
         # 2. DBからデータ読み込み
-        dam_df = load_data(target_dam)
-        rain_df = load_data(rain_station)
+        dam_df = load_data(target_dam.db_table_name, target_dam.id)
+        rain_df = load_data(rain_station.db_table_name, rain_station.id)
 
         # 3. グラフの表示
         fig = plot_water_level(target_dam, dam_df, rain_station, rain_df)

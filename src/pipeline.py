@@ -6,7 +6,7 @@
 import pandas as pd
 from config import DamConfig
 from scraper import fetch_dam_data
-from storage import save_to_db, load_data as db_load_data, get_latest_timestamp
+from storage import save_to_db, get_latest_timestamp, load_data as db_load_data
 
 def _safe_float(val) -> float | None:
     """値を float に変換する。'-' / '$' / 変換不可 → None。"""
@@ -78,18 +78,19 @@ def transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Timest
     return records
 
 
-def fetch_and_store(dam_config: DamConfig, latest_ts=None) -> pd.DataFrame:
+def fetch_and_store(dam_config: DamConfig, latest_ts=None) -> int:
     """
-    データを取得し、DBに保存して結果のDataFrameを返す。
-    latest_tsが与えられた場合、差分のみを保存する。
+    Extract層からデータを取得し、Transform層で変換後、Load層(DB)に保存する。
+    latest_tsが与えられた場合、それ以降の差分のみを保存する。
+    Returns:
+        int: 保存されたレコード数
     """
     raw_df = fetch_dam_data(dam_config)
     
     records = transform_data(raw_df, dam_config, latest_ts=latest_ts)
 
-    save_to_db(dam_config.db_table_name, dam_config.id, records)
-
-    return load_data(dam_config)
+    count = save_to_db(dam_config.db_table_name, dam_config.id, records)
+    return count
 
 
 def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
@@ -119,8 +120,4 @@ def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
     return True
 
 
-def load_data(dam_config: DamConfig) -> pd.DataFrame:
-    """
-    DBからデータを読み込んでDataFrameとして返す。
-    """
-    return db_load_data(dam_config.db_table_name, dam_config.id)
+

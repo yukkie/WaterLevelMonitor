@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.config import load_config
-from src.pipeline import fetch_and_store, load_data, check_and_fetch
+from src.pipeline import fetch_and_store, check_and_fetch
+from src.storage import load_data
+
 from src.plot import plot_water_level
 
 
@@ -66,8 +68,8 @@ def main():
     check_and_fetch_data(rain_station)
 
     # データの読み込み（DBから）
-    dam_df = load_data(target_dam)
-    rain_df = load_data(rain_station)
+    dam_df = load_data(target_dam.db_table_name, target_dam.id)
+    rain_df = load_data(rain_station.db_table_name, rain_station.id)
 
     if not dam_df.empty and not rain_df.empty:
         st.subheader(f"{target_dam.name} の状況")
