@@ -36,7 +36,7 @@ def _assert_snapshot(records, identifier):
 
 
 def test_fetch_and_store_dam(test_config, mock_requests_get, mock_supabase):
-    dam_target = test_config.dams['miyagase']
+    dam_target = test_config.sites['miyagase'].dam
     
     # 本番のパイプライン処理を実行
     fetch_and_store(dam_target, latest_ts=None)
@@ -49,7 +49,7 @@ def test_fetch_and_store_dam(test_config, mock_requests_get, mock_supabase):
 
 
 def test_fetch_and_store_rain(test_config, mock_requests_get, mock_supabase):
-    rain_target = test_config.dams['miyagase_oizawa_rain']
+    rain_target = test_config.sites['miyagase'].rain
     
     # 本番のパイプライン処理を実行
     fetch_and_store(rain_target, latest_ts=None)

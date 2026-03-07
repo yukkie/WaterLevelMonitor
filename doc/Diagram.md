@@ -18,8 +18,8 @@ graph TD
     end
 
     YAML -- "YAML読み込み" --> CONFIG
-    CONFIG -- "DamConfig" --> CONVERTER
-    CONFIG -- "DamConfig" --> APP
+    CONFIG -- "StationConfig" --> CONVERTER
+    CONFIG -- "StationConfig" --> APP
 
     WEB -- "HTTP GET" --> SCRAPER
     SCRAPER -- "DataFrame（生データ）" --> CONVERTER
@@ -29,8 +29,8 @@ graph TD
     CONVERTER -- "処理済みデータ" --> MAIN
     CONVERTER -- "処理済みデータ" --> APP
 
-    MAIN -- "DamConfig + DataFrame" --> PLOT
-    APP -- "DamConfig + DataFrame" --> PLOT
+    MAIN -- "StationConfig + DataFrame" --> PLOT
+    APP -- "StationConfig + DataFrame" --> PLOT
     PLOT -- "matplotlib Figure" --> GRAPH
 
     style CONVERTER fill:#e8f5e9,stroke:#388e3c

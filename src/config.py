@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import Dict, Optional
 import os
 
-class DamConfig(BaseModel):
+class StationConfig(BaseModel):
     name: str
     id: str
     type: str = "dam"
@@ -12,8 +12,13 @@ class DamConfig(BaseModel):
     url_kind: str
     url_page: Optional[str] = "0"
 
+class SiteConfig(BaseModel):
+    name: str
+    dam: StationConfig
+    rain: Optional[StationConfig] = None
+
 class AppConfig(BaseModel):
-    dams: Dict[str, DamConfig]
+    sites: Dict[str, SiteConfig]
 
 def load_config(config_path="dams.yaml") -> AppConfig:
     """

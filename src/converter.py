@@ -4,7 +4,7 @@
 抽出 → 変換 → DB保存の一連のフローを制御する。
 """
 import pandas as pd
-from config import DamConfig
+from config import StationConfig
 from scraper import _fetch_dam_data as fetch_dam_data
 from storage import _save_to_db as save_to_db, _get_latest_timestamp as get_latest_timestamp
 
@@ -19,7 +19,7 @@ def _safe_float(val) -> float | None:
     except (ValueError, TypeError):
         return None
 
-def _transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Timestamp | None = None) -> list[dict]:
+def _transform_data(df: pd.DataFrame, station_config: StationConfig, latest_ts: pd.Timestamp | None = None) -> list[dict]:
     """
     RAWデータをDBに投入可能な形式の辞書リストに変換する。
     """
@@ -44,11 +44,11 @@ def _transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Times
     if latest_ts is not None:
         df = df[df["parsed_ts"] > latest_ts]
 
-    req_col = "2" if dam_config.type == "rain" else "4"
+    req_col = "2" if station_config.type == "rain" else "4"
     if req_col in df.columns:
         df = df[df[req_col].astype(str).str.strip() != "-"]
 
-    if dam_config.type == "rain":
+    if station_config.type == "rain":
         col_mapping = {"rainfall": "2"}
         required_db_col = "rainfall"
     else:
@@ -64,7 +64,7 @@ def _transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Times
     records = []
     for _, row in df.iterrows():
         record = {
-            "station_id": dam_config.id,
+            "station_id": station_config.id,
             "timestamp": row["parsed_ts"].isoformat(),
         }
 
@@ -79,22 +79,22 @@ def _transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Times
     return records
 
 
-def _fetch_and_store(dam_config: DamConfig, latest_ts=None) -> int:
+def _fetch_and_store(station_config: StationConfig, latest_ts=None) -> int:
     """
     Extract層からデータを取得し、Transform層で変換後、Load層(DB)に保存する。
     latest_tsが与えられた場合、それ以降の差分のみを保存する。
     Returns:
         int: 保存されたレコード数
     """
-    raw_df = fetch_dam_data(dam_config)
+    raw_df = fetch_dam_data(station_config)
     
-    records = _transform_data(raw_df, dam_config, latest_ts=latest_ts)
+    records = _transform_data(raw_df, station_config, latest_ts=latest_ts)
 
-    count = save_to_db(dam_config.db_table_name, dam_config.id, records)
+    count = save_to_db(station_config.db_table_name, station_config.id, records)
     return count
 
 
-def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
+def check_and_fetch(station_config: StationConfig, throttle_minutes: int = 20) -> bool:
     """
     DBの最終タイムスタンプを確認し、throttle_minutes 以上経過していれば
     fetch_and_store を実行する。Streamlit非依存。
@@ -103,7 +103,7 @@ def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
         True  : スクレイピングを実行した
         False : 閾値以内のためスキップした
     """
-    latest_ts = get_latest_timestamp(dam_config.db_table_name, dam_config.id)
+    latest_ts = get_latest_timestamp(station_config.db_table_name, station_config.id)
 
     if latest_ts is not None:
         # DBのタイムスタンプはUTC aware で返るので、now も UTC で比較する
@@ -112,12 +112,12 @@ def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
         elapsed_minutes = (now - latest_utc).total_seconds() / 60
         if elapsed_minutes < throttle_minutes:
             print(
-                f"[{dam_config.name}] DBの最新データ: {elapsed_minutes:.1f}分前"
+                f"[{station_config.name}] DBの最新データ: {elapsed_minutes:.1f}分前"
                 f" ({throttle_minutes}分以内のためスキップ)"
             )
             return False
 
-    _fetch_and_store(dam_config, latest_ts=latest_ts)
+    _fetch_and_store(station_config, latest_ts=latest_ts)
     return True
 
 

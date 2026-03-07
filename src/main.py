@@ -11,13 +11,15 @@ def main():
         # 設定の読み込み
         config = load_config()
 
-        # とりあえず宮ヶ瀬ダムと雨量を取得
-        target_dam = config.dams["miyagase"]
-        rain_station = config.dams["miyagase_oizawa_rain"]
+        # とりあえず宮ヶ瀬ダムのサイトを取得
+        target_site = config.sites["miyagase"]
+        target_dam = target_site.dam
+        rain_station = target_site.rain
 
         # 1. データの取得・DB保存（10分ガード付き）
         check_and_fetch(target_dam)
-        check_and_fetch(rain_station)
+        if rain_station:
+            check_and_fetch(rain_station)
 
         # 2. DBからデータ読み込み
         dam_df = load_data(target_dam.db_table_name, target_dam.id)

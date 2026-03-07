@@ -1,7 +1,7 @@
 import pandas as pd
-from config import DamConfig
+from config import StationConfig
 
-def plot_water_level(dam: DamConfig, dam_df: pd.DataFrame, rain_station: DamConfig, rain_df: pd.DataFrame):
+def plot_water_level(dam: StationConfig, dam_df: pd.DataFrame, rain_station: StationConfig, rain_df: pd.DataFrame):
     import matplotlib.pyplot as plt
     import matplotlib.dates as mdates
     import numpy as np

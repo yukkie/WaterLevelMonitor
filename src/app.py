@@ -43,35 +43,24 @@ def main():
         config_path = os.path.join("..", "dams.yaml")
     config = load_config(config_path)
 
-    # 対象ダムの選択
-    dam_options = {k: v.name for k, v in config.dams.items() if v.type != "rain"}
-    selected_dam_key = st.selectbox("表示するダムを選択", options=list(dam_options.keys()), format_func=lambda x: dam_options[x])
+    # 対象サイトの選択
+    site_options = {k: v.name for k, v in config.sites.items()}
+    selected_site_key = st.selectbox("表示するダムを選択", options=list(site_options.keys()), format_func=lambda x: site_options[x])
 
-    target_dam = config.dams[selected_dam_key]
-    # 対象ダムに関連する雨量観測所を取得
-    rain_station_key = f"{selected_dam_key}_oizawa_rain"
-    if rain_station_key not in config.dams:
-        rain_station_keys = [k for k, v in config.dams.items() if v.type == "rain"]
-        if rain_station_keys:
-            rain_station_key = rain_station_keys[0]
-        else:
-            rain_station_key = None
-
-    if rain_station_key:
-        rain_station = config.dams[rain_station_key]
-    else:
-        st.warning("雨量観測所の設定が見つかりません。")
-        return
+    target_site = config.sites[selected_site_key]
+    target_dam = target_site.dam
+    rain_station = target_site.rain
 
     # 最新データの取得（10分ガード付き）
     check_and_fetch_data(target_dam)
-    check_and_fetch_data(rain_station)
+    if rain_station:
+        check_and_fetch_data(rain_station)
 
     # データの読み込み（DBから）
     dam_df = load_data(target_dam.db_table_name, target_dam.id)
-    rain_df = load_data(rain_station.db_table_name, rain_station.id)
+    rain_df = load_data(rain_station.db_table_name, rain_station.id) if rain_station else pd.DataFrame()
 
-    if not dam_df.empty and not rain_df.empty:
+    if not dam_df.empty:
         st.subheader(f"{target_dam.name} の状況")
 
         # グラフの描画
