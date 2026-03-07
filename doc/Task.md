@@ -35,9 +35,13 @@
   - `requirements.txt` にStreamlit等の依存ライブラリを追加する。
 
 ## フェーズ 4: テストと CI/CD
-- [ ] **pytest によるユニットテストの作成**
-  - `tests/` ディレクトリを作成し、各モジュール (`scraper.py`, `storage.py`, `pipeline.py`, `plot.py`) のテストを実装する。
-  - 外部サイトへのアクセスを伴うテストは `unittest.mock` でモック化する。
+- [x] **テストランナーと基本構成の導入 (pytest)**
+  - `tests/` 下に `conftest.py` などの標準ディレクトリを切り、`pytest-mock` をセットアップした。
+- [x] **E2E（End-to-End）スナップショットテストの作成**
+  - アーキテクチャの大規模改修（ETL分離）を行う前に、既存システムが正常に出力する最終形式（SupabaseへのUPSERTレコード）を完全に保存する。
+  - `tests/e2e/test_pipeline.py` を作成し、ローカルに保存した実際のDATファイル（Fixture）を入力として、出力結果が JSON スナップショットと完全に一致することを保証する仕組みを作った。
+- [ ] **リファクタリング後のユニットテストの作成**
+  - ETL分離が完了し、副作用を持たなくなった `scraper.py`, `pipeline.py` のロジックに対して、より細粒度の単体テスト（Unit test）をあとで追加する。
 - [ ] **GitHub Actions による CI パイプラインの構築**
   - `.github/workflows/ci.yml` を作成し、push / PR 時に自動で pytest と lint (flake8等) を実行する。
   - Branch Protection Rules を設定し、テストが通らないコードの master マージを防止する。
@@ -97,9 +101,9 @@
     - `scraper.py`: URL生成、ダウンロード、CSV読み込み、一部の行フィルタリング（`-`, `$`の除外など）。**（EとTが混在）**
     - `pipeline.py`: 中継のみ。**（薄すぎる）**
     - `db.py`: 日時文字列のパース（JST→UTC）、列名のマッピング、行から辞書への変換処理。**（LなのにTをやっている）**
-  - **【理想（ターゲットアーキテクチャ）】**
     - **Extract (`scraper.py`)**:
       - 責務: 外部サイトからRAWデータをダウンロードし、一切加工せずにPandas DataFrameとして取り出すことだけを行う。
+      - 処理: 単体試験やデバッグ容易性向上のため、取得したRAWデータをそのまま（未加工で）CSVファイルとしてローカル保存する機能を持たせる。
     - **Transform (`pipeline.py` または 新設 `transformer.py`)**:
       - 責務: RAWデータをシステムのテーブルスキーマ（DBと1:1の形式）に変換する。
       - 処理: 日時文字列の結合とUTC変換（ベクトル演算）、異常値の処理、不要列の削除、カラム名のマッピング（例: `2` → `rainfall`）、`station_id` の付与。
@@ -107,8 +111,9 @@
       - 責務: 受け取った整形済みデータをDBにそのまま流し込む純粋なインフラ機能。
       - 処理: DataFrameの `to_dict('records')` を受け取って `upsert()` するだけ（パースやマッピングの知識は持たない）。
 
-- [ ] **Step 1: Extract (scraper.py) の純粋化**
+- [ ] **Step 1: Extract (scraper.py) の純粋化とバックアップ機能の追加**
   - `scraper.py` で現在行っている `dropna` などのクレンジング処理を削除し、純粋にRAWデータをそのまま DataFrame として返す責務にする。
+  - 取得したPandas DataFrameを、加工する前にローカルにCSVファイルとして `to_csv` 保存する処理を追加する（単体試験・デバッグ用）。
 - [ ] **Step 2: Transform ロジックの移動と集約 (`pipeline.py`)**
   - `db.py` 内にある `_vectorized_parse_timestamp` や `col_mapping`、`_safe_float` などのパース・変換・抽出処理を `pipeline.py`（または専用モジュール）側に移動する。
   - `scraper` から受け取ったRAWデータを引数に取り、DBスキーマ構成と完全に一致するDataFrameを出力する関数を作る。
