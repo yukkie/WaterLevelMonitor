@@ -42,9 +42,10 @@
   - `tests/e2e/test_pipeline.py` を作成し、ローカルに保存した実際のDATファイル（Fixture）を入力として、出力結果が JSON スナップショットと完全に一致することを保証する仕組みを作った。
 - [ ] **リファクタリング後のユニットテストの作成**
   - ETL分離が完了し、副作用を持たなくなった `scraper.py`, `pipeline.py` のロジックに対して、より細粒度の単体テスト（Unit test）をあとで追加する。
-- [ ] **Linter (flake8) と Formatter (black/isort) の導入**
-  - 未使用のインポートや命名規則違反を自動検知するため、`flake8` を導入する。
-  - コードスタイルを統一するため、`black` や `isort` での自動フォーマットを行えるようにする。
+- [x] **Linter & Formatter (Ruff) の導入**
+  - 未使用のインポートや命名規則違反の自動検知（Lint）、およびコードスタイルの統一（Format）を高速に行うため、Rust製の `ruff` を導入する。
+  - **選定理由:** 従来の `flake8` + `black` + `isort` の組み合わせと比較して、単一のツールで完結するため設定が容易であり、実行速度が圧倒的に速いためCI/CDやローカルでの開発体験が大きく向上する。
+  - [x] `pre-commit` を導入し、コミット時に自動で Ruff を実行する仕組みを構築する。
 - [ ] **GitHub Actions による CI パイプラインの構築**
   - `.github/workflows/ci.yml` を作成し、push / PR 時に自動で pytest と lint 実行を確認する。
   - Branch Protection Rules を設定し、テストが通らないコードの master マージを防止する。
@@ -125,6 +126,12 @@
   - 単純に `upsert(records)` を実行するだけの薄い共通関数 `upsert_records(table_name, records)` に置き換える。
 
 ## フェーズ 6: データ取得の定期実行とアーキテクチャ分離
+
 - [ ] **GitHub Actions によるデータ定期取得 (Cron)**
   - 現在 Streamlit アプリへのアクセス時に行っているスクレイピング処理を、GitHub Actions のスケジュール実行 (Cron) に移行し、10〜20分間隔で自動収集する。
   - Webアプリ側（Streamlit）はスクレイピングを行わず、Supabase からデータを読み込んでグラフを表示するだけの役割に専念させ、ページロード時間とユーザー体験を劇的に向上させる。
+
+## 開発環境の改善 (Developer Experience)
+- [x] **YAML スキーマの自動生成とバリデーション導入**
+  - `src/config.py` の Pydantic モデルから JSON Schema を出力するスクリプトを作成する。
+  - VS Code 等のエディタで `dams.yaml` 編集時にスキーマバリデーションと補完が効くように設定する。

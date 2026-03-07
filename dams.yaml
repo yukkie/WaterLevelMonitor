@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=./doc/dams_schema.json
 sites:
   miyagase:
     name: "宮ヶ瀬ダム"

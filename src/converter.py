@@ -3,10 +3,14 @@
 スクレイピング(Extract)されたRAWデータを受け取り、DB保存可能な形式(辞書リスト)に変換する。
 抽出 → 変換 → DB保存の一連のフローを制御する。
 """
+
 import pandas as pd
 from config import StationConfig
 from scraper import _fetch_dam_data as fetch_dam_data
-from storage import _save_to_db as save_to_db, _get_latest_timestamp as get_latest_timestamp
+from storage import (
+    _get_latest_timestamp as get_latest_timestamp,
+    _save_to_db as save_to_db,
+)
 
 
 def _safe_float(val) -> float | None:
@@ -19,19 +23,26 @@ def _safe_float(val) -> float | None:
     except (ValueError, TypeError):
         return None
 
-def _transform_data(df: pd.DataFrame, station_config: StationConfig, latest_ts: pd.Timestamp | None = None) -> list[dict]:
+
+def _transform_data(
+    df: pd.DataFrame,
+    station_config: StationConfig,
+    latest_ts: pd.Timestamp | None = None,
+) -> list[dict]:
     """
     RAWデータをDBに投入可能な形式の辞書リストに変換する。
     """
     df = df.copy()
 
     # 日付と時刻を結合
-    datetime_str = df["0"].astype(str).str.strip() + " " + df["1"].astype(str).str.strip()
-    
+    datetime_str = (
+        df["0"].astype(str).str.strip() + " " + df["1"].astype(str).str.strip()
+    )
+
     # 24:00 を 00:00 に置換し、翌日扱いにするフラグを作成
     is_2400 = df["1"].astype(str).str.strip() == "24:00"
     datetime_str = datetime_str.str.replace(" 24:00", " 00:00")
-    
+
     try:
         dt_series = pd.to_datetime(datetime_str, format="mixed", errors="coerce")
         dt_series = dt_series + pd.to_timedelta(is_2400.astype(int), unit="d")
@@ -87,14 +98,14 @@ def _fetch_and_store(station_config: StationConfig, latest_ts=None) -> int:
         int: 保存されたレコード数
     """
     raw_df = fetch_dam_data(station_config)
-    
+
     records = _transform_data(raw_df, station_config, latest_ts=latest_ts)
 
     count = save_to_db(station_config.db_table_name, station_config.id, records)
     return count
 
 
-def check_and_fetch(station_config: StationConfig, throttle_minutes: int = 20) -> bool:
+def refresh_data(station_config: StationConfig, throttle_minutes: int = 20) -> bool:
     """
     DBの最終タイムスタンプを確認し、throttle_minutes 以上経過していれば
     fetch_and_store を実行する。Streamlit非依存。
@@ -108,7 +119,11 @@ def check_and_fetch(station_config: StationConfig, throttle_minutes: int = 20) -
     if latest_ts is not None:
         # DBのタイムスタンプはUTC aware で返るので、now も UTC で比較する
         now = pd.Timestamp.now("UTC")
-        latest_utc = latest_ts.tz_convert("UTC") if latest_ts.tzinfo else latest_ts.tz_localize("UTC")
+        latest_utc = (
+            latest_ts.tz_convert("UTC")
+            if latest_ts.tzinfo
+            else latest_ts.tz_localize("UTC")
+        )
         elapsed_minutes = (now - latest_utc).total_seconds() / 60
         if elapsed_minutes < throttle_minutes:
             print(
@@ -119,6 +134,3 @@ def check_and_fetch(station_config: StationConfig, throttle_minutes: int = 20) -
 
     _fetch_and_store(station_config, latest_ts=latest_ts)
     return True
-
-
-

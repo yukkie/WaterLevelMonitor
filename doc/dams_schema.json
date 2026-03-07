@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "SiteConfig": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "dam": {
+          "$ref": "#/$defs/StationConfig"
+        },
+        "rain": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StationConfig"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "name",
+        "dam"
+      ],
+      "title": "SiteConfig",
+      "type": "object"
+    },
+    "StationConfig": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "default": "dam",
+          "title": "Type",
+          "type": "string"
+        },
+        "db_table_name": {
+          "default": "dam_data",
+          "title": "Db Table Name",
+          "type": "string"
+        },
+        "capacity_m3": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capacity M3"
+        },
+        "url_kind": {
+          "title": "Url Kind",
+          "type": "string"
+        },
+        "url_page": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "0",
+          "title": "Url Page"
+        }
+      },
+      "required": [
+        "name",
+        "id",
+        "url_kind"
+      ],
+      "title": "StationConfig",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "sites": {
+      "additionalProperties": {
+        "$ref": "#/$defs/SiteConfig"
+      },
+      "title": "Sites",
+      "type": "object"
+    }
+  },
+  "required": [
+    "sites"
+  ],
+  "title": "AppConfig",
+  "type": "object"
+}

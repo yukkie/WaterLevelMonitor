@@ -1,24 +1,28 @@
+import os
+
 import yaml
 from pydantic import BaseModel
-from typing import Dict, Optional
-import os
+
 
 class StationConfig(BaseModel):
     name: str
     id: str
     type: str = "dam"
     db_table_name: str = "dam_data"
-    capacity_m3: Optional[int] = None
+    capacity_m3: int | None = None
     url_kind: str
-    url_page: Optional[str] = "0"
+    url_page: str | None = "0"
+
 
 class SiteConfig(BaseModel):
     name: str
     dam: StationConfig
-    rain: Optional[StationConfig] = None
+    rain: StationConfig | None = None
+
 
 class AppConfig(BaseModel):
-    sites: Dict[str, SiteConfig]
+    sites: dict[str, SiteConfig]
+
 
 def load_config(config_path="dams.yaml") -> AppConfig:
     """
@@ -30,7 +34,7 @@ def load_config(config_path="dams.yaml") -> AppConfig:
         parent_path = os.path.join("..", config_path)
         if os.path.exists(parent_path):
             config_path = parent_path
-            
-    with open(config_path, "r", encoding="utf-8") as f:
+
+    with open(config_path, encoding="utf-8") as f:
         raw_data = yaml.safe_load(f)
     return AppConfig(**raw_data)

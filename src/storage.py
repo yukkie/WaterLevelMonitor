@@ -2,9 +2,11 @@
 データストレージ (Load層)。
 Supabase (PostgreSQL) への接続と、変換済みデータのバッチUPSERT処理(CRUD)を提供する。
 """
+
 import os
+
 import pandas as pd
-from supabase import create_client, Client
+from supabase import Client, create_client
 
 _supabase_client: Client | None = None
 
@@ -24,6 +26,7 @@ def _get_supabase_client() -> Client:
 
     # 1. .env ファイル / 環境変数から取得を試みる
     from dotenv import load_dotenv
+
     load_dotenv()
     url = os.environ.get("SUPABASE_URL")
     key = os.environ.get("SUPABASE_KEY")
@@ -32,6 +35,7 @@ def _get_supabase_client() -> Client:
     if not url or not key:
         try:
             import streamlit as st
+
             url = url or st.secrets.get("SUPABASE_URL")
             key = key or st.secrets.get("SUPABASE_KEY")
         except Exception:
@@ -39,8 +43,8 @@ def _get_supabase_client() -> Client:
 
     if not url or not key:
         raise RuntimeError(
-            "Supabase の接続情報が見つかりません。"
-            "SUPABASE_URL と SUPABASE_KEY を環境変数または Streamlit Secrets に設定してください。"
+            "Supabase の接続情報が見つかりません。SUPABASE_URL と "
+            "SUPABASE_KEY を環境変数または Streamlit Secrets に設定してください。"
         )
 
     _supabase_client = create_client(url, key)
@@ -49,7 +53,8 @@ def _get_supabase_client() -> Client:
 
 def _save_to_db(table_name: str, station_id: str, records: list[dict]) -> int:
     """
-    Supabase APIのサイズ制限対策として、レコードのリストを500件ずつのバッチでUPSERTする。
+    Supabase APIのサイズ制限対策として、
+    レコードのリストを500件ずつのバッチでUPSERTする。
     """
     if not records:
         print(f"[db] {table_name}: 挿入対象レコードなし (station_id={station_id})")
@@ -59,17 +64,19 @@ def _save_to_db(table_name: str, station_id: str, records: list[dict]) -> int:
     BATCH_SIZE = 500
     total_count = 0
     for i in range(0, len(records), BATCH_SIZE):
-        batch = records[i:i + BATCH_SIZE]
+        batch = records[i : i + BATCH_SIZE]
         try:
             result = client.table(table_name).upsert(batch).execute()
             count = len(result.data) if result.data else 0
             total_count += count
-            print(f"[db] {table_name}: バッチ {i//BATCH_SIZE + 1} - {count}件 UPSERT")
+            print(f"[db] {table_name}: バッチ {i // BATCH_SIZE + 1} - {count}件 UPSERT")
         except Exception as e:
-            print(f"[db] {table_name}: バッチ {i//BATCH_SIZE + 1} エラー: {e}")
+            print(f"[db] {table_name}: バッチ {i // BATCH_SIZE + 1} エラー: {e}")
             raise
 
-    print(f"[db] {table_name}: 合計 {total_count}件 UPSERT完了 (station_id={station_id})")
+    print(
+        f"[db] {table_name}: 合計 {total_count}件 UPSERT完了 (station_id={station_id})"
+    )
     return total_count
 
 
@@ -92,9 +99,9 @@ def _fetch_records_paginated(table_name: str, station_id: str):
         )
         if not result.data:
             break
-            
+
         yield from result.data
-        
+
         if len(result.data) < page_size:
             break
         start += page_size

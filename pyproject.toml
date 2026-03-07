@@ -1,0 +1,31 @@
+[tool.ruff]
+# Target Python version
+target-version = "py310"
+
+# Enable lint rules
+# E: pycodestyle errors
+# F: Pyflakes
+# I: isort
+# B: flake8-bugbear
+# UP: pyupgrade
+lint.select = ["E", "F", "I", "B", "UP"]
+lint.ignore = []
+
+# Exclude common directories
+exclude = [
+    ".git",
+    ".pytest_cache",
+    "venv",
+    "__pycache__",
+    "data",
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
