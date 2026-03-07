@@ -9,14 +9,15 @@ from storage import save_to_db
 from db import load_dam_data, load_rain_data, get_latest_timestamp
 
 
-def fetch_and_store(dam_config: DamConfig) -> pd.DataFrame:
+def fetch_and_store(dam_config: DamConfig, latest_ts=None) -> pd.DataFrame:
     """
     データを取得し、DBに保存して結果のDataFrameを返す。
+    latest_tsが与えられた場合、差分のみを保存する。
     """
     new_df = fetch_dam_data(dam_config)
 
-    # DB に保存
-    save_to_db(dam_config.id, dam_config.type, new_df)
+    # DB に保存 (差分のみ)
+    save_to_db(dam_config.id, dam_config.type, new_df, latest_ts=latest_ts)
 
     # DBから最新データを読み込んで返す
     return load_data(dam_config)
@@ -46,7 +47,7 @@ def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
             )
             return False
 
-    fetch_and_store(dam_config)
+    fetch_and_store(dam_config, latest_ts=latest_ts)
     return True
 
 

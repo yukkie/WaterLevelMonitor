@@ -58,24 +58,27 @@ def _safe_float(val) -> float | None:
         return None
 
 
-def _parse_timestamp(date_str: str, time_str: str) -> str:
+def _vectorized_parse_timestamp(df: pd.DataFrame) -> pd.Series:
     """
-    日付文字列と時刻文字列からUTC基準のISO 8601タイムスタンプを生成する。
-    DATファイルの時刻はJST(UTC+9)のため、UTC変換して返す。
-    '24:00' は翌日の '00:00' として扱う。
+    DataFrameの0列目(日付)と1列目(時刻)からUTC基準のpd.Timestampシリーズを生成する（ベクトル演算）。
     """
-    date_str = str(date_str).strip()
-    time_str = str(time_str).strip()
+    # 日付と時刻を結合
+    datetime_str = df["0"].astype(str).str.strip() + " " + df["1"].astype(str).str.strip()
+    
+    # 24:00 を 00:00 に置換し、翌日扱いにするフラグを作成
+    is_2400 = df["1"].astype(str).str.strip() == "24:00"
+    datetime_str = datetime_str.str.replace(" 24:00", " 00:00")
+    
+    try:
+        # 文字列から datetime へ変換
+        dt_series = pd.to_datetime(datetime_str, format="mixed", errors="coerce")
+        # 24:00 だった行に1日加算
+        dt_series = dt_series + pd.to_timedelta(is_2400.astype(int), unit="d")
+        # JST(UTC+9) として localize してから UTC に変換
+        return dt_series.dt.tz_localize("Asia/Tokyo").dt.tz_convert("UTC")
+    except Exception:
+        return pd.Series(pd.NaT, index=df.index)
 
-    dt = pd.to_datetime(date_str)
-    if time_str == "24:00":
-        time_str = "00:00"
-        dt += pd.Timedelta(days=1)
-
-    # JST(UTC+9) として localize → UTC に変換
-    jst = pd.to_datetime(f"{dt.strftime('%Y-%m-%d')} {time_str}")
-    utc = jst.tz_localize("Asia/Tokyo").tz_convert("UTC")
-    return utc.isoformat()
 
 
 def _batch_upsert(table_name: str, station_id: str, records: list[dict]) -> int:
@@ -104,11 +107,18 @@ def _batch_upsert(table_name: str, station_id: str, records: list[dict]) -> int:
     return total_count
 
 
-def upsert_dam_data(station_id: str, df: pd.DataFrame) -> int:
+def upsert_dam_data(station_id: str, df: pd.DataFrame, latest_ts: pd.Timestamp | None = None) -> int:
     """
     DataFrameをdam_dataテーブルにUPSERTする。
+    latest_tsが指定されている場合は、それより新しいデータのみを挿入する。
     Returns: 挿入/更新された行数
     """
+    df["parsed_ts"] = _vectorized_parse_timestamp(df)
+    df = df.dropna(subset=["parsed_ts"])
+
+    if latest_ts is not None:
+        df = df[df["parsed_ts"] > latest_ts]
+
     records = []
     for _, row in df.iterrows():
         rainfall = _safe_float(row.get("2"))
@@ -121,14 +131,9 @@ def upsert_dam_data(station_id: str, df: pd.DataFrame) -> int:
         if volume is None:
             continue
 
-        try:
-            ts = _parse_timestamp(row["0"], row["1"])
-        except Exception:
-            continue
-
         records.append({
             "station_id": station_id,
-            "timestamp": ts,
+            "timestamp": row["parsed_ts"].isoformat(),
             "rainfall": rainfall,
             "volume": volume,
             "inflow": inflow,
@@ -139,11 +144,18 @@ def upsert_dam_data(station_id: str, df: pd.DataFrame) -> int:
     return _batch_upsert("dam_data", station_id, records)
 
 
-def upsert_rain_data(station_id: str, df: pd.DataFrame) -> int:
+def upsert_rain_data(station_id: str, df: pd.DataFrame, latest_ts: pd.Timestamp | None = None) -> int:
     """
     DataFrameをrain_dataテーブルにUPSERTする。
+    latest_tsが指定されている場合は、それより新しいデータのみを挿入する。
     Returns: 挿入/更新された行数
     """
+    df["parsed_ts"] = _vectorized_parse_timestamp(df)
+    df = df.dropna(subset=["parsed_ts"])
+
+    if latest_ts is not None:
+        df = df[df["parsed_ts"] > latest_ts]
+
     records = []
     for _, row in df.iterrows():
         rainfall = _safe_float(row.get("2"))
@@ -152,14 +164,9 @@ def upsert_rain_data(station_id: str, df: pd.DataFrame) -> int:
         if rainfall is None:
             continue
 
-        try:
-            ts = _parse_timestamp(row["0"], row["1"])
-        except Exception:
-            continue
-
         records.append({
             "station_id": station_id,
-            "timestamp": ts,
+            "timestamp": row["parsed_ts"].isoformat(),
             "rainfall": rainfall,
         })
 
