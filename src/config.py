@@ -6,7 +6,8 @@ import os
 class DamConfig(BaseModel):
     name: str
     id: str
-    type: str = "water"
+    type: str = "dam"
+    db_table_name: str = "dam_data"
     capacity_m3: Optional[int] = None
     url_kind: str
     url_page: Optional[str] = "0"

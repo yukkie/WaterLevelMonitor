@@ -88,6 +88,34 @@
 - [x] **`src/db.py` — Supabase クライアントのキャッシュ化**
   - 現在、UPSERT/SELECT のたびに `create_client()` を呼んでいる。1セッション1インスタンスに。
 
+## ETL分離にもとづくリファクタリング (アーキテクチャ改善)
+現状、`db.py`（ロード層）がスクレイピング先のファイル形式に依存したドメイン知識（パース、マッピング、'$', '-'の処理など）を多く持ちすぎており、責務が混同している。
+データの流れを **Extract (抽出) -> Transform (変換) -> Load (保存)** に明確に分離し、各層の責務を単一化する。
+
+- [ ] **現状の分析と責務の再定義**
+  - **【現在】**
+    - `scraper.py`: URL生成、ダウンロード、CSV読み込み、一部の行フィルタリング（`-`, `$`の除外など）。**（EとTが混在）**
+    - `pipeline.py`: 中継のみ。**（薄すぎる）**
+    - `db.py`: 日時文字列のパース（JST→UTC）、列名のマッピング、行から辞書への変換処理。**（LなのにTをやっている）**
+  - **【理想（ターゲットアーキテクチャ）】**
+    - **Extract (`scraper.py`)**:
+      - 責務: 外部サイトからRAWデータをダウンロードし、一切加工せずにPandas DataFrameとして取り出すことだけを行う。
+    - **Transform (`pipeline.py` または 新設 `transformer.py`)**:
+      - 責務: RAWデータをシステムのテーブルスキーマ（DBと1:1の形式）に変換する。
+      - 処理: 日時文字列の結合とUTC変換（ベクトル演算）、異常値の処理、不要列の削除、カラム名のマッピング（例: `2` → `rainfall`）、`station_id` の付与。
+    - **Load (`db.py` / `storage.py`)**:
+      - 責務: 受け取った整形済みデータをDBにそのまま流し込む純粋なインフラ機能。
+      - 処理: DataFrameの `to_dict('records')` を受け取って `upsert()` するだけ（パースやマッピングの知識は持たない）。
+
+- [ ] **Step 1: Extract (scraper.py) の純粋化**
+  - `scraper.py` で現在行っている `dropna` などのクレンジング処理を削除し、純粋にRAWデータをそのまま DataFrame として返す責務にする。
+- [ ] **Step 2: Transform ロジックの移動と集約 (`pipeline.py`)**
+  - `db.py` 内にある `_vectorized_parse_timestamp` や `col_mapping`、`_safe_float` などのパース・変換・抽出処理を `pipeline.py`（または専用モジュール）側に移動する。
+  - `scraper` から受け取ったRAWデータを引数に取り、DBスキーマ構成と完全に一致するDataFrameを出力する関数を作る。
+- [ ] **Step 3: Load (`db.py`) のシンプル化**
+  - `db.py` の `_upsert_data` 内で行っているループ生成やマッピングロジックを全廃する。
+  - 単純に `upsert(records)` を実行するだけの薄い共通関数 `upsert_records(table_name, records)` に置き換える。
+
 ## フェーズ 6: データ取得の定期実行とアーキテクチャ分離
 - [ ] **GitHub Actions によるデータ定期取得 (Cron)**
   - 現在 Streamlit アプリへのアクセス時に行っているスクレイピング処理を、GitHub Actions のスケジュール実行 (Cron) に移行し、10〜20分間隔で自動収集する。

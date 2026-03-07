@@ -6,7 +6,7 @@ import pandas as pd
 from config import DamConfig
 from scraper import fetch_dam_data
 from storage import save_to_db
-from db import load_dam_data, load_rain_data, get_latest_timestamp
+from db import load_data as db_load_data, get_latest_timestamp
 
 
 def fetch_and_store(dam_config: DamConfig, latest_ts=None) -> pd.DataFrame:
@@ -32,8 +32,7 @@ def check_and_fetch(dam_config: DamConfig, throttle_minutes: int = 20) -> bool:
         True  : スクレイピングを実行した
         False : 閾値以内のためスキップした
     """
-    table_name = "dam_data" if dam_config.type != "rain" else "rain_data"
-    latest_ts = get_latest_timestamp(table_name, dam_config.id)
+    latest_ts = get_latest_timestamp(dam_config.db_table_name, dam_config.id)
 
     if latest_ts is not None:
         # DBのタイムスタンプはUTC aware で返るので、now も UTC で比較する
@@ -55,7 +54,4 @@ def load_data(dam_config: DamConfig) -> pd.DataFrame:
     """
     DBからデータを読み込んでDataFrameとして返す。
     """
-    if dam_config.type == "rain":
-        return load_rain_data(dam_config.id)
-    else:
-        return load_dam_data(dam_config.id)
+    return db_load_data(dam_config.db_table_name, dam_config.id)

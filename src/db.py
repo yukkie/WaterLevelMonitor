@@ -98,7 +98,7 @@ def _batch_upsert(table_name: str, station_id: str, records: list[dict]) -> int:
             result = client.table(table_name).upsert(batch).execute()
             count = len(result.data) if result.data else 0
             total_count += count
-            print(f"[db] {table_name}: バッチ {i//BATCH_SIZE + 1} — {count}件 UPSERT")
+            print(f"[db] {table_name}: バッチ {i//BATCH_SIZE + 1} - {count}件 UPSERT")
         except Exception as e:
             print(f"[db] {table_name}: バッチ {i//BATCH_SIZE + 1} エラー: {e}")
             raise
@@ -107,70 +107,77 @@ def _batch_upsert(table_name: str, station_id: str, records: list[dict]) -> int:
     return total_count
 
 
-def upsert_dam_data(station_id: str, df: pd.DataFrame, latest_ts: pd.Timestamp | None = None) -> int:
+def _prepare_upsert_df(df: pd.DataFrame, latest_ts: pd.Timestamp | None = None) -> pd.DataFrame:
     """
-    DataFrameをdam_dataテーブルにUPSERTする。
-    latest_tsが指定されている場合は、それより新しいデータのみを挿入する。
-    Returns: 挿入/更新された行数
+    UPSERT用にDataFrameのタイムスタンプをパースし、latest_ts以降のデータのみにフィルタリングする。
     """
+    df = df.copy()
     df["parsed_ts"] = _vectorized_parse_timestamp(df)
     df = df.dropna(subset=["parsed_ts"])
 
     if latest_ts is not None:
         df = df[df["parsed_ts"] > latest_ts]
+    return df
+
+
+def _upsert_data(
+    table_name: str,
+    station_id: str,
+    df: pd.DataFrame,
+    col_mapping: dict[str, str],
+    required_col: str,
+    latest_ts: pd.Timestamp | None = None
+) -> int:
+    """
+    データ種別によらず、汎用的にDataFrameをパースして指定テーブルにUPSERTする。
+    col_mapping: DBのカラム名 -> 元DataFrame(DATファイル)の列インデックス のマッピング
+    required_col: この列がNoneなら未受信行としてスキップするDBのカラム名
+    """
+    df = _prepare_upsert_df(df, latest_ts)
 
     records = []
     for _, row in df.iterrows():
-        rainfall = _safe_float(row.get("2"))
-        volume = _safe_float(row.get("4"))
-        inflow = _safe_float(row.get("6"))
-        outflow = _safe_float(row.get("8"))
-        storage_rate = _safe_float(row.get("10"))
-
-        # 主要データ（volume）がNoneの場合は未受信行としてスキップ
-        if volume is None:
-            continue
-
-        records.append({
+        # station_id と timestamp はDBスキーマ側の複合主キー(PK)であるためそこからrecordを作成する。
+        record = {
             "station_id": station_id,
             "timestamp": row["parsed_ts"].isoformat(),
-            "rainfall": rainfall,
-            "volume": volume,
-            "inflow": inflow,
-            "outflow": outflow,
-            "storage_rate": storage_rate,
-        })
+        }
 
-    return _batch_upsert("dam_data", station_id, records)
+        # 設定されたマッピングに従ってデータを抽出        
+        for db_col, df_col in col_mapping.items():
+            record[db_col] = _safe_float(row.get(df_col))
+
+        # 必須データがNoneの場合は未受信行としてスキップ
+        if record.get(required_col) is None:
+            continue
+
+        records.append(record)
+
+    return _batch_upsert(table_name, station_id, records)
+
+
+def upsert_dam_data(station_id: str, df: pd.DataFrame, latest_ts: pd.Timestamp | None = None) -> int:
+    """
+    DataFrameをdam_dataテーブルにUPSERTする。
+    """
+    col_mapping = {
+        "rainfall": "2",
+        "volume": "4",
+        "inflow": "6",
+        "outflow": "8",
+        "storage_rate": "10",
+    }
+    return _upsert_data("dam_data", station_id, df, col_mapping, required_col="volume", latest_ts=latest_ts)
 
 
 def upsert_rain_data(station_id: str, df: pd.DataFrame, latest_ts: pd.Timestamp | None = None) -> int:
     """
     DataFrameをrain_dataテーブルにUPSERTする。
-    latest_tsが指定されている場合は、それより新しいデータのみを挿入する。
-    Returns: 挿入/更新された行数
     """
-    df["parsed_ts"] = _vectorized_parse_timestamp(df)
-    df = df.dropna(subset=["parsed_ts"])
-
-    if latest_ts is not None:
-        df = df[df["parsed_ts"] > latest_ts]
-
-    records = []
-    for _, row in df.iterrows():
-        rainfall = _safe_float(row.get("2"))
-
-        # 雨量がNoneの場合は未受信行としてスキップ
-        if rainfall is None:
-            continue
-
-        records.append({
-            "station_id": station_id,
-            "timestamp": row["parsed_ts"].isoformat(),
-            "rainfall": rainfall,
-        })
-
-    return _batch_upsert("rain_data", station_id, records)
+    col_mapping = {
+        "rainfall": "2",
+    }
+    return _upsert_data("rain_data", station_id, df, col_mapping, required_col="rainfall", latest_ts=latest_ts)
 
 
 def _fetch_records_paginated(table_name: str, station_id: str):
@@ -200,7 +207,7 @@ def _fetch_records_paginated(table_name: str, station_id: str):
         start += page_size
 
 
-def _load_data_as_dataframe(table_name: str, station_id: str) -> pd.DataFrame:
+def load_data(table_name: str, station_id: str) -> pd.DataFrame:
     """
     指定テーブルからデータを全件取得し、DataFrameに変換して返す。
     """
@@ -212,20 +219,6 @@ def _load_data_as_dataframe(table_name: str, station_id: str) -> pd.DataFrame:
     df = pd.DataFrame(all_data)
     df["timestamp"] = pd.to_datetime(df["timestamp"])
     return df
-
-
-def load_dam_data(station_id: str) -> pd.DataFrame:
-    """
-    dam_dataテーブルからデータを読み込んでDataFrameとして返す。
-    """
-    return _load_data_as_dataframe("dam_data", station_id)
-
-
-def load_rain_data(station_id: str) -> pd.DataFrame:
-    """
-    rain_dataテーブルからデータを読み込んでDataFrameとして返す。
-    """
-    return _load_data_as_dataframe("rain_data", station_id)
 
 
 def get_latest_timestamp(table_name: str, station_id: str) -> pd.Timestamp | None:
