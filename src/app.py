@@ -13,7 +13,7 @@ from src.storage import load_data
 from src.plot import plot_water_level
 
 
-def check_and_fetch_data(dam_config, throttle_minutes=20):
+def refresh_data_if_needed(dam_config, throttle_minutes=20):
     """
     converter.check_and_fetch を呼び出して Streamlit の UI（spinner/toast/error）を追加する薄いラッパー。
     ガードロジック本体は converter.py に一元化されているため、main.py からも同じ関数が使える。
@@ -52,13 +52,15 @@ def main():
     rain_station = target_site.rain
 
     # 最新データの取得（10分ガード付き）
-    check_and_fetch_data(target_dam)
+    refresh_data_if_needed(target_dam)
+    rain_df = None
     if rain_station:
-        check_and_fetch_data(rain_station)
+        refresh_data_if_needed(rain_station)
+        rain_df = load_data(rain_station.db_table_name, rain_station.id) if rain_station else pd.DataFrame()
 
     # データの読み込み（DBから）
     dam_df = load_data(target_dam.db_table_name, target_dam.id)
-    rain_df = load_data(rain_station.db_table_name, rain_station.id) if rain_station else pd.DataFrame()
+
 
     if not dam_df.empty:
         st.subheader(f"{target_dam.name} の状況")
