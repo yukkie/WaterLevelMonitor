@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.config import load_config
-from src.converter import fetch_and_store, check_and_fetch
+from src.converter import check_and_fetch
 from src.storage import load_data
 
 from src.plot import plot_water_level
