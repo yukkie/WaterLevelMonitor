@@ -11,7 +11,7 @@ graph TD
         CONFIG["config.py"]
         SCRAPER["scraper.py"]
         STORAGE["storage.py"]
-        DB_MOD["db.py"]
+        DB_MOD["storage.py"]
         PIPELINE["pipeline.py"]
         PLOT["plot.py"]
         MAIN["main.py"]

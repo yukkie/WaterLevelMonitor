@@ -96,7 +96,7 @@
 現状、`db.py`（ロード層）がスクレイピング先のファイル形式に依存したドメイン知識（パース、マッピング、'$', '-'の処理など）を多く持ちすぎており、責務が混同している。
 データの流れを **Extract (抽出) -> Transform (変換) -> Load (保存)** に明確に分離し、各層の責務を単一化する。
 
-- [ ] **現状の分析と責務の再定義**
+- [x] **現状の分析と責務の再定義**
   - **【現在】**
     - `scraper.py`: URL生成、ダウンロード、CSV読み込み、一部の行フィルタリング（`-`, `$`の除外など）。**（EとTが混在）**
     - `pipeline.py`: 中継のみ。**（薄すぎる）**
@@ -111,13 +111,13 @@
       - 責務: 受け取った整形済みデータをDBにそのまま流し込む純粋なインフラ機能。
       - 処理: DataFrameの `to_dict('records')` を受け取って `upsert()` するだけ（パースやマッピングの知識は持たない）。
 
-- [ ] **Step 1: Extract (scraper.py) の純粋化とバックアップ機能の追加**
+- [x] **Step 1: Extract (scraper.py) の純粋化とバックアップ機能の追加**
   - `scraper.py` で現在行っている `dropna` などのクレンジング処理を削除し、純粋にRAWデータをそのまま DataFrame として返す責務にする。
   - 取得したPandas DataFrameを、加工する前にローカルにCSVファイルとして `to_csv` 保存する処理を追加する（単体試験・デバッグ用）。
-- [ ] **Step 2: Transform ロジックの移動と集約 (`pipeline.py`)**
+- [x] **Step 2: Transform ロジックの移動と集約 (`pipeline.py`)**
   - `db.py` 内にある `_vectorized_parse_timestamp` や `col_mapping`、`_safe_float` などのパース・変換・抽出処理を `pipeline.py`（または専用モジュール）側に移動する。
   - `scraper` から受け取ったRAWデータを引数に取り、DBスキーマ構成と完全に一致するDataFrameを出力する関数を作る。
-- [ ] **Step 3: Load (`db.py`) のシンプル化**
+- [x] **Step 3: Load (`db.py`) のシンプル化**
   - `db.py` の `_upsert_data` 内で行っているループ生成やマッピングロジックを全廃する。
   - 単純に `upsert(records)` を実行するだけの薄い共通関数 `upsert_records(table_name, records)` に置き換える。
 

@@ -1,12 +1,81 @@
 """
-データパイプライン。
-スクレイピング → DB保存 → DB読み込みの一連の処理を提供する。
+データパイプライン (Transform層)。
+スクレイピング(Extract)されたRAWデータを受け取り、DB保存可能な形式(辞書リスト)に変換する。
+抽出 → 変換 → DB保存の一連のフローを制御する。
 """
 import pandas as pd
 from config import DamConfig
 from scraper import fetch_dam_data
-from storage import save_to_db
-from db import load_data as db_load_data, get_latest_timestamp
+from storage import save_to_db, load_data as db_load_data, get_latest_timestamp
+
+def _safe_float(val) -> float | None:
+    """値を float に変換する。'-' / '$' / 変換不可 → None。"""
+    s = str(val).strip()
+    if s in ("-", "$", "", "nan", "None"):
+        return None
+    try:
+        return float(s)
+    except (ValueError, TypeError):
+        return None
+
+def transform_data(df: pd.DataFrame, dam_config: DamConfig, latest_ts: pd.Timestamp | None = None) -> list[dict]:
+    """
+    RAWデータをDBに投入可能な形式の辞書リストに変換する。
+    """
+    df = df.copy()
+
+    # 日付と時刻を結合
+    datetime_str = df["0"].astype(str).str.strip() + " " + df["1"].astype(str).str.strip()
+    
+    # 24:00 を 00:00 に置換し、翌日扱いにするフラグを作成
+    is_2400 = df["1"].astype(str).str.strip() == "24:00"
+    datetime_str = datetime_str.str.replace(" 24:00", " 00:00")
+    
+    try:
+        dt_series = pd.to_datetime(datetime_str, format="mixed", errors="coerce")
+        dt_series = dt_series + pd.to_timedelta(is_2400.astype(int), unit="d")
+        df["parsed_ts"] = dt_series.dt.tz_localize("Asia/Tokyo").dt.tz_convert("UTC")
+    except Exception:
+        df["parsed_ts"] = pd.Series(pd.NaT, index=df.index)
+
+    df = df.dropna(subset=["parsed_ts"])
+
+    if latest_ts is not None:
+        df = df[df["parsed_ts"] > latest_ts]
+
+    req_col = "2" if dam_config.type == "rain" else "4"
+    if req_col in df.columns:
+        df = df[df[req_col].astype(str).str.strip() != "-"]
+
+    if dam_config.type == "rain":
+        col_mapping = {"rainfall": "2"}
+        required_db_col = "rainfall"
+    else:
+        col_mapping = {
+            "rainfall": "2",
+            "volume": "4",
+            "inflow": "6",
+            "outflow": "8",
+            "storage_rate": "10",
+        }
+        required_db_col = "volume"
+
+    records = []
+    for _, row in df.iterrows():
+        record = {
+            "station_id": dam_config.id,
+            "timestamp": row["parsed_ts"].isoformat(),
+        }
+
+        for db_col, df_col in col_mapping.items():
+            record[db_col] = _safe_float(row.get(df_col))
+
+        if record.get(required_db_col) is None:
+            continue
+
+        records.append(record)
+
+    return records
 
 
 def fetch_and_store(dam_config: DamConfig, latest_ts=None) -> pd.DataFrame:
@@ -14,12 +83,12 @@ def fetch_and_store(dam_config: DamConfig, latest_ts=None) -> pd.DataFrame:
     データを取得し、DBに保存して結果のDataFrameを返す。
     latest_tsが与えられた場合、差分のみを保存する。
     """
-    new_df = fetch_dam_data(dam_config)
+    raw_df = fetch_dam_data(dam_config)
+    
+    records = transform_data(raw_df, dam_config, latest_ts=latest_ts)
 
-    # DB に保存 (差分のみ)
-    save_to_db(dam_config.id, dam_config.type, new_df, latest_ts=latest_ts)
+    save_to_db(dam_config.db_table_name, dam_config.id, records)
 
-    # DBから最新データを読み込んで返す
     return load_data(dam_config)
 
 

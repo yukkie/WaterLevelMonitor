@@ -15,8 +15,7 @@ WaterLevelMonitor/
 ├── src/                   # ソースコード配置ディレクトリ
 │   ├── config.py          # 設定(YAML)の読み込みと型定義
 │   ├── scraper.py         # 各種データソースからの取得ロジック
-│   ├── storage.py         # Supabase DBへの保存ロジック
-│   ├── db.py              # Supabase (PostgreSQL) 接続・CRUD層
+│   ├── storage.py         # Supabase (PostgreSQL) 接続・CRUD層および保存ロジック
 │   ├── pipeline.py        # データパイプライン共通処理（取得・保存・読込）
 │   ├── plot.py            # グラフ描画ロジック
 │   ├── main.py            # CLIエントリーポイント（ローカル実行用）
