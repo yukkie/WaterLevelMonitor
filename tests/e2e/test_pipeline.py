@@ -9,7 +9,7 @@ project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(_
 if os.path.join(project_root, 'src') not in sys.path:
     sys.path.append(os.path.join(project_root, 'src'))
 
-from pipeline import fetch_and_store
+from converter import fetch_and_store
 
 def _assert_snapshot(records, identifier):
     """

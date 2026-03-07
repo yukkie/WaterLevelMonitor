@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.config import load_config
-from src.pipeline import fetch_and_store, check_and_fetch
+from src.converter import fetch_and_store, check_and_fetch
 from src.storage import load_data
 
 from src.plot import plot_water_level
@@ -15,8 +15,8 @@ from src.plot import plot_water_level
 
 def check_and_fetch_data(dam_config, throttle_minutes=20):
     """
-    pipeline.check_and_fetch を呼び出して Streamlit の UI（spinner/toast/error）を追加する薄いラッパー。
-    ガードロジック本体は pipeline.py に一元化されているため、main.py からも同じ関数が使える。
+    converter.check_and_fetch を呼び出して Streamlit の UI（spinner/toast/error）を追加する薄いラッパー。
+    ガードロジック本体は converter.py に一元化されているため、main.py からも同じ関数が使える。
     """
     with st.spinner(f"[{dam_config.name}] 最新データを確認中..."):
         try:

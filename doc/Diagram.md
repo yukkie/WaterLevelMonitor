@@ -11,32 +11,29 @@ graph TD
         CONFIG["config.py"]
         SCRAPER["scraper.py"]
         STORAGE["storage.py"]
-        DB_MOD["storage.py"]
-        PIPELINE["pipeline.py"]
+        CONVERTER["converter.py"]
         PLOT["plot.py"]
         MAIN["main.py"]
         APP["app.py"]
     end
 
     YAML -- "YAML読み込み" --> CONFIG
-    CONFIG -- "DamConfig" --> PIPELINE
+    CONFIG -- "DamConfig" --> CONVERTER
     CONFIG -- "DamConfig" --> APP
 
     WEB -- "HTTP GET" --> SCRAPER
-    SCRAPER -- "DataFrame（生データ）" --> PIPELINE
-    PIPELINE -- "UPSERT" --> STORAGE
-    STORAGE --> DB_MOD
-    DB_MOD -- "DB書き込み" --> DB
-    DB -- "DB読み込み" --> DB_MOD
-    DB_MOD --> PIPELINE
-    PIPELINE -- "DataFrame" --> MAIN
-    PIPELINE -- "DataFrame" --> APP
+    SCRAPER -- "DataFrame（生データ）" --> CONVERTER
+    CONVERTER -- "UPSERT" --> STORAGE
+    STORAGE -- "DB読み書き" --> DB
+
+    CONVERTER -- "処理済みデータ" --> MAIN
+    CONVERTER -- "処理済みデータ" --> APP
 
     MAIN -- "DamConfig + DataFrame" --> PLOT
     APP -- "DamConfig + DataFrame" --> PLOT
     PLOT -- "matplotlib Figure" --> GRAPH
 
-    style PIPELINE fill:#e8f5e9,stroke:#388e3c
+    style CONVERTER fill:#e8f5e9,stroke:#388e3c
     style APP fill:#e3f2fd,stroke:#1565c0
     style MAIN fill:#fff3e0,stroke:#ef6c00
     style DB fill:#fce4ec,stroke:#c62828

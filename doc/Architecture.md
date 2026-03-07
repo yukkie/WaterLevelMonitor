@@ -15,8 +15,8 @@ WaterLevelMonitor/
 ├── src/                   # ソースコード配置ディレクトリ
 │   ├── config.py          # 設定(YAML)の読み込みと型定義
 │   ├── scraper.py         # 各種データソースからの取得ロジック
+│   ├── converter.py       # データ変換(Transform)および流れの制御
 │   ├── storage.py         # Supabase (PostgreSQL) 接続・CRUD層および保存ロジック
-│   ├── pipeline.py        # データパイプライン共通処理（取得・保存・読込）
 │   ├── plot.py            # グラフ描画ロジック
 │   ├── main.py            # CLIエントリーポイント（ローカル実行用）
 │   └── app.py             # Streamlit Webアプリのエントリーポイント
@@ -59,8 +59,8 @@ dams:
   * `station_id` + `timestamp` を主キーとし、重複を排除して新データを優先して上書きする設計としています。
   * 500件ずつバッチUPSERTを行い、APIのサイズ制限に対応しています。
   * SELECTでは1000件のデフォルト上限に対応するため、ページネーションで全件取得を行います。
-* **共通パイプライン (`pipeline.py`)**:
-  * データ取得→DB保存、DB読み込みといった一連の共通処理を `pipeline.py` に集約しています。
+* **共通コンバーター (`converter.py`)**:
+  * データ取得→DB保存、DB読み込みといった一連の共通処理を `converter.py` に集約しています。
   * CLI (`main.py`) と Web UI (`app.py`) の両エントリーポイントからこの共通モジュールを呼び出すことで、ロジックの重複を排除しています。
 
 ## 4. Web UI の設計方針
