@@ -1,4 +1,8 @@
 import os
+import sys
+
+# プロジェクトルートを sys.path に追加 (Streamlit Cloud での ImportNotFoundError 対策)
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import matplotlib.pyplot as plt
 import pandas as pd
