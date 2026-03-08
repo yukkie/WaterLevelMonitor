@@ -80,3 +80,23 @@ dams:
 現在は開発スピード・立ち上げの「手っ取り早さ」を優先してStreamlitを採用していますが、将来的にアクセス数が大幅に増大した場合や、より柔軟・リッチなUIが必要になった場合は、以下の構成への移行も視野に入れています（これらの案は将来構想として残しておきます）。
 * **案2 (FastAPI + Vercel/Next.js 等)**: バックエンド(API)とフロントエンドを分離し、スケーラビリティとUIの自由度を高める構成。
 * **案3 (Node.js フルスタック / Hono 等)**: TypeScript等で統一し、VercelやCloudflare Pages/Workersなどの強力なエッジ・無料枠を活用する構成。
+
+## 5. 開発ワークフローとCI/CD
+
+品質を担保するため、本プロジェクトでは**プルリクエスト駆動開発 (PR Workflow)** と自動化されたCIを利用します。
+
+### 5.1 Branch Protection (masterの保護)
+- `master` ブランチへの直接のプッシュ (`git push origin master`) は禁止されています。
+- 全ての変更は作業ブランチ（例: `feature/xxx`, `fix/yyy`）からプルリクエスト (PR) を経由してマージする必要があります。
+- マージには、GitHub Actions によるステータスチェック（Lint および Test）のパスが必須です。
+
+### 5.2 CI (継続的インテグレーション)
+GitHub Actions により、PR作成時およびPush時に以下のチェックが自動で実行されます。
+- **Ruff**: 高速な Linter & Formatter。コーディング規約違反や未使用インポートを検知します。
+- **pytest**: 単体テスト・E2Eテストを実行し、デグレ（機能退行）を防ぎます。特にグラフの日本語フォント（豆腐問題）などの環境依存エラーもここで捕捉します。
+
+### 5.3 開発手順
+1. `git checkout -b feature/your-feature-name` でブランチを作成
+2. 開発を行い、ローカルでテスト (`ruff check .`, `pytest`)
+3. コミット・プッシュし、GitHub 上で `master` 宛の PR を作成
+4. CI の全パスを確認後、マージを実行
