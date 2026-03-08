@@ -1,10 +1,12 @@
 import io
+import os
 import urllib.parse
 
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-from config import StationConfig
+
+from .config import StationConfig
 
 
 def _fetch_dam_data(dam: StationConfig) -> pd.DataFrame:
@@ -62,8 +64,6 @@ def _fetch_dam_data(dam: StationConfig) -> pd.DataFrame:
     df.columns = df.columns.astype(str)
 
     # --- RAWデータのバックアップ保存 ---
-    import os
-
     os.makedirs("data", exist_ok=True)
     df.to_csv(f"data/raw_{dam.id}.csv", index=False)
 

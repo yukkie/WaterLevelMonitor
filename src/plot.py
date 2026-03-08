@@ -1,5 +1,6 @@
 import pandas as pd
-from config import StationConfig
+
+from .config import StationConfig
 
 
 def plot_water_level(

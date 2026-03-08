@@ -1,10 +1,11 @@
 import sys
 
 import matplotlib.pyplot as plt
-from config import load_config
-from converter import refresh_data
-from plot import plot_water_level
-from storage import load_data
+
+from .config import load_config
+from .converter import refresh_data
+from .plot import plot_water_level
+from .storage import load_data
 
 
 def main():

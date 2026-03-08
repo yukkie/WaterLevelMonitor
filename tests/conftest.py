@@ -54,7 +54,7 @@ def mock_requests_get():
 
         return MockResponse("")
 
-    with patch("scraper.requests.get", side_effect=side_effect) as mock_get:
+    with patch("src.scraper.requests.get", side_effect=side_effect) as mock_get:
         yield mock_get
 
 
@@ -119,5 +119,5 @@ def mock_supabase():
         def table(self, table_name):
             return MockTable(table_name)
 
-    with patch("storage._get_supabase_client", return_value=MockSupabaseClient()):
+    with patch("src.storage._get_supabase_client", return_value=MockSupabaseClient()):
         yield inserted_records
