@@ -66,3 +66,6 @@ venv.bak/
 
 # Streamlit
 .streamlit/
+
+# Test output
+test_plot.png
