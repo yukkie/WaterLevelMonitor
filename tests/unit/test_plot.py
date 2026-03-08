@@ -106,7 +106,7 @@ def test_plot_japanese_font_warning(test_config, tmp_path):
         }
     )
 
-    # 実際に描画(savefig)を行って、UserWarning("Glyph XXX missing from font") が出ないかトラップする
+    # 描画して UserWarning("Glyph ... missing") が出ないか確認する
     with warnings.catch_warnings(record=True) as w:
         warnings.simplefilter("always")
         fig = plot_water_level(dam_config, dam_df, rain_config, rain_df)
@@ -119,6 +119,8 @@ def test_plot_japanese_font_warning(test_config, tmp_path):
             str(warn.message) for warn in w if "Glyph" in str(warn.message)
         ]
 
-    assert (
-        len(glyph_encounters) == 0
-    ), f"日本語フォントが見つからず文字化け(豆腐)が発生する可能性があります\\n詳細: {glyph_encounters}"
+    error_msg = (
+        "日本語フォントが見つからず文字化け(豆腐)が発生する可能性があります\\n"
+        f"詳細: {glyph_encounters}"
+    )
+    assert len(glyph_encounters) == 0, error_msg
