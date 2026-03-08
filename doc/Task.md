@@ -133,15 +133,18 @@
   - `db.py` の `_upsert_data` 内で行っているループ生成やマッピングロジックを全廃する。
   - 単純に `upsert(records)` を実行するだけの薄い共通関数 `upsert_records(table_name, records)` に置き換える。
 
-## フェーズ 7: データ取得の定期実行とアーキテクチャ分離
+## フェーズ 7: データ取得の定期実行とアーキテクチャ分離 -> 完了 🎉
 - [x] **ETLアーキテクチャの分離 (`pipeline.py` と `app.py` の分割)**
   - Webアプリ側（Streamlit `app.py`）から10分ガード付きスクレイピング処理を取り除き、Supabaseからデータを読み込んでグラフを表示するだけの役割に専念させ、ページロード時間を向上させた。
   - 別途、スタンドアローンのバッチスクリプトとして `src/pipeline.py` を新設し、データ収集処理を独立させた。
 - [x] **Streamlit UIの自動テスト (`test_app.py`) の導入**
   - アーキテクチャ分離に伴い、UI側のE2Eテスト（`AppTest` 利用）とデータパイプライン側のE2Eテストに分割してシステム全体の堅牢性を高めた。
-- [ ] **GitHub Actions によるデータ定期取得 (Cron)**
-  - 作成した `pipeline.py` を GitHub Actions のスケジュール実行 (Cron) に組み込み、10〜20分間隔で自動収集する。
-  - ※ 検討事項: コストと実装の優先順位により、将来実装を検討。
+- [x] **GitHub Actions によるデータ定期取得 (Cron)**
+  - `.github/workflows/cron.yml` を作成し、20分おきに `src/pipeline.py` を自動実行する設定を追加した。
+  - **【運用上の注意点】**
+    - 本設定を有効化させるには、GitHubの `Settings > Secrets and variables > Actions` にて、以下の Repository secrets を追加する必要がある。
+      1. `SUPABASE_URL`
+      2. `SUPABASE_KEY` (ローカルの `.env` と同値)
 
 ## 開発環境の改善 (Developer Experience)
 - [x] **YAML スキーマの自動生成とバリデーション導入**

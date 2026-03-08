@@ -1,0 +1,37 @@
+name: Scheduled Data Retrieval
+
+on:
+  schedule:
+    # 20分おきに実行 (JST: 毎時0,20,40分)
+    # cron式はUTC基準ですが、指定間隔実行の場合はUTC/JSTを意識する必要はありません
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+    # GitHub画面タブからの手動実行も許可（動作確認用）
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Pipeline (ETL)
+      env:
+        # DB接続用（GitHub Secretsから注入）
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        PYTHONPATH: .
+      run: |
+        python src/pipeline.py
