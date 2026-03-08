@@ -9,29 +9,8 @@ import pandas as pd
 import streamlit as st
 
 from src.config import load_config
-from src.converter import refresh_data
 from src.plot import plot_water_level
 from src.storage import load_data
-
-
-def refresh_data_if_needed(dam_config, throttle_minutes=20):
-    """
-    converter.refresh_data を呼び出して Streamlit の UI
-    （spinner/toast/error）を追加する薄いラッパー。
-    ガードロジック本体は converter.py に一元化されているため、
-    main.py からも同じ関数が使える。
-    """
-    with st.spinner(f"[{dam_config.name}] 最新データを確認中..."):
-        try:
-            fetched = refresh_data(dam_config, throttle_minutes)
-            if fetched:
-                st.toast(f"[{dam_config.name}] データ更新完了", icon="✅")
-            else:
-                st.toast(f"[{dam_config.name}] 最新データをキャッシュから利用")
-            return fetched
-        except Exception as e:
-            st.error(f"データ取得エラー: {e}")
-    return False
 
 
 def main():
@@ -60,18 +39,12 @@ def main():
     target_dam = target_site.dam
     rain_station = target_site.rain
 
-    # 最新データの取得（10分ガード付き）
-    refresh_data_if_needed(target_dam)
-    rain_df = None
-    if rain_station:
-        refresh_data_if_needed(rain_station)
-        rain_df = (
-            load_data(rain_station.db_table_name, rain_station.id)
-            if rain_station
-            else pd.DataFrame()
-        )
-
     # データの読み込み（DBから）
+    rain_df = (
+        load_data(rain_station.db_table_name, rain_station.id)
+        if rain_station
+        else pd.DataFrame()
+    )
     dam_df = load_data(target_dam.db_table_name, target_dam.id)
 
     if not dam_df.empty:
