@@ -78,3 +78,47 @@ def test_plot_water_level_execution_and_data(test_config):
     assert abs(y_data[0] - expected_rate) < 0.001
 
     plt.close(fig)  # メモリリーク防止
+
+
+def test_plot_japanese_font_warning(test_config, tmp_path):
+    """
+    グラフ描画時に日本語フォント(豆腐)に関する警告が出ないかを検証する。
+    """
+    import warnings
+
+    dam_config = test_config.sites["miyagase"].dam
+    rain_config = test_config.sites["miyagase"].rain
+
+    # 最低限のダミーデータ
+    base_time = pd.Timestamp("2023-10-01T00:00:00Z")
+    dam_df = pd.DataFrame(
+        {
+            "timestamp": [base_time, base_time + pd.Timedelta(minutes=10)],
+            "volume": [10000, 10000],
+            "inflow": [10.0, 10.0],
+            "outflow": [5.0, 5.0],
+        }
+    )
+    rain_df = pd.DataFrame(
+        {
+            "timestamp": [base_time, base_time + pd.Timedelta(minutes=10)],
+            "rainfall": [1.0, 1.0],
+        }
+    )
+
+    # 実際に描画(savefig)を行って、UserWarning("Glyph XXX missing from font") が出ないかトラップする
+    with warnings.catch_warnings(record=True) as w:
+        warnings.simplefilter("always")
+        fig = plot_water_level(dam_config, dam_df, rain_config, rain_df)
+
+        output_file = tmp_path / "test_font.png"
+        fig.savefig(str(output_file))
+        plt.close(fig)
+
+        glyph_encounters = [
+            str(warn.message) for warn in w if "Glyph" in str(warn.message)
+        ]
+
+    assert (
+        len(glyph_encounters) == 0
+    ), f"日本語フォントが見つからず文字化け(豆腐)が発生する可能性があります\\n詳細: {glyph_encounters}"
