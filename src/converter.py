@@ -6,9 +6,9 @@
 
 import pandas as pd
 
-from .config import StationConfig
-from .scraper import _fetch_dam_data as fetch_dam_data
-from .storage import (
+from src.config import StationConfig
+from src.scraper import _fetch_dam_data as fetch_dam_data
+from src.storage import (
     _get_latest_timestamp as get_latest_timestamp,
     _save_to_db as save_to_db,
 )

@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 
-from .config import load_config
-from .converter import refresh_data
-from .plot import plot_water_level
-from .storage import load_data
+from src.config import load_config
+from src.converter import refresh_data
+from src.plot import plot_water_level
+from src.storage import load_data
 
 
 def refresh_data_if_needed(dam_config, throttle_minutes=20):
