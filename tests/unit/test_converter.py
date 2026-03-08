@@ -47,10 +47,9 @@ def test_transform_data_dam(test_config):
     assert record1["volume"] == 12000.0
     assert record1["inflow"] == 15.0
 
-    record2 = records[1]
     # JST 11:00 -> UTC 02:00
-    assert record2["timestamp"] == "2023-10-01T02:00:00+00:00"
-    assert record2["rainfall"] == 0.0
+    assert records[1]["timestamp"] == "2023-10-01T02:00:00+00:00"
+    assert records[1]["rainfall"] == 0.0
 
 
 def test_transform_data_rain(test_config):
