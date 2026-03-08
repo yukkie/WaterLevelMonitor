@@ -13,3 +13,5 @@ python-dotenv>=1.0.0
 ruff
 pre-commit
 pytest
+pytest-cov
+pytest-html
