@@ -9,6 +9,7 @@ def plot_water_level(
     rain_station: StationConfig,
     rain_df: pd.DataFrame,
 ):
+    import japanize_matplotlib  # noqa: F401
     import matplotlib.dates as mdates
     import matplotlib.pyplot as plt
 
