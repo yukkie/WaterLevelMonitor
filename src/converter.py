@@ -17,7 +17,7 @@ from .storage import (
 def _safe_float(val) -> float | None:
     """値を float に変換する。'-' / '$' / 変換不可 → None。"""
     s = str(val).strip()
-    if s in ("-", "$", "", "nan", "None"):
+    if s.lower() in ("-", "$", "", "nan", "none"):
         return None
     try:
         return float(s)

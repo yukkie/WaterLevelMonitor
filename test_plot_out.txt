@@ -1,0 +1,139 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.3, pytest-9.0.2, pluggy-1.6.0 -- D:\git\WaterLevelMonitor\venv\Scripts\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.13.3', 'Platform': 'Windows-11-10.0.26200-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.12.1', 'cov': '7.0.0', 'html': '4.2.0', 'metadata': '3.1.1', 'mock': '3.15.1'}}
+rootdir: D:\git\WaterLevelMonitor
+configfile: pyproject.toml
+plugins: anyio-4.12.1, cov-7.0.0, html-4.2.0, metadata-3.1.1, mock-3.15.1
+collecting ... collected 1 item
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data FAILED [100%]
+
+================================== FAILURES ===================================
+__________________ test_plot_water_level_execution_and_data ___________________
+
+test_config = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+
+    def test_plot_water_level_execution_and_data(test_config):
+        """
+        plot_water_level関数が正しくFigureを返し、内部のデータ変換が期待通りかテストする。
+        """
+        dam_config = test_config.sites["miyagase"].dam
+        rain_config = test_config.sites["miyagase"].rain
+    
+        # ダミーのダムデータ (10分間隔)
+        base_time = pd.Timestamp("2023-10-01T00:00:00Z")
+        times = [base_time + pd.Timedelta(minutes=10 * i) for i in range(12)] # 2時間分
+    
+        # 意図的に欠損値(NaN)を入れる
+        dam_data = {
+            "timestamp": times,
+            "volume": [10000 + i * 10 for i in range(11)] + [float('nan')],
+            "inflow": [10.0 + i for i in range(12)],
+            "outflow": [5.0 for i in range(12)],
+        }
+        dam_df = pd.DataFrame(dam_data)
+    
+        # ダミーの雨量データ (10分間隔)
+        # 欠損値(NaN)や0.0のデータを入れる
+        rain_data = {
+            "timestamp": times,
+            "rainfall": [1.0, 0.0, 1.0, float('nan'), 2.0, 0.5] + [0.0] * 6, # 最初の1時間: 4.5mm積算, 次の1時間: 0mm
+        }
+        rain_df = pd.DataFrame(rain_data)
+    
+        # Figureオブジェクトが返ってくるかテスト (クラッシュしないこと)
+        fig = plot_water_level(dam_config, dam_df, rain_config, rain_df)
+    
+        # Axesオブジェクトの検証
+        axes = fig.get_axes()
+        # ax1 (貯水率), ax2 (twinx: 雨量), ax3 (流入/放流) の3つができるはず
+        assert len(axes) == 3
+        ax1, ax2, ax3 = axes
+    
+        # --- データ変換の検証 ---
+    
+        # 雨量 (ax2) の1時間積算が機能しているか
+        # 棒グラフ(BarContainer)からデータを取得
+        bars = [child for child in ax2.get_children() if isinstance(child, plt.Rectangle)]
+        # 自動生成される背景などのRectangleを除外するため、高さが0より大きいものを取得
+        # (plot.py 内で > 0 にフィルタしているので、1本だけ描画されるはず)
+        rain_heights = [b.get_height() for b in bars if b.get_height() > 0 and b.get_width() < 1]
+    
+        # 最初の1時間の積算雨量は 1.0 + 0.0 + 1.0 + 2.0 + 0.5 = 4.5mm (NaNはスキップ)
+        # 次の1時間はすべて0.0なのでプロットから除外される
+>       assert len(rain_heights) == 1
+E       assert 11 == 1
+E        +  where 11 = len([np.float64(10.0), np.float64(11.0), np.float64(12.0), np.float64(13.0), np.float64(14.0), np.float64(15.0), ...])
+
+tests\unit\test_plot.py:57: AssertionError
+============================== warnings summary ===============================
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:45: SettingWithCopyWarning: 
+  A value is trying to be set on a copy of a slice from a DataFrame.
+  Try using .loc[row_indexer,col_indexer] = value instead
+  
+  See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+    dam_df["storage_rate"] = (dam_df["volume_m3"] / dam.capacity_m3) * 100
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 36015 (\N{CJK UNIFIED IDEOGRAPH-8CAF}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 27700 (\N{CJK UNIFIED IDEOGRAPH-6C34}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 29575 (\N{CJK UNIFIED IDEOGRAPH-7387}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 38632 (\N{CJK UNIFIED IDEOGRAPH-96E8}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 37327 (\N{CJK UNIFIED IDEOGRAPH-91CF}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 26178 (\N{CJK UNIFIED IDEOGRAPH-6642}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 27969 (\N{CJK UNIFIED IDEOGRAPH-6D41}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 20837 (\N{CJK UNIFIED IDEOGRAPH-5165}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+tests/unit/test_plot.py::test_plot_water_level_execution_and_data
+  D:\git\WaterLevelMonitor\src\plot.py:115: UserWarning: Glyph 25918 (\N{CJK UNIFIED IDEOGRAPH-653E}) missing from font(s) DejaVu Sans.
+    plt.tight_layout()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.13.3-final-0 _______________
+
+Name               Stmts   Miss  Cover
+--------------------------------------
+src\__init__.py        0      0   100%
+src\app.py            51     51     0%
+src\config.py         25      3    88%
+src\converter.py      59     59     0%
+src\main.py           28     28     0%
+src\plot.py           47      0   100%
+src\scraper.py        33     33     0%
+src\storage.py        68     68     0%
+--------------------------------------
+TOTAL                311    242    22%
+Coverage HTML written to dir htmlcov
+----- Generated html report: file:///D:/git/WaterLevelMonitor/report.html -----
+=========================== short test summary info ===========================
+FAILED tests/unit/test_plot.py::test_plot_water_level_execution_and_data - as...
+======================= 1 failed, 11 warnings in 1.48s ========================

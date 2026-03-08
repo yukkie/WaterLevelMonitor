@@ -1,0 +1,345 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.3, pytest-9.0.2, pluggy-1.6.0
+rootdir: D:\git\WaterLevelMonitor
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.12.1, cov-7.0.0, html-4.2.0, metadata-3.1.1, mock-3.15.1
+collected 9 items
+
+tests\e2e\test_pipeline.py ..                                            [ 22%]
+tests\unit\test_converter.py FFFF                                        [ 66%]
+tests\unit\test_plot.py F                                                [ 77%]
+tests\unit\test_scraper.py FF                                            [100%]
+
+================================== FAILURES ===================================
+_______________________________ test_safe_float _______________________________
+
+    def test_safe_float():
+        """値が正しくfloatに変換されるか、無効な値がNoneに変換されるかテスト。"""
+        assert _safe_float("123.45") == 123.45
+        assert _safe_float(100) == 100.0
+        assert _safe_float("-") is None
+        assert _safe_float("$") is None
+        assert _safe_float("") is None
+>       assert _safe_float("NaN") is None
+E       AssertionError: assert nan is None
+E        +  where nan = _safe_float('NaN')
+
+tests\unit\test_converter.py:15: AssertionError
+___________________________ test_transform_data_dam ___________________________
+
+test_config = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+
+    def test_transform_data_dam(test_config):
+        """
+        ダムのRAWデータ(DataFrame)が、DB登録用の辞書リストに期待通り変換されるかテストする。
+        """
+>       dam_config = test_config.dams[0]
+                     ^^^^^^^^^^^^^^^^
+
+tests\unit\test_converter.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+item = 'dams'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'AppConfig' object has no attribute 'dams'
+
+venv\Lib\site-packages\pydantic\main.py:1026: AttributeError
+__________________________ test_transform_data_rain ___________________________
+
+test_config = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+
+    def test_transform_data_rain(test_config):
+        """
+        雨量計のRAWデータが期待通り変換されるかテストする。
+        """
+>       rain_config = test_config.rain_stations[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\unit\test_converter.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+item = 'rain_stations'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'AppConfig' object has no attribute 'rain_stations'
+
+venv\Lib\site-packages\pydantic\main.py:1026: AttributeError
+_____________________ test_transform_data_with_latest_ts ______________________
+
+test_config = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+
+    def test_transform_data_with_latest_ts(test_config):
+        """
+        latest_tsが指定された場合、それ以降のデータのみが抽出されるかテストする。
+        """
+>       dam_config = test_config.dams[0]
+                     ^^^^^^^^^^^^^^^^
+
+tests\unit\test_converter.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+item = 'dams'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'AppConfig' object has no attribute 'dams'
+
+venv\Lib\site-packages\pydantic\main.py:1026: AttributeError
+__________________ test_plot_water_level_execution_and_data ___________________
+
+test_config = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+
+    def test_plot_water_level_execution_and_data(test_config):
+        """
+        plot_water_level関数が正しくFigureを返し、内部のデータ変換が期待通りかテストする。
+        """
+>       dam_config = test_config.dams[0]
+                     ^^^^^^^^^^^^^^^^
+
+tests\unit\test_plot.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+item = 'dams'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'AppConfig' object has no attribute 'dams'
+
+venv\Lib\site-packages\pydantic\main.py:1026: AttributeError
+___________________________ test_fetch_dam_data_dam ___________________________
+
+test_config = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+mock_requests_get = <MagicMock name='get' id='2363819059120'>
+
+    def test_fetch_dam_data_dam(test_config, mock_requests_get):
+        """
+        ダムデータの取得とパースが正しく行われるかをテストする。
+        HTTPリクエストはモック化されているため、fixtures/miyagase_dam.dat の内容が返る。
+        """
+>       dam = test_config.dams[0]  # 宮ヶ瀬ダム
+              ^^^^^^^^^^^^^^^^
+
+tests\unit\test_scraper.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+item = 'dams'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'AppConfig' object has no attribute 'dams'
+
+venv\Lib\site-packages\pydantic\main.py:1026: AttributeError
+__________________________ test_fetch_dam_data_rain ___________________________
+
+test_config = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+mock_requests_get = <MagicMock name='get' id='2363819056432'>
+
+    def test_fetch_dam_data_rain(test_config, mock_requests_get):
+        """
+        雨量データの取得とパースが正しく行われるかをテストする。
+        """
+>       rain = test_config.rain_stations[0]  # 宮ヶ瀬及沢
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\unit\test_scraper.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = AppConfig(sites={'miyagase': SiteConfig(name='宮ヶ瀬ダム', dam=StationConfig(name='宮ヶ瀬ダム', id='1368030799020', type='dam', ...せおいざわ）', id='103071283319020', type='rain', db_table_name='rain_data', capacity_m3=None, url_kind='9', url_page='0'))})
+item = 'rain_stations'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'AppConfig' object has no attribute 'rain_stations'
+
+venv\Lib\site-packages\pydantic\main.py:1026: AttributeError
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.13.3-final-0 _______________
+
+Name               Stmts   Miss  Cover
+--------------------------------------
+src\__init__.py        0      0   100%
+src\app.py            51     51     0%
+src\config.py         25      3    88%
+src\converter.py      59     16    73%
+src\main.py           28     28     0%
+src\plot.py           47     44     6%
+src\scraper.py        33      4    88%
+src\storage.py        68     46    32%
+--------------------------------------
+TOTAL                311    192    38%
+Coverage HTML written to dir htmlcov
+----- Generated html report: file:///D:/git/WaterLevelMonitor/report.html -----
+=========================== short test summary info ===========================
+FAILED tests/unit/test_converter.py::test_safe_float - AssertionError: assert...
+FAILED tests/unit/test_converter.py::test_transform_data_dam - AttributeError...
+FAILED tests/unit/test_converter.py::test_transform_data_rain - AttributeErro...
+FAILED tests/unit/test_converter.py::test_transform_data_with_latest_ts - Att...
+FAILED tests/unit/test_plot.py::test_plot_water_level_execution_and_data - At...
+FAILED tests/unit/test_scraper.py::test_fetch_dam_data_dam - AttributeError: ...
+FAILED tests/unit/test_scraper.py::test_fetch_dam_data_rain - AttributeError:...
+========================= 7 failed, 2 passed in 2.43s =========================
