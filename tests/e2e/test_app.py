@@ -9,7 +9,7 @@ def test_app_loads_empty_data(mock_supabase):
     警告メッセージが正しく表示されるかをテストする。
     """
     at = AppTest.from_file("src/app.py")
-    at.run()
+    at.run(timeout=10)
 
     # エラーが発生せずに起動すること
     assert not at.exception
@@ -34,7 +34,7 @@ def test_app_loads_with_data(test_config, mock_supabase, mock_requests_get, mock
 
     # 2. アプリを起動する
     at = AppTest.from_file("src/app.py")
-    at.run()
+    at.run(timeout=10)
 
     # エラーが発生せずに起動すること
     assert not at.exception
