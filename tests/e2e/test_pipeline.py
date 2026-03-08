@@ -1,7 +1,9 @@
 import json
 import os
 
-from src.converter import _fetch_and_store as fetch_and_store
+import pytest
+
+from src.pipeline import run_pipeline
 
 
 def _assert_snapshot(records, identifier):
@@ -41,27 +43,31 @@ def _assert_snapshot(records, identifier):
         ), f"{i}行目のデータが異なります\nExpected: {expected}\nActual: {actual}"
 
 
-def test_fetch_and_store_dam(test_config, mock_requests_get, mock_supabase):
-    dam_target = test_config.sites["miyagase"].dam
+def test_run_pipeline(test_config, mock_requests_get, mock_supabase, mocker):
+    # run_pipeline内部で呼ばれるload_configをモック化して、
+    # conftestで用意した test_config を返すようにする
+    mocker.patch("src.pipeline.load_config", return_value=test_config)
+
+    target_site = test_config.sites["miyagase"]
+    dam_target = target_site.dam
+    rain_target = target_site.rain
 
     # 本番のパイプライン処理を実行
-    fetch_and_store(dam_target, latest_ts=None)
+    success = run_pipeline()
 
-    records = mock_supabase[dam_target.db_table_name]
-    assert len(records) > 0, "データがUPSERTされていません"
+    # 戻り値の確認
+    if not success:
+        # DBへの書き込み処理等のどこかでExceptionが起きた
+        pytest.fail("run_pipeline() returned False. Check logs for details.")
+    assert success is True
 
-    # 完全一致スナップショット検証
-    _assert_snapshot(records, dam_target.id)
+    # DBにUPSERTされていることを確認
+    dam_records = mock_supabase[dam_target.db_table_name]
+    assert len(dam_records) > 0, "ダムデータがUPSERTされていません"
 
-
-def test_fetch_and_store_rain(test_config, mock_requests_get, mock_supabase):
-    rain_target = test_config.sites["miyagase"].rain
-
-    # 本番のパイプライン処理を実行
-    fetch_and_store(rain_target, latest_ts=None)
-
-    records = mock_supabase[rain_target.db_table_name]
-    assert len(records) > 0, "雨量データがUPSERTされていません"
+    rain_records = mock_supabase[rain_target.db_table_name]
+    assert len(rain_records) > 0, "雨量データがUPSERTされていません"
 
     # 完全一致スナップショット検証
-    _assert_snapshot(records, rain_target.id)
+    _assert_snapshot(dam_records, dam_target.id)
+    _assert_snapshot(rain_records, rain_target.id)

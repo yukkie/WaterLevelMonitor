@@ -52,7 +52,13 @@
   - `.github/workflows/ci.yml` を作成し、push / PR 時に自動で pytest と lint (Ruff) 実行を確認する。
   - 実DBへの接続を伴うテスト（将来用）を除外するためのマーカー (`-m "not remote_db"`) を導入した。
 
-## フェーズ 5: データ管理の改善 — Supabase (PostgreSQL) 移行 -> 完了 🎉
+## フェーズ 5: プルリクエスト駆動開発 (PR Workflow) の導入 -> 完了 🎉
+- [x] **GitHub の Branch Protection 導入手順の整理**
+  - `master` ブランチへの直接 Push を禁止し、CI (pytest/ruff) のパスを必須とする設定手順をドキュメント化する。
+- [x] **ローカル開発ワークフローの更新**
+  - 今後の開発でブランチを切って PR を出す運用方法を `Architecture.md` などのドキュメントに追記・整理する。
+
+## フェーズ 6: データ管理の改善 — Supabase (PostgreSQL) 移行 -> 完了 🎉
 - [x] **Supabase プロジェクトのセットアップ**
   - `dam_data` / `rain_data` テーブルを作成する。
   - `service_role` キーと Project URL を Streamlit Secrets / 環境変数に設定する。
@@ -127,18 +133,15 @@
   - `db.py` の `_upsert_data` 内で行っているループ生成やマッピングロジックを全廃する。
   - 単純に `upsert(records)` を実行するだけの薄い共通関数 `upsert_records(table_name, records)` に置き換える。
 
-## フェーズ 6: データ取得の定期実行とアーキテクチャ分離
-
+## フェーズ 7: データ取得の定期実行とアーキテクチャ分離
+- [x] **ETLアーキテクチャの分離 (`pipeline.py` と `app.py` の分割)**
+  - Webアプリ側（Streamlit `app.py`）から10分ガード付きスクレイピング処理を取り除き、Supabaseからデータを読み込んでグラフを表示するだけの役割に専念させ、ページロード時間を向上させた。
+  - 別途、スタンドアローンのバッチスクリプトとして `src/pipeline.py` を新設し、データ収集処理を独立させた。
+- [x] **Streamlit UIの自動テスト (`test_app.py`) の導入**
+  - アーキテクチャ分離に伴い、UI側のE2Eテスト（`AppTest` 利用）とデータパイプライン側のE2Eテストに分割してシステム全体の堅牢性を高めた。
 - [ ] **GitHub Actions によるデータ定期取得 (Cron)**
-  - 現在 Streamlit アプリへのアクセス時に行っているスクレイピング処理を、GitHub Actions のスケジュール実行 (Cron) に移行し、10〜20分間隔で自動収集する。
-  - Webアプリ側（Streamlit）はスクレイピングを行わず、Supabase からデータを読み込んでグラフを表示するだけの役割に専念させ、ページロード時間とユーザー体験を向上させる。
-  - ※ 検討事項: コストと実装の優先順位により将来の課題として維持。
-
-## フェーズ 7: プルリクエスト駆動開発 (PR Workflow) の導入
-- [ ] **GitHub の Branch Protection 導入手順の整理**
-  - `master` ブランチへの直接 Push を禁止し、CI (pytest/ruff) のパスを必須とする設定手順をドキュメント化する。
-- [ ] **ローカル開発ワークフローの更新**
-  - 今後の開発でブランチを切って PR を出す運用方法を `Architecture.md` などのドキュメントに追記・整理する。
+  - 作成した `pipeline.py` を GitHub Actions のスケジュール実行 (Cron) に組み込み、10〜20分間隔で自動収集する。
+  - ※ 検討事項: コストと実装の優先順位により、将来実装を検討。
 
 ## 開発環境の改善 (Developer Experience)
 - [x] **YAML スキーマの自動生成とバリデーション導入**

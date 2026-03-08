@@ -1,12 +1,14 @@
 import os
+import sys
 from unittest.mock import MagicMock, patch
 
 import pytest
 
-from src.config import load_config
-
-# プロジェクトルートを取得
+# プロジェクトルートを取得してsys.pathに追加
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_root)
+
+from src.config import load_config  # noqa: E402
 
 
 @pytest.fixture
@@ -110,6 +112,7 @@ def mock_supabase():
 
             mock_select.eq.return_value = mock_select
             mock_select.order.return_value = mock_select
+            mock_select.limit.return_value = mock_select
             mock_select.range = mock_range
             mock_select.execute = mock_execute
 
