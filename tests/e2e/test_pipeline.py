@@ -58,7 +58,7 @@ def test_run_pipeline(test_config, mock_requests_get, mock_supabase, mocker):
     assert success is True
 
     # サイトごとにアサート
-    for site in test_config.sites.items():
+    for site in test_config.sites.values():
         # ダムのレコード
         dam_records = [
             r

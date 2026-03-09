@@ -19,7 +19,7 @@ def run_pipeline() -> bool:
     config = load_config()
     success = True
 
-    for site in config.sites.items():
+    for site in config.sites.values():
         target_dam = site.dam
         rain_station = site.rain
 
