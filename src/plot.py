@@ -14,7 +14,13 @@ def plot_water_level(
     import matplotlib.pyplot as plt
 
     # --- データ準備 ---
+    # ダムデータ自身が雨量を持つ場合（矢木沢ダムなど）、空のrain_dfをダムデータで補完
+    if rain_df.empty and not dam_df.empty and "rainfall" in dam_df.columns:
+        rain_df = dam_df[["timestamp", "rainfall"]].copy()
+
     for df in [rain_df, dam_df]:
+        if df.empty:
+            continue
         df["timestamp"] = pd.to_datetime(df["timestamp"])
         if df["timestamp"].dt.tz is not None:
             df["timestamp"] = (
@@ -24,7 +30,21 @@ def plot_water_level(
     # --- データのパースと変換 ---
 
     # 雨量
-    rain_df["rainfall_mm"] = pd.to_numeric(rain_df["rainfall"], errors="coerce")
+    if not rain_df.empty:
+        rain_df["rainfall_mm"] = pd.to_numeric(rain_df["rainfall"], errors="coerce")
+        rain_df = rain_df.dropna(subset=["rainfall_mm"])
+        # 1時間積算雨量に集約（10分雨量は値が小さく棒グラフが潰れるため）
+        rain_hourly = (
+            rain_df.set_index("timestamp")["rainfall_mm"]
+            .resample("1h")
+            .sum()
+            .reset_index()
+        )
+        rain_hourly = rain_hourly[
+            rain_hourly["rainfall_mm"] > 0
+        ]  # 0mm の時間帯は非表示
+    else:
+        rain_hourly = pd.DataFrame(columns=["timestamp", "rainfall_mm"])
 
     # ダムデータ
     # volume は千m³単位 → m³に変換
@@ -33,14 +53,7 @@ def plot_water_level(
     dam_df["outflow_m3s"] = pd.to_numeric(dam_df["outflow"], errors="coerce").fillna(0)
 
     # 欠損行はプロットから除外
-    rain_df = rain_df.dropna(subset=["rainfall_mm"])
     dam_df = dam_df.dropna(subset=["volume_m3"])
-
-    # 1時間積算雨量に集約（10分雨量は値が小さく棒グラフが潰れるため）
-    rain_hourly = (
-        rain_df.set_index("timestamp")["rainfall_mm"].resample("1h").sum().reset_index()
-    )
-    rain_hourly = rain_hourly[rain_hourly["rainfall_mm"] > 0]  # 0mm の時間帯は非表示
 
     # 貯水率の計算
     dam_df["storage_rate"] = (dam_df["volume_m3"] / dam.capacity_m3) * 100
@@ -70,8 +83,8 @@ def plot_water_level(
 
     ax2 = ax1.twinx()
     ax2.bar(
-        rain_hourly["timestamp"],
-        rain_hourly["rainfall_mm"],
+        rain_hourly["timestamp"] if not rain_hourly.empty else [],
+        rain_hourly["rainfall_mm"] if not rain_hourly.empty else [],
         width=1 / 24,
         color="c",
         alpha=0.6,

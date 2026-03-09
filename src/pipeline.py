@@ -19,32 +19,24 @@ def run_pipeline() -> bool:
     config = load_config()
     success = True
 
-    # 本来は config.sites の全要素をループする想定だが、
-    # 現状は main.py 同様 miyagase のみを取得する（拡張可能に実装）
-    # 将来複数サイト対応時にループ化する
+    for site in config.sites.items():
+        target_dam = site.dam
+        rain_station = site.rain
 
-    site = config.sites.get("miyagase")
-    if not site:
-        print("エラー: 設定 'miyagase' が見つかりません。", file=sys.stderr)
-        return False
+        try:
+            print(f"[{target_dam.name}] データ取得を開始します...")
+            refresh_data(target_dam)
 
-    target_dam = site.dam
-    rain_station = site.rain
+            if rain_station:
+                refresh_data(rain_station)
 
-    try:
-        print(f"[{target_dam.name}] データ取得を開始します...")
-        refresh_data(target_dam)
+            print(f"[{target_dam.name}] データ取得が正常に完了しました。")
+        except Exception as e:
+            import traceback
 
-        if rain_station:
-            refresh_data(rain_station)
-
-        print(f"[{target_dam.name}] データ取得が正常に完了しました。")
-    except Exception as e:
-        import traceback
-
-        print(f"[{target_dam.name}] データ処理エラー: {e}", file=sys.stderr)
-        traceback.print_exc()
-        success = False
+            print(f"[{target_dam.name}] データ処理エラー: {e}", file=sys.stderr)
+            traceback.print_exc()
+            success = False
 
     return success
 
