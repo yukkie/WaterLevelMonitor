@@ -48,10 +48,6 @@ def test_run_pipeline(test_config, mock_requests_get, mock_supabase, mocker):
     # conftestで用意した test_config を返すようにする
     mocker.patch("src.pipeline.load_config", return_value=test_config)
 
-    target_site = test_config.sites["miyagase"]
-    dam_target = target_site.dam
-    rain_target = target_site.rain
-
     # 本番のパイプライン処理を実行
     success = run_pipeline()
 
@@ -61,13 +57,27 @@ def test_run_pipeline(test_config, mock_requests_get, mock_supabase, mocker):
         pytest.fail("run_pipeline() returned False. Check logs for details.")
     assert success is True
 
-    # DBにUPSERTされていることを確認
-    dam_records = mock_supabase[dam_target.db_table_name]
-    assert len(dam_records) > 0, "ダムデータがUPSERTされていません"
+    # サイトごとにアサート
+    for site in test_config.sites.values():
+        # ダムのレコード
+        dam_records = [
+            r
+            for r in mock_supabase[site.dam.db_table_name]
+            if r["station_id"] == site.dam.id
+        ]
+        assert (
+            len(dam_records) > 0
+        ), f"ダムデータがUPSERTされていません: {site.dam.name}"
+        _assert_snapshot(dam_records, site.dam.id)
 
-    rain_records = mock_supabase[rain_target.db_table_name]
-    assert len(rain_records) > 0, "雨量データがUPSERTされていません"
-
-    # 完全一致スナップショット検証
-    _assert_snapshot(dam_records, dam_target.id)
-    _assert_snapshot(rain_records, rain_target.id)
+        # 雨量のレコード (設定されていれば)
+        if site.rain:
+            rain_records = [
+                r
+                for r in mock_supabase[site.rain.db_table_name]
+                if r["station_id"] == site.rain.id
+            ]
+            assert (
+                len(rain_records) > 0
+            ), f"雨量データがUPSERTされていません: {site.rain.name}"
+            _assert_snapshot(rain_records, site.rain.id)

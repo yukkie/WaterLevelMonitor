@@ -34,22 +34,36 @@ def mock_requests_get():
 
         # HTML内部のDATリンクにアクセスしたとき
         if url.endswith(".dat"):
-            if "5313680" in url:  # miyagase_dam 向けリンクという想定 (適当な識別子)
+            if "dummy_5313680.dat" in url:  # miyagase_dam 向けリンクという想定
                 with open(
-                    os.path.join(fixtures_dir, "miyagase_dam.dat"), encoding="utf-8"
+                    os.path.join(fixtures_dir, "miyagase_dam.dat"),
+                    encoding="shift_jis",
+                    errors="replace",
                 ) as f:
                     # Windows特有の \r\n -> \r\r\n の連続改行を吸収する
                     text = f.read().replace("\n\n", "\n")
-                    return MockResponse(text)
-            else:
+                    return MockResponse(text, encoding="shift_jis")
+            elif "dummy_yagisawa.dat" in url:
                 with open(
-                    os.path.join(fixtures_dir, "miyagase_rain.dat"), encoding="utf-8"
+                    os.path.join(fixtures_dir, "yagisawa_dam.dat"),
+                    encoding="shift_jis",
+                    errors="replace",
                 ) as f:
                     text = f.read().replace("\n\n", "\n")
-                    return MockResponse(text)
+                    return MockResponse(text, encoding="shift_jis")
+            else:
+                with open(
+                    os.path.join(fixtures_dir, "miyagase_rain.dat"),
+                    encoding="shift_jis",
+                    errors="replace",
+                ) as f:
+                    text = f.read().replace("\n\n", "\n")
+                    return MockResponse(text, encoding="shift_jis")
 
         # URLにアクセスしてHTMLを取得したとき
         if "DspDamData.exe" in url:
+            if "1368030375010" in url:
+                return MockResponse('<a href="dummy_yagisawa.dat">dummy</a>')
             return MockResponse('<a href="dummy_5313680.dat">dummy</a>')
         elif "DspRainData.exe" in url:
             return MockResponse('<a href="dummy_rain.dat">dummy</a>')
