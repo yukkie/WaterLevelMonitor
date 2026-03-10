@@ -105,30 +105,71 @@ def mock_supabase():
             return mock_execute
 
         def select(self, *args, **kwargs):
-            mock_select = MagicMock()
+            from unittest.mock import create_autospec
 
-            # ページネーション対応のためにrangeを記録する
+            from postgrest import SyncSelectRequestBuilder
+
+            # 1. 本物のクラス構造を持ったモックを作成
+            # (存在しないメソッド呼び出しはエラーになる)
+            mock_select = create_autospec(SyncSelectRequestBuilder, instance=True)
+
+            # 状態を保持するためのカスタム属性
             mock_select.current_range = None
+            mock_select.filters = []
+            mock_select.order_by = None
+            mock_select.limit_count = None
 
+            # 各メソッドが呼ばれた際の処理（side_effect）を定義
             def mock_range(start, end):
                 mock_select.current_range = (start, end)
                 return mock_select
 
-            def mock_execute():
-                data = inserted_records[self.table_name]
-                if mock_select.current_range:
-                    start, end = mock_select.current_range
-                    # Supabaseのrangeはinclusiveなので端点を含む
-                    mock_select.data = data[start : end + 1]
-                else:
-                    mock_select.data = data
+            def mock_eq(column, value):
+                mock_select.filters.append((column, value))
                 return mock_select
 
-            mock_select.eq.return_value = mock_select
-            mock_select.order.return_value = mock_select
-            mock_select.limit.return_value = mock_select
-            mock_select.range = mock_range
-            mock_select.execute = mock_execute
+            def mock_order(column, desc=False, nullsfirst=False):
+                # 実際の order のシグネチャに合わせて
+                # nullsfirst 引数も受け取るようにする
+                mock_select.order_by = (column, desc)
+                return mock_select
+
+            def mock_limit(size):
+                mock_select.limit_count = size
+                return mock_select
+
+            def mock_execute():
+                data = inserted_records[self.table_name]
+
+                # 1. フィルタ適用 (.eq)
+                for col, val in mock_select.filters:
+                    data = [r for r in data if r.get(col) == val]
+
+                # 2. ソート適用 (.order)
+                if mock_select.order_by:
+                    col, desc = mock_select.order_by
+                    data.sort(key=lambda x: x.get(col, ""), reverse=desc)
+
+                # 3. ページネーション適用 (.range)
+                if mock_select.current_range:
+                    start, end = mock_select.current_range
+                    data = data[start : end + 1]
+
+                # 4. リミット適用 (.limit)
+                if mock_select.limit_count is not None:
+                    data = data[: mock_select.limit_count]
+
+                # execute() はデータを持つ別のオブジェクトを返す想定
+                mock_result = MagicMock()
+                mock_result.data = data
+                return mock_result
+
+            # side_effect に設定して、実際の中身を動かす
+            mock_select.eq.side_effect = mock_eq
+            mock_select.order.side_effect = mock_order
+            mock_select.limit.side_effect = mock_limit
+            mock_select.range.side_effect = mock_range
+            mock_select.execute.side_effect = mock_execute
 
             return mock_select
 
