@@ -1,3 +1,4 @@
+import argparse
 import sys
 
 import matplotlib.pyplot as plt
@@ -6,10 +7,14 @@ import pandas as pd
 from src.config import load_config
 from src.converter import refresh_data
 from src.plot import plot_water_level
-from src.storage import load_data
+from src.storage import DisplayPeriod, load_data
+
+# 表示期間のデフォルト値。コマンドライン引数がない場合はここを変更する。
+# 選択肢: DisplayPeriod.TWO_WEEKS / DisplayPeriod.ONE_YEAR / DisplayPeriod.ALL
+DISPLAY_PERIOD = DisplayPeriod.TWO_WEEKS
 
 
-def main():
+def main(period: DisplayPeriod = DISPLAY_PERIOD):
     try:
         # 設定の読み込み
         config = load_config()
@@ -23,12 +28,12 @@ def main():
             # 1. データの取得・DB保存（10分ガード付き）
             refresh_data(target_dam)
             # 1. ダムデータの読み込み
-            dam_df = load_data(target_dam.db_table_name, target_dam.id)
+            dam_df = load_data(target_dam.db_table_name, target_dam.id, period)
 
             # 2. 雨量データの読み込み (Optional)
             if rain_station:
                 refresh_data(rain_station)
-                rain_df = load_data(rain_station.db_table_name, rain_station.id)
+                rain_df = load_data(rain_station.db_table_name, rain_station.id, period)
             else:
                 rain_df = pd.DataFrame()
 
@@ -60,4 +65,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Water Level Monitor")
+    parser.add_argument(
+        "--period",
+        choices=[p.value for p in DisplayPeriod],
+        default=DISPLAY_PERIOD.value,
+        help="表示期間 (2w: 2週間, 1y: 1年, all: 全部)",
+    )
+    args = parser.parse_args()
+    main(period=DisplayPeriod(args.period))
