@@ -10,7 +10,7 @@ import streamlit as st
 
 from src.config import load_config
 from src.plot import plot_water_level
-from src.storage import load_data
+from src.storage import DisplayPeriod, load_data
 
 
 def main():
@@ -35,17 +35,31 @@ def main():
         format_func=lambda x: site_options[x],
     )
 
+    # 表示期間の選択
+    period_options = {
+        "2週間": DisplayPeriod.TWO_WEEKS,
+        "1年": DisplayPeriod.ONE_YEAR,
+        "全部": DisplayPeriod.ALL,
+    }
+    selected_period_label = st.radio(
+        "表示期間",
+        options=list(period_options.keys()),
+        index=0,
+        horizontal=True,
+    )
+    period = period_options[selected_period_label]
+
     target_site = config.sites[selected_site_key]
     target_dam = target_site.dam
     rain_station = target_site.rain
 
     # データの読み込み（DBから）
     rain_df = (
-        load_data(rain_station.db_table_name, rain_station.id)
+        load_data(rain_station.db_table_name, rain_station.id, period)
         if rain_station
         else pd.DataFrame()
     )
-    dam_df = load_data(target_dam.db_table_name, target_dam.id)
+    dam_df = load_data(target_dam.db_table_name, target_dam.id, period)
 
     if not dam_df.empty:
         st.subheader(f"{target_dam.name} の状況")

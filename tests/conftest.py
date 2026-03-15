@@ -166,6 +166,7 @@ def mock_supabase():
 
             # side_effect に設定して、実際の中身を動かす
             mock_select.eq.side_effect = mock_eq
+            mock_select.gte.side_effect = lambda col, val: mock_select
             mock_select.order.side_effect = mock_order
             mock_select.limit.side_effect = mock_limit
             mock_select.range.side_effect = mock_range

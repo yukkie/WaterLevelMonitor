@@ -69,3 +69,6 @@ venv.bak/
 
 # Test output
 test_plot.png
+
+# For Claude code
+.claude/
