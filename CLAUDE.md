@@ -30,6 +30,7 @@ ETL を明確に分離している。
 - `master` への直接 push は**禁止**。必ず `feature/xxx` ブランチ → PR → CI パス → マージ
 - コミット前に `ruff check .` と `pytest` を実行（pre-commit でも自動実行）
 - インポートは**絶対インポート** `from src.xxx` を使用（相対インポート不可・Streamlit Cloud 対応のため）
+- **実装前に必ず設計を説明する**: 変更ファイル・変更内容・設計上の判断ポイントを提示し、ユーザーの承認を得てから実装に入ること
 
 詳細: [doc/Architecture.md#5-開発ワークフローとcicd](doc/Architecture.md)
 
