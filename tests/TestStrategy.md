@@ -12,8 +12,8 @@
 
 ### `src/scraper.py`
 *   **役割**: 指定URLからHTMLを取得し、DATファイルのリンクを解析してPandas DataFrameとして抽出する (Extract)。
-*   **Unit Test**: 
-    *   **対象**: HTTP通信をモック化（`responses` や `pytest-mock` を使用）し、ローカルの `fixtures/` にある生データ（HTMLやDAT）を注入してパースロジックをテストする。
+*   **Unit Test**:
+    *   **対象**: `conftest.py` の `mock_requests_get` フィクスチャ（`unittest.mock.patch("src.scraper.requests.get")`）を使い、ローカルの `tests/fixtures/` にある生データ（HTMLやDAT）を注入してパースロジックをテストする。DAT ファイルは Shift-JIS で読み込まれ、ダム・雨量それぞれ対応する fixture ファイルが返される。
     *   **検証項目**: DataFrameの列数、ヘッダー名の上書き処理、不要な改行やスペースのトリムが正しく行われているか。欠測値 (`$`) や未受信 (`-`) の行が文字列として正しくDataFrameに格納されているか（ここではまだ加工しない）。
 
 ### `src/converter.py`
@@ -39,13 +39,16 @@
 *   **役割**: Supabaseとの通信、バッチUPSERT、ページネーション取得 (Load)。
 *   **Unit Test**: **対象外**。
     *   **理由**: 処理の95%がSupabaseクライアントライブラリの呼び出しであり、これを単体テストでモック化してもライブラリの使い方のチェックにしかならず、ロジックの安全性担保としての費用対効果が低いため。
-*   **Integration / E2E Test**: `test_pipeline.py` における `mock_supabase`（モック環境）、または将来的に導入する「検証用Supabaseプロジェクト」への実際の接続（統合テスト）でカバーする。
+*   **Integration / E2E Test**: `test_pipeline.py` / `test_main.py` / `test_app.py` における `mock_supabase` フィクスチャ（`conftest.py` で定義。`src.storage._get_supabase_client` を差し替え、upsert はインメモリ辞書への蓄積、select はページネーション（range）をインメモリ再現）でカバーする。または将来的に導入する「検証用Supabaseプロジェクト」への実際の接続（統合テスト）でカバーする。
 
-### `src/app.py` & `src/main.py`
-*   **役割**: Streamlit UIの構築とパイプラインの呼び出し司令塔。
+### `src/app.py` & `src/main.py` & `src/pipeline.py`
+*   **役割**: Streamlit UIの構築（`app.py`）、ローカルCLI実行（`main.py`）、データ収集バッチ（`pipeline.py`）。
 *   **Unit Test**: **対象外**。
     *   **理由**: 状態を持続させるUIフレームワーク（Streamlit）への依存度が高く、また単体で検証すべき複雑なビジネスロジックを持たないため。
-*   **E2E Test**: `main.py` の実行フローは現在の `test_pipeline.py`（パイプライン全体の疎通確認と JSON Snapshot による出力一致確認）によってカバーされている。
+*   **E2E Test**: それぞれ独立したE2Eテストでカバーされている。
+    *   `tests/e2e/test_pipeline.py`: パイプライン全体の疎通確認と JSON Snapshot による出力一致確認。
+    *   `tests/e2e/test_main.py`: `main.py` の実行フロー確認。
+    *   `tests/e2e/test_app.py`: Streamlit `AppTest` を用いたUI層の疎通確認。
 
 ---
 
