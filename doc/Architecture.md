@@ -7,19 +7,41 @@
 
 ```text
 WaterLevelMonitor/
+├── .github/workflows/
+│   ├── ci.yml             # Push/PR 時: ruff + pytest
+│   └── cron.yml           # 20分おきに src/pipeline.py を自動実行
 ├── doc/                   # ドキュメント配置ディレクトリ
 │   ├── Architecture.md    # 本ドキュメント
+│   ├── Diagram.md         # Mermaid モジュール構成図
+│   ├── Disclaimer.md      # 免責事項
 │   ├── Spec.md            # 仕様書
-│   └── Task.md            # タスク管理
-├── scripts/               # ユーティリティスクリプト
+│   ├── Task.md            # タスク管理
+│   └── dams_schema.json   # dams.yaml の JSON Schema（Pydantic から自動生成）
+├── scripts/
+│   └── generate_schema.py # dams_schema.json を再生成するユーティリティ
 ├── src/                   # ソースコード配置ディレクトリ
-│   ├── config.py          # 設定(YAML)の読み込みと型定義
-│   ├── scraper.py         # 各種データソースからの取得ロジック
-│   ├── converter.py       # データ変換(Transform)および流れの制御
-│   ├── storage.py         # Supabase (PostgreSQL) 接続・CRUD層および保存ロジック
-│   ├── plot.py            # グラフ描画ロジック
-│   ├── main.py            # CLIエントリーポイント（ローカル実行用）
-│   └── app.py             # Streamlit Webアプリのエントリーポイント
+│   ├── config.py          # 設定(YAML)の読み込みと型定義 (Pydantic)
+│   ├── scraper.py         # Extract: HTTP取得→RAW DataFrame（未加工）
+│   ├── converter.py       # Transform: RAW DataFrame→DBスキーマ形式・スロットリングガード
+│   ├── storage.py         # Load: Supabase UPSERT / ページネーション SELECT
+│   ├── plot.py            # グラフ描画ロジック (matplotlib Figure 生成)
+│   ├── pipeline.py        # データ収集バッチ（GitHub Actions Cron から実行）
+│   ├── main.py            # CLIエントリーポイント（ローカル実行・グラフ PNG 出力）
+│   └── app.py             # Streamlit Webアプリのエントリーポイント（DB 表示専念）
+├── tests/
+│   ├── conftest.py
+│   ├── e2e/
+│   │   ├── test_pipeline.py  # パイプライン全体スナップショットテスト
+│   │   ├── test_main.py
+│   │   └── test_app.py
+│   ├── unit/
+│   │   ├── test_scraper.py
+│   │   ├── test_converter.py
+│   │   └── test_plot.py
+│   ├── scripts/
+│   │   └── fetch_fixtures.py # フィクスチャ取得ユーティリティ
+│   ├── fixtures/             # ローカルの生 HTML / DAT ファイル
+│   └── TestStrategy.md       # テスト方針ドキュメント
 ├── dams.yaml              # ダムの設定データ（マスターデータ）
 └── requirements.txt       # 依存ライブラリ一覧
 ```
@@ -35,13 +57,23 @@ WaterLevelMonitor/
 
 **設定ファイルの例 (`dams.yaml`):**
 ```yaml
-dams:
+sites:
   miyagase:
     name: "宮ヶ瀬ダム"
-    id: "1368030799020"    # URLのIDパラメータ
-    capacity_m3: 183000000 # 有効貯水容量 (m³)
-    url_kind: "3" 
-    url_page: "0"
+    dam:
+      name: "宮ヶ瀬ダム"
+      type: "dam"
+      db_table_name: "dam_data"
+      id: "1368030799020"    # URLのIDパラメータ
+      capacity_m3: 183000000 # 有効貯水容量 (m³)
+      url_kind: "3"
+      url_page: "0"
+    rain:                    # 雨量観測所（省略可。DATに内包される場合は不要）
+      name: "宮ヶ瀬及沢"
+      type: "rain"
+      db_table_name: "rain_data"
+      id: "103071283319020"
+      url_kind: "9"
 ```
 
 ## 3. データ取得・蓄積のアーキテクチャ
@@ -59,16 +91,21 @@ dams:
   * `station_id` + `timestamp` を主キーとし、重複を排除して新データを優先して上書きする設計としています。
   * 500件ずつバッチUPSERTを行い、APIのサイズ制限に対応しています。
   * SELECTでは1000件のデフォルト上限に対応するため、ページネーションで全件取得を行います。
-* **共通コンバーター (`converter.py`)**:
-  * データ取得→DB保存、DB読み込みといった一連の共通処理を `converter.py` に集約しています。
-  * CLI (`main.py`) と Web UI (`app.py`) の両エントリーポイントからこの共通モジュールを呼び出すことで、ロジックの重複を排除しています。
+* **ETL の制御 (`converter.py`)**:
+  * Extract→Transform→Load の一連フローと**スロットリングガード**（後述）を `converter.py` の `refresh_data()` に集約しています。
+  * バッチ実行 (`pipeline.py`) と CLI (`main.py`) の両エントリーポイントから呼び出すことで、ロジックの重複を排除しています。
 
 ## 4. Web UI の設計方針
 
 ### 採用技術: Streamlit + Streamlit Community Cloud
 フェーズ3のWebアプリケーション化には **Streamlit** を採用し、`src/app.py` に実装しています。
-現在、MVPとして**宮ヶ瀬湖**のデータ表示に対応しており、将来のダム追加を見据えてプルダウン(SelectBox)を用意しています。
-また、APIの負荷軽減のため、セッション内で**前回取得から20分以内の場合はスクレイピングをスキップしてキャッシュを利用する**ガード機能(スロットリング)を実装しています。
+現在、宮ヶ瀬ダム・矢木沢ダムに対応しており、プルダウン(SelectBox)でダムを切り替えられます。
+
+**`app.py` は Supabase DB からの読み込みと表示に専念**しており、スクレイピングは行いません。
+データ収集は `src/pipeline.py` が担当し、GitHub Actions の Cron（20分おき）によって自動実行されます。
+
+**スロットリングガード (`converter.py`):**
+`pipeline.py` や `main.py` から呼ばれる `refresh_data()` に実装されています。DB の最新タイムスタンプを確認し、**前回取得から20分以内の場合はスクレイピングをスキップ**します。
 
 **選定理由:**
 * **圧倒的に手っ取り早い**: Pythonのみで完結し、HTML/CSS/JavaScriptといったフロントエンドの知識が不要なため、MVP（最小限の実装）を最速で構築できる。
