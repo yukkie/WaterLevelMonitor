@@ -1,0 +1,7697 @@
+[
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T15:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41362.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T15:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41362.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T15:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41362.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T15:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41395.0,
+    "inflow": 4.64,
+    "outflow": 0.0,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T15:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41362.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T16:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41395.0,
+    "inflow": 5.84,
+    "outflow": 0.0,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T16:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41407.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T16:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41407.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T16:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41407.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T16:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41407.0,
+    "inflow": 5.39,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T16:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41407.0,
+    "inflow": 5.39,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T17:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41407.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T17:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41407.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T17:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41407.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T17:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41419.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T17:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41451.0,
+    "inflow": 5.24,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T17:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41451.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T18:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41451.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T18:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41451.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T18:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41451.0,
+    "inflow": 5.84,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T18:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41451.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T18:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41451.0,
+    "inflow": 4.64,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T18:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41464.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T19:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41464.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T19:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41464.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T19:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41496.0,
+    "inflow": 5.39,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T19:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41496.0,
+    "inflow": 5.39,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T19:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41496.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T19:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41496.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T20:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41496.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T20:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41508.0,
+    "inflow": 5.24,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T20:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41508.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T20:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41508.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T20:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41508.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T20:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41508.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T21:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41508.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T21:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41508.0,
+    "inflow": 4.79,
+    "outflow": 0.0,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T21:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41553.0,
+    "inflow": 5.39,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T21:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41553.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T21:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41553.0,
+    "inflow": 5.84,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T21:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41553.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T22:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41553.0,
+    "inflow": 4.64,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T22:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41553.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T22:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41553.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T22:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41553.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T22:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41585.0,
+    "inflow": 4.79,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T22:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41566.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T23:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41598.0,
+    "inflow": 5.09,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T23:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41598.0,
+    "inflow": 5.39,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T23:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41598.0,
+    "inflow": 5.69,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T23:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41598.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T23:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41598.0,
+    "inflow": 5.24,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-12T23:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41598.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T00:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41610.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T00:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41610.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T00:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41610.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T00:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41610.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T00:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41610.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T00:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41643.0,
+    "inflow": 5.24,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T01:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41643.0,
+    "inflow": 5.54,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T01:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41655.0,
+    "inflow": 5.84,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T01:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41655.0,
+    "inflow": 4.94,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T01:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41655.0,
+    "inflow": 5.09,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T01:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41655.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T01:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41655.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T02:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41655.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T02:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41655.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T02:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41668.0,
+    "inflow": 4.64,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T02:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41668.0,
+    "inflow": 4.79,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T02:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41700.0,
+    "inflow": 5.69,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T02:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41668.0,
+    "inflow": 5.54,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T03:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41700.0,
+    "inflow": 5.99,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T03:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41700.0,
+    "inflow": 5.54,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T03:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41700.0,
+    "inflow": 5.09,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T03:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41700.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T03:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41700.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T03:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41700.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T04:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41700.0,
+    "inflow": 4.64,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T04:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41687.0,
+    "inflow": 4.49,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T04:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41687.0,
+    "inflow": 4.64,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T04:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41687.0,
+    "inflow": 4.94,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T04:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41707.0,
+    "inflow": 5.39,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T04:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41695.0,
+    "inflow": 5.69,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T05:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41695.0,
+    "inflow": 5.39,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T05:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41682.0,
+    "inflow": 5.09,
+    "outflow": 0.0,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T05:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41638.0,
+    "inflow": 4.5,
+    "outflow": 87.84,
+    "storage_rate": 36.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T05:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41606.0,
+    "inflow": 4.54,
+    "outflow": 93.36,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T05:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41590.0,
+    "inflow": 4.58,
+    "outflow": 93.45,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T05:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41607.0,
+    "inflow": 4.48,
+    "outflow": 93.51,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T06:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41599.0,
+    "inflow": 5.13,
+    "outflow": 93.58,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T06:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41596.0,
+    "inflow": 5.19,
+    "outflow": 93.67,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T06:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41557.0,
+    "inflow": 5.39,
+    "outflow": 93.73,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T06:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41529.0,
+    "inflow": 5.6,
+    "outflow": 93.83,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T06:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41546.0,
+    "inflow": 5.66,
+    "outflow": 93.88,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T06:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41518.0,
+    "inflow": 5.12,
+    "outflow": 93.95,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T07:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41536.0,
+    "inflow": 5.19,
+    "outflow": 94.04,
+    "storage_rate": 36.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T07:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41508.0,
+    "inflow": 5.1,
+    "outflow": 78.8,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T07:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41513.0,
+    "inflow": 5.31,
+    "outflow": 76.52,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T07:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41517.0,
+    "inflow": 5.5,
+    "outflow": 76.55,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T07:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41465.0,
+    "inflow": 5.57,
+    "outflow": 94.28,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T07:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41462.0,
+    "inflow": 5.64,
+    "outflow": 94.36,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T08:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41453.0,
+    "inflow": 5.71,
+    "outflow": 94.41,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T08:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41427.0,
+    "inflow": 5.94,
+    "outflow": 94.5,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T08:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41457.0,
+    "inflow": 6.32,
+    "outflow": 94.57,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T08:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41418.0,
+    "inflow": 6.25,
+    "outflow": 94.63,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T08:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41435.0,
+    "inflow": 6.03,
+    "outflow": 94.7,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T08:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41409.0,
+    "inflow": 6.12,
+    "outflow": 94.78,
+    "storage_rate": 35.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T09:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41370.0,
+    "inflow": 5.75,
+    "outflow": 94.85,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T09:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41401.0,
+    "inflow": 6.44,
+    "outflow": 94.93,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T09:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41361.0,
+    "inflow": 6.23,
+    "outflow": 94.99,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T09:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41367.0,
+    "inflow": 6.77,
+    "outflow": 95.06,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T09:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41352.0,
+    "inflow": 6.87,
+    "outflow": 95.13,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T09:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41313.0,
+    "inflow": 6.97,
+    "outflow": 95.21,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T10:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41331.0,
+    "inflow": 7.06,
+    "outflow": 93.28,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T10:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41304.0,
+    "inflow": 7.45,
+    "outflow": 95.34,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T10:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41277.0,
+    "inflow": 7.69,
+    "outflow": 95.4,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T10:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41295.0,
+    "inflow": 7.61,
+    "outflow": 93.48,
+    "storage_rate": 35.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T10:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41268.0,
+    "inflow": 6.79,
+    "outflow": 95.36,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T10:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41274.0,
+    "inflow": 7.16,
+    "outflow": 93.6,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T11:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41249.0,
+    "inflow": 6.97,
+    "outflow": 93.67,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T11:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41255.0,
+    "inflow": 7.38,
+    "outflow": 93.73,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T11:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41242.0,
+    "inflow": 7.94,
+    "outflow": 93.82,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T11:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41216.0,
+    "inflow": 7.58,
+    "outflow": 95.92,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T11:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41210.0,
+    "inflow": 8.24,
+    "outflow": 93.95,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T11:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41197.0,
+    "inflow": 8.31,
+    "outflow": 94.02,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T12:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41172.0,
+    "inflow": 7.93,
+    "outflow": 94.09,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T12:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41178.0,
+    "inflow": 8.3,
+    "outflow": 94.16,
+    "storage_rate": 35.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T12:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41165.0,
+    "inflow": 8.22,
+    "outflow": 94.23,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T12:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41159.0,
+    "inflow": 8.4,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T12:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41146.0,
+    "inflow": 7.67,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T12:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41159.0,
+    "inflow": 8.04,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T13:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41108.0,
+    "inflow": 7.38,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T13:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41140.0,
+    "inflow": 7.91,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T13:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41127.0,
+    "inflow": 8.14,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T13:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41090.0,
+    "inflow": 7.8,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T13:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41102.0,
+    "inflow": 7.73,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T13:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41077.0,
+    "inflow": 7.81,
+    "outflow": 0.0,
+    "storage_rate": 35.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T14:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41052.0,
+    "inflow": 7.59,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T14:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41039.0,
+    "inflow": 7.36,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T14:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41045.0,
+    "inflow": 7.13,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T14:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41014.0,
+    "inflow": 7.05,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T14:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41020.0,
+    "inflow": 7.1,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T14:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 41007.0,
+    "inflow": 7.16,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T15:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40963.0,
+    "inflow": 7.22,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T15:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40969.0,
+    "inflow": 6.83,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T15:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40956.0,
+    "inflow": 7.03,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T15:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40944.0,
+    "inflow": 6.49,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T15:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40963.0,
+    "inflow": 6.84,
+    "outflow": 0.0,
+    "storage_rate": 35.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T15:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40919.0,
+    "inflow": 6.3,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T16:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40938.0,
+    "inflow": 6.35,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T16:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40913.0,
+    "inflow": 5.96,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T16:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40881.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T16:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40887.0,
+    "inflow": 6.38,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T16:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40875.0,
+    "inflow": 6.6,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T16:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40875.0,
+    "inflow": 6.37,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T17:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40850.0,
+    "inflow": 6.27,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T17:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40837.0,
+    "inflow": 5.85,
+    "outflow": 0.0,
+    "storage_rate": 35.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T17:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40824.0,
+    "inflow": 5.59,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T17:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40799.0,
+    "inflow": 5.61,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T17:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40799.0,
+    "inflow": 4.9,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T17:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40806.0,
+    "inflow": 5.23,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T18:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40793.0,
+    "inflow": 4.95,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T18:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40793.0,
+    "inflow": 5.41,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T18:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40768.0,
+    "inflow": 5.0,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T18:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40755.0,
+    "inflow": 5.2,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T18:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40743.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T18:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40730.0,
+    "inflow": 5.28,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T19:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40717.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 35.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T19:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40705.0,
+    "inflow": 4.84,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T19:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40680.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T19:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40680.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T19:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40654.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T19:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40642.0,
+    "inflow": 4.69,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T20:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40660.0,
+    "inflow": 5.28,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T20:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40635.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T20:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40635.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T20:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40622.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 35.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T20:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40597.0,
+    "inflow": 4.84,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T20:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40597.0,
+    "inflow": 4.84,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T21:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40572.0,
+    "inflow": 4.69,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T21:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40559.0,
+    "inflow": 4.55,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T21:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40546.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T21:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40534.0,
+    "inflow": 4.69,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T21:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40553.0,
+    "inflow": 4.69,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T21:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40540.0,
+    "inflow": 5.28,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T22:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40515.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T22:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40515.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T22:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40490.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 35.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T22:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40477.0,
+    "inflow": 4.69,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T22:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40465.0,
+    "inflow": 4.55,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T22:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40452.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T23:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40439.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T23:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40427.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T23:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40414.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T23:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40421.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T23:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40408.0,
+    "inflow": 4.84,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-13T23:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40396.0,
+    "inflow": 5.28,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T00:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40383.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T00:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40370.0,
+    "inflow": 4.55,
+    "outflow": 0.0,
+    "storage_rate": 35.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T00:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40358.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T00:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40333.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T00:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40320.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T00:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40320.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T01:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40295.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T01:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40283.0,
+    "inflow": 4.55,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T01:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40302.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T01:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40277.0,
+    "inflow": 5.14,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T01:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40277.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T01:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40252.0,
+    "inflow": 5.07,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T02:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40292.0,
+    "inflow": 3.67,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T02:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40268.0,
+    "inflow": 2.36,
+    "outflow": 0.0,
+    "storage_rate": 34.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T02:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40227.0,
+    "inflow": 1.78,
+    "outflow": 0.0,
+    "storage_rate": 34.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T02:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40238.0,
+    "inflow": 1.83,
+    "outflow": 0.0,
+    "storage_rate": 34.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T02:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40231.0,
+    "inflow": 1.95,
+    "outflow": 0.0,
+    "storage_rate": 34.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T02:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40185.0,
+    "inflow": 1.92,
+    "outflow": 0.0,
+    "storage_rate": 34.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T03:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40216.0,
+    "inflow": 2.06,
+    "outflow": 0.0,
+    "storage_rate": 34.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T03:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40177.0,
+    "inflow": 2.2,
+    "outflow": 0.0,
+    "storage_rate": 34.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T03:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40175.0,
+    "inflow": 2.05,
+    "outflow": 0.0,
+    "storage_rate": 34.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T03:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40149.0,
+    "inflow": 1.91,
+    "outflow": 0.0,
+    "storage_rate": 34.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T03:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40123.0,
+    "inflow": 1.64,
+    "outflow": 0.0,
+    "storage_rate": 34.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T03:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40080.0,
+    "inflow": 1.52,
+    "outflow": 0.0,
+    "storage_rate": 34.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T04:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40057.0,
+    "inflow": 0.82,
+    "outflow": 0.0,
+    "storage_rate": 34.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T04:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40046.0,
+    "inflow": 1.05,
+    "outflow": 0.0,
+    "storage_rate": 34.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T04:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 40019.0,
+    "inflow": 1.5,
+    "outflow": 0.0,
+    "storage_rate": 34.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T04:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39995.0,
+    "inflow": 1.58,
+    "outflow": 0.0,
+    "storage_rate": 34.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T04:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39983.0,
+    "inflow": 1.73,
+    "outflow": 0.0,
+    "storage_rate": 34.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T04:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39971.0,
+    "inflow": 1.73,
+    "outflow": 0.0,
+    "storage_rate": 34.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T05:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39959.0,
+    "inflow": 1.88,
+    "outflow": 0.0,
+    "storage_rate": 34.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T05:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39947.0,
+    "inflow": 2.03,
+    "outflow": 0.0,
+    "storage_rate": 34.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T05:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39935.0,
+    "inflow": 2.18,
+    "outflow": 0.0,
+    "storage_rate": 34.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T05:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39923.0,
+    "inflow": 1.6,
+    "outflow": 0.0,
+    "storage_rate": 34.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T05:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39899.0,
+    "inflow": 1.74,
+    "outflow": 0.0,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T05:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39887.0,
+    "inflow": 1.46,
+    "outflow": 0.0,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T06:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39875.0,
+    "inflow": 1.02,
+    "outflow": 0.0,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T06:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39862.0,
+    "inflow": 1.91,
+    "outflow": 0.0,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T06:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39882.0,
+    "inflow": 1.61,
+    "outflow": 0.0,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T06:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39838.0,
+    "inflow": 1.35,
+    "outflow": 69.98,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T06:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39829.0,
+    "inflow": 1.38,
+    "outflow": 94.55,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T06:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39802.0,
+    "inflow": 1.76,
+    "outflow": 94.27,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T07:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39829.0,
+    "inflow": 2.39,
+    "outflow": 96.53,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T07:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39788.0,
+    "inflow": 2.29,
+    "outflow": 90.71,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T07:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39816.0,
+    "inflow": 2.3,
+    "outflow": 92.45,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T07:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39775.0,
+    "inflow": 2.18,
+    "outflow": 93.84,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T07:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39791.0,
+    "inflow": 1.62,
+    "outflow": 92.63,
+    "storage_rate": 34.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T07:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39774.0,
+    "inflow": 2.51,
+    "outflow": 155.46,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T08:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39749.0,
+    "inflow": 3.5,
+    "outflow": 153.83,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T08:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39724.0,
+    "inflow": 4.15,
+    "outflow": 152.29,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T08:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39723.0,
+    "inflow": 5.7,
+    "outflow": 154.79,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T08:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39720.0,
+    "inflow": 5.46,
+    "outflow": 153.77,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T08:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39720.0,
+    "inflow": 5.62,
+    "outflow": 175.63,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T08:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39710.0,
+    "inflow": 6.01,
+    "outflow": 190.78,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T09:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39724.0,
+    "inflow": 5.9,
+    "outflow": 189.05,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T09:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39708.0,
+    "inflow": 6.12,
+    "outflow": 189.35,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T09:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39699.0,
+    "inflow": 6.55,
+    "outflow": 189.69,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T09:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39696.0,
+    "inflow": 6.67,
+    "outflow": 190.05,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T09:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39667.0,
+    "inflow": 6.95,
+    "outflow": 190.35,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T09:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39703.0,
+    "inflow": 7.37,
+    "outflow": 189.08,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T10:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39675.0,
+    "inflow": 7.79,
+    "outflow": 191.03,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T10:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39691.0,
+    "inflow": 8.31,
+    "outflow": 191.33,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T10:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39695.0,
+    "inflow": 7.89,
+    "outflow": 191.64,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T10:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39667.0,
+    "inflow": 7.87,
+    "outflow": 190.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T10:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39673.0,
+    "inflow": 8.21,
+    "outflow": 190.3,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T10:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39659.0,
+    "inflow": 8.37,
+    "outflow": 190.63,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T11:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39634.0,
+    "inflow": 8.7,
+    "outflow": 192.14,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T11:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39640.0,
+    "inflow": 8.85,
+    "outflow": 191.23,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T11:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39646.0,
+    "inflow": 9.02,
+    "outflow": 191.59,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T11:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39620.0,
+    "inflow": 9.33,
+    "outflow": 191.88,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T11:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39626.0,
+    "inflow": 9.65,
+    "outflow": 190.15,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T11:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39600.0,
+    "inflow": 9.37,
+    "outflow": 192.31,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T12:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39606.0,
+    "inflow": 9.86,
+    "outflow": 190.78,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T12:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39612.0,
+    "inflow": 9.29,
+    "outflow": 191.1,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T12:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39649.0,
+    "inflow": 10.19,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T12:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39644.0,
+    "inflow": 10.39,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T12:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39681.0,
+    "inflow": 10.51,
+    "outflow": 0.0,
+    "storage_rate": 34.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T12:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39631.0,
+    "inflow": 9.98,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T13:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39618.0,
+    "inflow": 9.5,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T13:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39631.0,
+    "inflow": 9.6,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T13:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39568.0,
+    "inflow": 9.15,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T13:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39593.0,
+    "inflow": 9.71,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T13:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39568.0,
+    "inflow": 9.54,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T13:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39574.0,
+    "inflow": 9.29,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T14:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39587.0,
+    "inflow": 9.85,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T14:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39581.0,
+    "inflow": 9.63,
+    "outflow": 0.0,
+    "storage_rate": 34.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T14:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39537.0,
+    "inflow": 8.95,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T14:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39537.0,
+    "inflow": 9.15,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T14:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39531.0,
+    "inflow": 9.01,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T14:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39511.0,
+    "inflow": 8.94,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T15:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39486.0,
+    "inflow": 9.22,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T15:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39505.0,
+    "inflow": 8.56,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T15:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39461.0,
+    "inflow": 8.72,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T15:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39468.0,
+    "inflow": 8.88,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T15:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39468.0,
+    "inflow": 8.29,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T15:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39455.0,
+    "inflow": 8.14,
+    "outflow": 0.0,
+    "storage_rate": 34.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T16:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39430.0,
+    "inflow": 7.84,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T16:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39430.0,
+    "inflow": 7.37,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T16:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39404.0,
+    "inflow": 7.49,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T16:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39423.0,
+    "inflow": 7.28,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T16:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39392.0,
+    "inflow": 7.22,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T16:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39398.0,
+    "inflow": 7.8,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T17:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39385.0,
+    "inflow": 6.89,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T17:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39372.0,
+    "inflow": 7.02,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T17:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39360.0,
+    "inflow": 6.7,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T17:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39347.0,
+    "inflow": 6.39,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T17:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39334.0,
+    "inflow": 6.22,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T17:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39354.0,
+    "inflow": 6.19,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T18:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39309.0,
+    "inflow": 5.86,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T18:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39329.0,
+    "inflow": 6.27,
+    "outflow": 0.0,
+    "storage_rate": 34.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T18:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39316.0,
+    "inflow": 5.51,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T18:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39303.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T18:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39278.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T18:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39278.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T19:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39265.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T19:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39240.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T19:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39240.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T19:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39215.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 34.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T19:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39202.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T19:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39202.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T20:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39209.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T20:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39196.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T20:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39184.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T20:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39171.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T20:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39159.0,
+    "inflow": 5.72,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T20:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39146.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T21:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39133.0,
+    "inflow": 5.14,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T21:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39121.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T21:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39126.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T21:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39126.0,
+    "inflow": 5.72,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T21:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39114.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 33.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T21:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39089.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T22:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39089.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T22:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39063.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T22:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39051.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T22:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39051.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T22:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39025.0,
+    "inflow": 5.14,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T22:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39013.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T23:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39032.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T23:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39019.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T23:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 39007.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T23:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38994.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T23:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38982.0,
+    "inflow": 5.72,
+    "outflow": 0.0,
+    "storage_rate": 33.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-14T23:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38969.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T00:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38956.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T00:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38944.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T00:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38963.0,
+    "inflow": 5.28,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T00:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38938.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T00:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38938.0,
+    "inflow": 5.28,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T00:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38913.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T01:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38900.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T01:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38887.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T01:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38875.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 33.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T01:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38862.0,
+    "inflow": 5.72,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T01:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38849.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T01:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38837.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T02:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38855.0,
+    "inflow": 4.34,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T02:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38850.0,
+    "inflow": 3.69,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T02:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38826.0,
+    "inflow": 3.49,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T02:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38797.0,
+    "inflow": 3.6,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T02:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38842.0,
+    "inflow": 3.15,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T02:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38777.0,
+    "inflow": 2.54,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T03:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38798.0,
+    "inflow": 2.53,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T03:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38789.0,
+    "inflow": 2.37,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T03:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38761.0,
+    "inflow": 1.79,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T03:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38769.0,
+    "inflow": 1.8,
+    "outflow": 0.0,
+    "storage_rate": 33.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T03:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38716.0,
+    "inflow": 1.23,
+    "outflow": 0.0,
+    "storage_rate": 33.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T03:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38712.0,
+    "inflow": 1.41,
+    "outflow": 0.0,
+    "storage_rate": 33.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T04:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38696.0,
+    "inflow": 1.44,
+    "outflow": 0.0,
+    "storage_rate": 33.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T04:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38670.0,
+    "inflow": 1.33,
+    "outflow": 0.0,
+    "storage_rate": 33.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T04:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38625.0,
+    "inflow": 1.45,
+    "outflow": 0.0,
+    "storage_rate": 33.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T04:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38592.0,
+    "inflow": 1.73,
+    "outflow": 0.0,
+    "storage_rate": 33.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T04:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38608.0,
+    "inflow": 2.1,
+    "outflow": 0.0,
+    "storage_rate": 33.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T04:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38591.0,
+    "inflow": 2.18,
+    "outflow": 0.0,
+    "storage_rate": 33.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T05:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38555.0,
+    "inflow": 1.38,
+    "outflow": 0.0,
+    "storage_rate": 33.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T05:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38555.0,
+    "inflow": 1.38,
+    "outflow": 0.0,
+    "storage_rate": 33.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T05:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38543.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T05:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38488.0,
+    "inflow": 1.24,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T05:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38531.0,
+    "inflow": 1.53,
+    "outflow": 0.0,
+    "storage_rate": 33.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T05:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38495.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T06:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38495.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T06:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38515.0,
+    "inflow": 2.12,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T06:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38459.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T06:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38459.0,
+    "inflow": 1.53,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T06:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38435.0,
+    "inflow": 1.82,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T06:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38455.0,
+    "inflow": 1.24,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T07:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38443.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T07:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38419.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T07:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38419.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T07:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38395.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T07:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38427.0,
+    "inflow": 1.97,
+    "outflow": 0.0,
+    "storage_rate": 33.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T07:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38370.0,
+    "inflow": 1.68,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T08:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38390.0,
+    "inflow": 3.07,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T08:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38390.0,
+    "inflow": 3.27,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T08:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38354.0,
+    "inflow": 4.06,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T08:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38354.0,
+    "inflow": 3.95,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T08:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38342.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T08:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38318.0,
+    "inflow": 5.16,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T09:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38318.0,
+    "inflow": 5.02,
+    "outflow": 0.0,
+    "storage_rate": 33.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T09:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38230.0,
+    "inflow": 4.42,
+    "outflow": 168.75,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T09:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38215.0,
+    "inflow": 4.83,
+    "outflow": 187.52,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T09:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38253.0,
+    "inflow": 4.76,
+    "outflow": 187.86,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T09:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38222.0,
+    "inflow": 5.27,
+    "outflow": 188.06,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T09:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38255.0,
+    "inflow": 5.79,
+    "outflow": 188.31,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T10:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38248.0,
+    "inflow": 5.58,
+    "outflow": 188.65,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T10:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38205.0,
+    "inflow": 6.53,
+    "outflow": 190.82,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T10:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38218.0,
+    "inflow": 6.4,
+    "outflow": 189.33,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T10:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38214.0,
+    "inflow": 6.69,
+    "outflow": 189.66,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T10:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38205.0,
+    "inflow": 6.45,
+    "outflow": 189.99,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T10:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38234.0,
+    "inflow": 6.51,
+    "outflow": 190.33,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T11:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38207.0,
+    "inflow": 6.58,
+    "outflow": 190.67,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T11:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38209.0,
+    "inflow": 7.18,
+    "outflow": 190.97,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T11:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38194.0,
+    "inflow": 6.47,
+    "outflow": 191.33,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T11:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38198.0,
+    "inflow": 7.39,
+    "outflow": 191.61,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T11:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38214.0,
+    "inflow": 7.42,
+    "outflow": 209.89,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T11:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38186.0,
+    "inflow": 7.63,
+    "outflow": 192.31,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T12:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38221.0,
+    "inflow": 8.7,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T12:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38253.0,
+    "inflow": 7.4,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T12:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38265.0,
+    "inflow": 8.14,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T12:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38216.0,
+    "inflow": 7.99,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T12:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38240.0,
+    "inflow": 7.55,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T12:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38203.0,
+    "inflow": 7.55,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T13:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38178.0,
+    "inflow": 7.11,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T13:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38203.0,
+    "inflow": 7.55,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T13:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38154.0,
+    "inflow": 7.85,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T13:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38198.0,
+    "inflow": 8.14,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T13:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38173.0,
+    "inflow": 7.99,
+    "outflow": 0.0,
+    "storage_rate": 33.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T13:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38136.0,
+    "inflow": 8.14,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T14:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38161.0,
+    "inflow": 7.55,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T14:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38143.0,
+    "inflow": 7.85,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T14:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38112.0,
+    "inflow": 7.26,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T14:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38112.0,
+    "inflow": 7.7,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T14:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38075.0,
+    "inflow": 7.85,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T14:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38087.0,
+    "inflow": 7.85,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T15:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38093.0,
+    "inflow": 8.43,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T15:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38081.0,
+    "inflow": 8.46,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T15:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38081.0,
+    "inflow": 8.62,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T15:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38076.0,
+    "inflow": 8.68,
+    "outflow": 0.0,
+    "storage_rate": 33.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T15:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38044.0,
+    "inflow": 8.15,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T15:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38019.0,
+    "inflow": 8.05,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T16:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38039.0,
+    "inflow": 8.38,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T16:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38007.0,
+    "inflow": 7.82,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T16:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38014.0,
+    "inflow": 8.28,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T16:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 38002.0,
+    "inflow": 7.71,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T16:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37990.0,
+    "inflow": 7.58,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T16:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37965.0,
+    "inflow": 7.58,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T17:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37965.0,
+    "inflow": 7.13,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T17:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37940.0,
+    "inflow": 6.68,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T17:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37960.0,
+    "inflow": 6.65,
+    "outflow": 0.0,
+    "storage_rate": 32.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T17:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37928.0,
+    "inflow": 6.91,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T17:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37923.0,
+    "inflow": 7.17,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T17:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37923.0,
+    "inflow": 6.82,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T18:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37911.0,
+    "inflow": 5.75,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T18:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37898.0,
+    "inflow": 6.61,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T18:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37886.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T18:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37861.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T18:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37893.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T18:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37849.0,
+    "inflow": 6.61,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T19:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37856.0,
+    "inflow": 7.34,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T19:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37844.0,
+    "inflow": 6.9,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T19:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37832.0,
+    "inflow": 6.61,
+    "outflow": 0.0,
+    "storage_rate": 32.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T19:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37819.0,
+    "inflow": 6.31,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T19:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37807.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T19:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37782.0,
+    "inflow": 6.31,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T20:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37813.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T20:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37789.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T20:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37776.0,
+    "inflow": 7.05,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T20:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37764.0,
+    "inflow": 6.75,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T20:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37739.0,
+    "inflow": 6.61,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T20:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37739.0,
+    "inflow": 6.46,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T21:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37727.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T21:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37715.0,
+    "inflow": 6.31,
+    "outflow": 0.0,
+    "storage_rate": 32.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T21:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37702.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T21:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37677.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T21:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37697.0,
+    "inflow": 6.46,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T21:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37685.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T22:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37672.0,
+    "inflow": 6.61,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T22:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37660.0,
+    "inflow": 6.31,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T22:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37648.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T22:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37635.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T22:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37623.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T22:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37598.0,
+    "inflow": 5.72,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T23:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37630.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T23:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37606.0,
+    "inflow": 6.31,
+    "outflow": 0.0,
+    "storage_rate": 32.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T23:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37593.0,
+    "inflow": 6.9,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T23:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37581.0,
+    "inflow": 6.46,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T23:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37556.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-15T23:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37556.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T00:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37544.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T00:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37532.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T00:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37519.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T00:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37526.0,
+    "inflow": 6.16,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T00:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37482.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T00:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37501.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T01:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37489.0,
+    "inflow": 5.72,
+    "outflow": 0.0,
+    "storage_rate": 32.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T01:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37477.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T01:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37453.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T01:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37441.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T01:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37429.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T01:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37417.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T02:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37405.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T02:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37425.0,
+    "inflow": 6.02,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T02:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37413.0,
+    "inflow": 5.14,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T02:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37401.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T02:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37389.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T02:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37389.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T03:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37365.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T03:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37365.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T03:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37353.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T03:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37341.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T03:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37329.0,
+    "inflow": 5.28,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T03:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37317.0,
+    "inflow": 5.72,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T04:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37337.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T04:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37337.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T04:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37313.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T04:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37313.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T04:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37301.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T04:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37289.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T05:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37277.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T05:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37265.0,
+    "inflow": 5.28,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T05:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37296.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T05:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37253.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T05:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37272.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T05:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37260.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T06:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37236.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T06:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37236.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T06:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37224.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T06:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37212.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T06:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37212.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T06:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37188.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T07:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37188.0,
+    "inflow": 4.69,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T07:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37208.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T07:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37196.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T07:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37184.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T07:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37172.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T07:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37160.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T08:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37160.0,
+    "inflow": 5.45,
+    "outflow": 54.98,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T08:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37133.0,
+    "inflow": 5.16,
+    "outflow": 98.14,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T08:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37105.0,
+    "inflow": 5.32,
+    "outflow": 93.12,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T08:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37134.0,
+    "inflow": 4.99,
+    "outflow": 93.75,
+    "storage_rate": 32.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T08:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37094.0,
+    "inflow": 5.23,
+    "outflow": 93.52,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T08:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37091.0,
+    "inflow": 5.19,
+    "outflow": 92.63,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T09:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37107.0,
+    "inflow": 5.59,
+    "outflow": 91.61,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T09:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37080.0,
+    "inflow": 5.83,
+    "outflow": 93.74,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T09:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37108.0,
+    "inflow": 6.36,
+    "outflow": 92.82,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T09:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37081.0,
+    "inflow": 6.74,
+    "outflow": 92.44,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T09:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37097.0,
+    "inflow": 6.99,
+    "outflow": 93.99,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T09:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37083.0,
+    "inflow": 6.39,
+    "outflow": 96.63,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T10:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37056.0,
+    "inflow": 6.25,
+    "outflow": 95.23,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T10:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37086.0,
+    "inflow": 6.39,
+    "outflow": 94.49,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T10:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37047.0,
+    "inflow": 6.79,
+    "outflow": 92.63,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T10:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37064.0,
+    "inflow": 7.2,
+    "outflow": 93.6,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T10:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37063.0,
+    "inflow": 7.15,
+    "outflow": 94.28,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T10:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37068.0,
+    "inflow": 7.55,
+    "outflow": 93.15,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T11:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37055.0,
+    "inflow": 7.96,
+    "outflow": 92.95,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T11:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37060.0,
+    "inflow": 8.51,
+    "outflow": 93.16,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T11:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37046.0,
+    "inflow": 8.48,
+    "outflow": 93.45,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T11:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37032.0,
+    "inflow": 8.02,
+    "outflow": 93.32,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T11:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37037.0,
+    "inflow": 7.7,
+    "outflow": 92.84,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T11:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37024.0,
+    "inflow": 7.81,
+    "outflow": 94.18,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T12:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37041.0,
+    "inflow": 8.37,
+    "outflow": 93.29,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T12:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37014.0,
+    "inflow": 8.36,
+    "outflow": 95.38,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T12:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37045.0,
+    "inflow": 8.93,
+    "outflow": 93.52,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T12:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37018.0,
+    "inflow": 9.21,
+    "outflow": 93.55,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T12:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37067.0,
+    "inflow": 9.72,
+    "outflow": 0.0,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T12:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37018.0,
+    "inflow": 9.72,
+    "outflow": 0.0,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T13:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37042.0,
+    "inflow": 9.57,
+    "outflow": 0.0,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T13:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37018.0,
+    "inflow": 8.99,
+    "outflow": 0.0,
+    "storage_rate": 32.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T13:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36993.0,
+    "inflow": 8.26,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T13:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37005.0,
+    "inflow": 8.26,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T13:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37013.0,
+    "inflow": 8.55,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T13:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36981.0,
+    "inflow": 8.7,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T14:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 37000.0,
+    "inflow": 9.85,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T14:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36976.0,
+    "inflow": 9.7,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T14:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36956.0,
+    "inflow": 9.39,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T14:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36963.0,
+    "inflow": 9.14,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T14:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36951.0,
+    "inflow": 8.9,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T14:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36951.0,
+    "inflow": 8.94,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T15:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36926.0,
+    "inflow": 8.83,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T15:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36926.0,
+    "inflow": 8.29,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T15:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36946.0,
+    "inflow": 8.21,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T15:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36934.0,
+    "inflow": 8.41,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T15:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36934.0,
+    "inflow": 8.45,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T15:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36909.0,
+    "inflow": 8.62,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T16:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36909.0,
+    "inflow": 8.31,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T16:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36909.0,
+    "inflow": 7.74,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T16:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36884.0,
+    "inflow": 7.33,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T16:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36884.0,
+    "inflow": 6.92,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T16:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36872.0,
+    "inflow": 6.98,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T16:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36903.0,
+    "inflow": 7.02,
+    "outflow": 0.0,
+    "storage_rate": 32.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T17:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36860.0,
+    "inflow": 6.61,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T17:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36878.0,
+    "inflow": 7.09,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T17:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36878.0,
+    "inflow": 6.82,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T17:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36854.0,
+    "inflow": 6.99,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T17:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36854.0,
+    "inflow": 6.43,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T17:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36854.0,
+    "inflow": 6.32,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T18:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36829.0,
+    "inflow": 5.76,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T18:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36829.0,
+    "inflow": 5.77,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T18:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36817.0,
+    "inflow": 5.19,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T18:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36836.0,
+    "inflow": 5.36,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T18:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36836.0,
+    "inflow": 5.29,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T18:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36824.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T19:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36812.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T19:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36812.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T19:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36799.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T19:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36799.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T19:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36775.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T19:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36775.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T20:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36762.0,
+    "inflow": 4.69,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T20:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36750.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T20:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36782.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T20:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36770.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T20:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36757.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T20:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36757.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T21:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36733.0,
+    "inflow": 5.58,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T21:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36733.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T21:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36720.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T21:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36708.0,
+    "inflow": 4.84,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T21:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36740.0,
+    "inflow": 4.69,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T21:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36727.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T22:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36727.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T22:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36715.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T22:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36703.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T22:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36703.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T22:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36690.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T22:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36678.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T23:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36666.0,
+    "inflow": 5.43,
+    "outflow": 0.0,
+    "storage_rate": 31.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T23:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36653.0,
+    "inflow": 4.4,
+    "outflow": 0.0,
+    "storage_rate": 31.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T23:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36653.0,
+    "inflow": 4.55,
+    "outflow": 0.0,
+    "storage_rate": 31.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T23:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36672.0,
+    "inflow": 4.99,
+    "outflow": 0.0,
+    "storage_rate": 31.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T23:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36629.0,
+    "inflow": 5.72,
+    "outflow": 0.0,
+    "storage_rate": 31.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-16T23:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36660.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-17T00:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36647.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-17T00:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36635.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-17T00:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 36623.0,
+    "inflow": 5.87,
+    "outflow": 0.0,
+    "storage_rate": 31.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T12:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34804.0,
+    "inflow": 8.79,
+    "outflow": 157.13,
+    "storage_rate": 30.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T12:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T12:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T12:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T12:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34779.0,
+    "inflow": 9.2,
+    "outflow": 0.0,
+    "storage_rate": 30.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T12:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T13:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T13:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T13:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34797.0,
+    "inflow": 9.06,
+    "outflow": 0.0,
+    "storage_rate": 30.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T13:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34735.0,
+    "inflow": 9.34,
+    "outflow": 0.0,
+    "storage_rate": 30.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T13:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34748.0,
+    "inflow": 9.2,
+    "outflow": 0.0,
+    "storage_rate": 30.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T13:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34735.0,
+    "inflow": 8.77,
+    "outflow": 0.0,
+    "storage_rate": 30.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T14:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T14:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T14:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T14:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T14:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T14:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T15:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T15:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T15:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T15:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34625.0,
+    "inflow": 8.95,
+    "outflow": 0.0,
+    "storage_rate": 30.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T15:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T15:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T16:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T16:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34551.0,
+    "inflow": 9.19,
+    "outflow": 0.0,
+    "storage_rate": 29.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T16:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T16:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T16:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T16:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34520.0,
+    "inflow": 8.3,
+    "outflow": 0.0,
+    "storage_rate": 29.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T17:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34483.0,
+    "inflow": 8.31,
+    "outflow": 0.0,
+    "storage_rate": 29.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T17:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T17:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T17:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34446.0,
+    "inflow": 8.25,
+    "outflow": 0.0,
+    "storage_rate": 29.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T17:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T17:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34409.0,
+    "inflow": 7.69,
+    "outflow": 0.0,
+    "storage_rate": 29.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T18:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34440.0,
+    "inflow": 8.04,
+    "outflow": 0.0,
+    "storage_rate": 29.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T18:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T18:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34391.0,
+    "inflow": 7.76,
+    "outflow": 0.0,
+    "storage_rate": 29.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T18:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34422.0,
+    "inflow": 7.35,
+    "outflow": 0.0,
+    "storage_rate": 29.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T18:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34385.0,
+    "inflow": 7.48,
+    "outflow": 0.0,
+    "storage_rate": 29.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T18:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34385.0,
+    "inflow": 7.91,
+    "outflow": 0.0,
+    "storage_rate": 29.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T19:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34360.0,
+    "inflow": 7.33,
+    "outflow": 0.0,
+    "storage_rate": 29.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T19:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34348.0,
+    "inflow": 7.91,
+    "outflow": 0.0,
+    "storage_rate": 29.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T19:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T19:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34311.0,
+    "inflow": 7.77,
+    "outflow": 0.0,
+    "storage_rate": 29.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T19:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T19:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T20:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T20:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T20:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34255.0,
+    "inflow": 7.62,
+    "outflow": 0.0,
+    "storage_rate": 29.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T20:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T20:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T20:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34237.0,
+    "inflow": 8.05,
+    "outflow": 0.0,
+    "storage_rate": 29.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T21:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T21:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T21:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T21:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34175.0,
+    "inflow": 7.91,
+    "outflow": 0.0,
+    "storage_rate": 29.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T21:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T21:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34138.0,
+    "inflow": 8.05,
+    "outflow": 0.0,
+    "storage_rate": 29.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T22:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34157.0,
+    "inflow": 8.63,
+    "outflow": 0.0,
+    "storage_rate": 29.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T22:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34132.0,
+    "inflow": 8.34,
+    "outflow": 0.0,
+    "storage_rate": 29.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T22:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T22:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34126.0,
+    "inflow": 8.63,
+    "outflow": 0.0,
+    "storage_rate": 29.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T22:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T22:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34101.0,
+    "inflow": 8.63,
+    "outflow": 0.0,
+    "storage_rate": 29.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T23:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34077.0,
+    "inflow": 8.92,
+    "outflow": 0.0,
+    "storage_rate": 29.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T23:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T23:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T23:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T23:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 34060.0,
+    "inflow": 8.92,
+    "outflow": 0.0,
+    "storage_rate": 29.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-18T23:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T00:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T00:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33981.0,
+    "inflow": 8.35,
+    "outflow": 46.76,
+    "storage_rate": 29.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T00:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T00:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33981.0,
+    "inflow": 8.69,
+    "outflow": 0.0,
+    "storage_rate": 29.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T00:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T00:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33988.0,
+    "inflow": 8.69,
+    "outflow": 0.0,
+    "storage_rate": 29.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T01:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33964.0,
+    "inflow": 8.69,
+    "outflow": 0.0,
+    "storage_rate": 29.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T01:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33952.0,
+    "inflow": 8.69,
+    "outflow": 0.0,
+    "storage_rate": 29.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T01:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T01:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T01:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T01:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33892.0,
+    "inflow": 8.55,
+    "outflow": 0.0,
+    "storage_rate": 29.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T02:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33899.0,
+    "inflow": 9.27,
+    "outflow": 0.0,
+    "storage_rate": 29.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T02:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33887.0,
+    "inflow": 8.98,
+    "outflow": 0.0,
+    "storage_rate": 29.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T02:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T02:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T02:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T02:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T03:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T03:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T03:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T03:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T03:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T03:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T04:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T04:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T04:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33765.0,
+    "inflow": 11.11,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T04:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33753.0,
+    "inflow": 10.98,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T04:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33741.0,
+    "inflow": 10.84,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T04:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T05:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T05:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33724.0,
+    "inflow": 11.27,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T05:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33699.0,
+    "inflow": 11.7,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T05:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33718.0,
+    "inflow": 11.56,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T05:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T05:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33694.0,
+    "inflow": 11.85,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T06:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33701.0,
+    "inflow": 11.85,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T06:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33689.0,
+    "inflow": 12.57,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T06:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T06:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33684.0,
+    "inflow": 12.09,
+    "outflow": 0.0,
+    "storage_rate": 29.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T06:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T06:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33660.0,
+    "inflow": 12.52,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T07:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T07:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33655.0,
+    "inflow": 13.09,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T07:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33631.0,
+    "inflow": 12.95,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T07:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33619.0,
+    "inflow": 13.24,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T07:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33626.0,
+    "inflow": 13.52,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T07:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T08:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33621.0,
+    "inflow": 13.09,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T08:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33597.0,
+    "inflow": 13.81,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T08:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T08:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33561.0,
+    "inflow": 14.24,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T08:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33537.0,
+    "inflow": 14.38,
+    "outflow": 0.0,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T08:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33556.0,
+    "inflow": 14.96,
+    "outflow": 0.0,
+    "storage_rate": 29.1
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T09:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33532.0,
+    "inflow": 14.38,
+    "outflow": 0.0,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T09:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T09:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33499.0,
+    "inflow": 14.99,
+    "outflow": 159.93,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T09:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33466.0,
+    "inflow": 15.69,
+    "outflow": 156.46,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T09:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33469.0,
+    "inflow": 16.22,
+    "outflow": 165.46,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T09:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33466.0,
+    "inflow": 16.92,
+    "outflow": 155.78,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T10:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33457.0,
+    "inflow": 16.36,
+    "outflow": 149.9,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T10:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33449.0,
+    "inflow": 16.01,
+    "outflow": 155.26,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T10:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T10:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33450.0,
+    "inflow": 15.13,
+    "outflow": 151.5,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T10:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T10:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33419.0,
+    "inflow": 16.09,
+    "outflow": 156.75,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T11:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33429.0,
+    "inflow": 16.16,
+    "outflow": 150.97,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T11:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33408.0,
+    "inflow": 16.22,
+    "outflow": 159.49,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T11:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33431.0,
+    "inflow": 16.55,
+    "outflow": 155.19,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T11:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33411.0,
+    "inflow": 16.31,
+    "outflow": 157.53,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T11:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33404.0,
+    "inflow": 16.52,
+    "outflow": 154.54,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T11:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T12:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33411.0,
+    "inflow": 16.69,
+    "outflow": 158.62,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T12:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33393.0,
+    "inflow": 16.53,
+    "outflow": 159.25,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T12:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33376.0,
+    "inflow": 16.69,
+    "outflow": 160.2,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T12:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 0.0,
+    "inflow": 0.0,
+    "outflow": 0.0,
+    "storage_rate": 0.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T12:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33384.0,
+    "inflow": 16.62,
+    "outflow": 158.9,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T12:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33366.0,
+    "inflow": 17.37,
+    "outflow": 158.68,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T13:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33361.0,
+    "inflow": 16.97,
+    "outflow": 160.38,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T13:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33374.0,
+    "inflow": 17.17,
+    "outflow": 161.91,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T13:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33448.0,
+    "inflow": 17.78,
+    "outflow": 0.0,
+    "storage_rate": 29.0
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T13:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33374.0,
+    "inflow": 17.5,
+    "outflow": 0.0,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T13:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33399.0,
+    "inflow": 17.35,
+    "outflow": 0.0,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T13:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33405.0,
+    "inflow": 17.48,
+    "outflow": 0.0,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T14:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33356.0,
+    "inflow": 17.62,
+    "outflow": 0.0,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T14:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33381.0,
+    "inflow": 17.04,
+    "outflow": 0.0,
+    "storage_rate": 28.9
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T14:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33319.0,
+    "inflow": 17.03,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T14:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33319.0,
+    "inflow": 17.45,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T14:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33307.0,
+    "inflow": 17.15,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T14:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33287.0,
+    "inflow": 16.86,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T15:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33300.0,
+    "inflow": 17.42,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T15:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33263.0,
+    "inflow": 17.49,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T15:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33281.0,
+    "inflow": 17.46,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T15:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33299.0,
+    "inflow": 17.43,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T15:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33262.0,
+    "inflow": 17.29,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T15:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33262.0,
+    "inflow": 16.84,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T16:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33237.0,
+    "inflow": 16.96,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T16:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33213.0,
+    "inflow": 16.65,
+    "outflow": 0.0,
+    "storage_rate": 28.8
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T16:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33200.0,
+    "inflow": 16.21,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T16:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33193.0,
+    "inflow": 17.03,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T16:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33193.0,
+    "inflow": 16.16,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T16:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33169.0,
+    "inflow": 15.78,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T17:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33175.0,
+    "inflow": 15.84,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T17:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33163.0,
+    "inflow": 16.21,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T17:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33126.0,
+    "inflow": 15.59,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T17:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33143.0,
+    "inflow": 15.95,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T17:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33131.0,
+    "inflow": 15.6,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T17:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33106.0,
+    "inflow": 15.53,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T18:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33094.0,
+    "inflow": 15.27,
+    "outflow": 0.0,
+    "storage_rate": 28.7
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T18:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33069.0,
+    "inflow": 15.13,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T18:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33045.0,
+    "inflow": 15.11,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T18:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33063.0,
+    "inflow": 14.64,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T18:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33039.0,
+    "inflow": 14.45,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T18:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33026.0,
+    "inflow": 13.98,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T19:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33031.0,
+    "inflow": 14.22,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T19:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33007.0,
+    "inflow": 14.01,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T19:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32994.0,
+    "inflow": 13.26,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T19:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 33001.0,
+    "inflow": 13.67,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T19:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32988.0,
+    "inflow": 13.67,
+    "outflow": 0.0,
+    "storage_rate": 28.6
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T19:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32964.0,
+    "inflow": 13.53,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T20:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32939.0,
+    "inflow": 13.24,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T20:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32927.0,
+    "inflow": 13.39,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T20:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32932.0,
+    "inflow": 13.53,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T20:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32920.0,
+    "inflow": 13.53,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T20:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32895.0,
+    "inflow": 12.96,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T20:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32870.0,
+    "inflow": 12.96,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T21:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32888.0,
+    "inflow": 12.82,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T21:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32863.0,
+    "inflow": 13.24,
+    "outflow": 0.0,
+    "storage_rate": 28.5
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T21:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32839.0,
+    "inflow": 12.96,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T21:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32827.0,
+    "inflow": 12.4,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T21:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32834.0,
+    "inflow": 12.54,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T21:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32810.0,
+    "inflow": 12.82,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T22:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32798.0,
+    "inflow": 12.68,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T22:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32774.0,
+    "inflow": 12.4,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T22:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32762.0,
+    "inflow": 12.54,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T22:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32768.0,
+    "inflow": 12.26,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T22:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32744.0,
+    "inflow": 12.68,
+    "outflow": 0.0,
+    "storage_rate": 28.4
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T22:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32732.0,
+    "inflow": 12.54,
+    "outflow": 0.0,
+    "storage_rate": 28.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T23:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32708.0,
+    "inflow": 11.98,
+    "outflow": 0.0,
+    "storage_rate": 28.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T23:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32727.0,
+    "inflow": 11.55,
+    "outflow": 0.0,
+    "storage_rate": 28.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T23:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32691.0,
+    "inflow": 12.54,
+    "outflow": 0.0,
+    "storage_rate": 28.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T23:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32679.0,
+    "inflow": 12.26,
+    "outflow": 0.0,
+    "storage_rate": 28.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T23:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32667.0,
+    "inflow": 11.69,
+    "outflow": 0.0,
+    "storage_rate": 28.3
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-19T23:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32582.0,
+    "inflow": 11.28,
+    "outflow": 137.19,
+    "storage_rate": 28.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-20T00:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32575.0,
+    "inflow": 11.43,
+    "outflow": 161.27,
+    "storage_rate": 28.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-20T00:10:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32586.0,
+    "inflow": 11.52,
+    "outflow": 159.04,
+    "storage_rate": 28.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-20T00:20:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32578.0,
+    "inflow": 11.33,
+    "outflow": 156.93,
+    "storage_rate": 28.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-20T00:30:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32559.0,
+    "inflow": 11.1,
+    "outflow": 155.9,
+    "storage_rate": 28.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-20T00:40:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32542.0,
+    "inflow": 11.75,
+    "outflow": 160.37,
+    "storage_rate": 28.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-20T00:50:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32549.0,
+    "inflow": 11.99,
+    "outflow": 161.69,
+    "storage_rate": 28.2
+  },
+  {
+    "station_id": "1368030375010_anomalous",
+    "timestamp": "2026-03-20T01:00:00+00:00",
+    "rainfall": 0.0,
+    "volume": 32520.0,
+    "inflow": 11.26,
+    "outflow": 157.38,
+    "storage_rate": 28.2
+  }
+]
