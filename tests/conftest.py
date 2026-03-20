@@ -8,13 +8,16 @@ import pytest
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
 
-from src.config import load_config  # noqa: E402
+from src.config import AppConfig, load_config  # noqa: E402
 
 
 @pytest.fixture
 def test_config():
-    config_path = os.path.join(project_root, "dams.yaml")
-    return load_config(config_path)
+    base = load_config(os.path.join(project_root, "dams.yaml"))
+    extra = load_config(
+        os.path.join(project_root, "tests", "fixtures", "test_dams.yaml")
+    )
+    return AppConfig(sites={**base.sites, **extra.sites})
 
 
 @pytest.fixture
@@ -66,43 +69,14 @@ def mock_requests_get():
 
         # URLにアクセスしてHTMLを取得したとき
         if "DspDamData.exe" in url:
+            if "1368030375010_anomalous" in url:
+                return MockResponse('<a href="dummy_yagisawa_anomalous.dat">dummy</a>')
             if "1368030375010" in url:
                 return MockResponse('<a href="dummy_yagisawa.dat">dummy</a>')
             return MockResponse('<a href="dummy_5313680.dat">dummy</a>')
         elif "DspRainData.exe" in url:
             return MockResponse('<a href="dummy_rain.dat">dummy</a>')
 
-        return MockResponse("")
-
-    with patch("src.scraper.requests.get", side_effect=side_effect) as mock_get:
-        yield mock_get
-
-
-@pytest.fixture
-def mock_requests_get_anomalous():
-    """矢木沢ダムの異常データ（#フラグ・volume=0混在）を返すモック。"""
-
-    class MockResponse:
-        def __init__(self, text, encoding="utf-8"):
-            self.text = text
-            self.encoding = encoding
-            self.apparent_encoding = encoding
-
-        def raise_for_status(self):
-            pass
-
-    def side_effect(url, *args, **kwargs):
-        fixtures_dir = os.path.join(project_root, "tests", "fixtures")
-        if url.endswith(".dat"):
-            with open(
-                os.path.join(fixtures_dir, "yagisawa_dam_anomalous.dat"),
-                encoding="shift_jis",
-                errors="replace",
-            ) as f:
-                text = f.read().replace("\n\n", "\n")
-                return MockResponse(text, encoding="shift_jis")
-        if "DspDamData.exe" in url:
-            return MockResponse('<a href="dummy_yagisawa_anomalous.dat">dummy</a>')
         return MockResponse("")
 
     with patch("src.scraper.requests.get", side_effect=side_effect) as mock_get:

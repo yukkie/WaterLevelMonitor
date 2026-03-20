@@ -3,28 +3,27 @@ from unittest.mock import patch
 
 import pytest
 
+from src.config import load_config
 from src.main import main
 
 
-def test_main_execution(test_config, mock_supabase, mock_requests_get, mocker):
+def test_main_execution(mock_supabase, mock_requests_get):
     """
     main() を実行し、全ダムのプロット画像が生成されることを検証する。
+    main() は本番の dams.yaml を読むため、expected_files も同じ設定から作る。
     """
-    # 1. 保存先のパスを特定
-    # プロジェクトルートに保存される想定
-    expected_files = []
-    for site in test_config.sites.values():
-        expected_files.append(f"plot_{site.dam.name}.png")
+    # 1. 保存先のパスを特定（main() が使う本番設定と一致させる）
+    prod_config = load_config()
+    expected_files = [
+        f"plot_{site.dam.name}.png" for site in prod_config.sites.values()
+    ]
 
     # 念のため、既存のテストファイルを削除しておく
     for f in expected_files:
         if os.path.exists(f):
             os.remove(f)
 
-    # 2. main() 内部で呼ばれる load_config をモック化
-    # mocker.patch("src.main.load_config", return_value=test_config)
-
-    # 3. plt.show() がブロックしないようにモック化
+    # plt.show() がブロックしないようにモック化
     # (plt.savefig は実際にファイルを生成させるためモックしない)
     with patch("matplotlib.pyplot.show"):
         try:
