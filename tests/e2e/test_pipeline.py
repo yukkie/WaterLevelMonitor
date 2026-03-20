@@ -1,5 +1,6 @@
 import json
 import os
+import warnings
 
 import pytest
 
@@ -21,7 +22,11 @@ def _assert_snapshot(records, identifier):
 
     if not os.path.exists(snapshot_path):
         # スナップショットが存在しない場合は作成（初回実行時）
-        print(f"\n[{identifier}] スナップショットを新規作成します: {snapshot_path}")
+        warnings.warn(
+            f"[{identifier}] スナップショットを新規作成しました: {snapshot_path}",
+            UserWarning,
+            stacklevel=2,
+        )
         with open(snapshot_path, "w", encoding="utf-8") as f:
             json.dump(records, f, indent=2, ensure_ascii=False)
         return  # 初回はそのままパス
