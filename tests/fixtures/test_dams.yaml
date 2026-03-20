@@ -1,0 +1,11 @@
+sites:
+  yagisawa_anomalous:
+    name: "矢木沢ダム（異常データテスト用）"
+    dam:
+      name: "矢木沢ダム（異常データテスト用）"
+      type: "dam"
+      db_table_name: "dam_data"
+      id: "1368030375010_anomalous"
+      capacity_m3: 115500000
+      url_kind: "3"
+      url_page: "0"
