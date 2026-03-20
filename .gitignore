@@ -70,5 +70,8 @@ venv.bak/
 # Test output
 test_plot.png
 
+# Downloaded raw data (not version-controlled)
+data/
+
 # For Claude code
 .claude/
