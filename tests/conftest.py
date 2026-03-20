@@ -38,7 +38,6 @@ def mock_requests_get():
                 with open(
                     os.path.join(fixtures_dir, "miyagase_dam.dat"),
                     encoding="shift_jis",
-                    errors="replace",
                 ) as f:
                     # Windows特有の \r\n -> \r\r\n の連続改行を吸収する
                     text = f.read().replace("\n\n", "\n")
@@ -47,7 +46,6 @@ def mock_requests_get():
                 with open(
                     os.path.join(fixtures_dir, "yagisawa_dam.dat"),
                     encoding="shift_jis",
-                    errors="replace",
                 ) as f:
                     text = f.read().replace("\n\n", "\n")
                     return MockResponse(text, encoding="shift_jis")
@@ -55,7 +53,6 @@ def mock_requests_get():
                 with open(
                     os.path.join(fixtures_dir, "yagisawa_dam_anomalous.dat"),
                     encoding="shift_jis",
-                    errors="replace",
                 ) as f:
                     text = f.read().replace("\n\n", "\n")
                     return MockResponse(text, encoding="shift_jis")
@@ -63,7 +60,6 @@ def mock_requests_get():
                 with open(
                     os.path.join(fixtures_dir, "miyagase_rain.dat"),
                     encoding="shift_jis",
-                    errors="replace",
                 ) as f:
                     text = f.read().replace("\n\n", "\n")
                     return MockResponse(text, encoding="shift_jis")
