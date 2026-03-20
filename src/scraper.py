@@ -49,6 +49,12 @@ def _fetch_dam_data(dam: StationConfig) -> pd.DataFrame:
     dat_res = requests.get(dat_url, headers=headers)
     dat_res.encoding = dat_res.apparent_encoding
 
+    # --- DATファイルの生データをサーバー上のファイル名そのままで保存 ---
+    os.makedirs("data", exist_ok=True)
+    dat_filename = dat_url.split("/")[-1]
+    with open(f"data/{dat_filename}", "w", encoding=dat_res.apparent_encoding) as f:
+        f.write(dat_res.text)
+
     # DATファイルのパース (10行目から実データ)
     try:
         # header=Noneで読み込むと、列名は 0, 1, 2, ... となる

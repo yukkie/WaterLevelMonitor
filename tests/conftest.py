@@ -51,6 +51,14 @@ def mock_requests_get():
                 ) as f:
                     text = f.read().replace("\n\n", "\n")
                     return MockResponse(text, encoding="shift_jis")
+            elif "dummy_yagisawa_anomalous.dat" in url:
+                with open(
+                    os.path.join(fixtures_dir, "yagisawa_dam_anomalous.dat"),
+                    encoding="shift_jis",
+                    errors="replace",
+                ) as f:
+                    text = f.read().replace("\n\n", "\n")
+                    return MockResponse(text, encoding="shift_jis")
             else:
                 with open(
                     os.path.join(fixtures_dir, "miyagase_rain.dat"),
@@ -68,6 +76,37 @@ def mock_requests_get():
         elif "DspRainData.exe" in url:
             return MockResponse('<a href="dummy_rain.dat">dummy</a>')
 
+        return MockResponse("")
+
+    with patch("src.scraper.requests.get", side_effect=side_effect) as mock_get:
+        yield mock_get
+
+
+@pytest.fixture
+def mock_requests_get_anomalous():
+    """矢木沢ダムの異常データ（#フラグ・volume=0混在）を返すモック。"""
+
+    class MockResponse:
+        def __init__(self, text, encoding="utf-8"):
+            self.text = text
+            self.encoding = encoding
+            self.apparent_encoding = encoding
+
+        def raise_for_status(self):
+            pass
+
+    def side_effect(url, *args, **kwargs):
+        fixtures_dir = os.path.join(project_root, "tests", "fixtures")
+        if url.endswith(".dat"):
+            with open(
+                os.path.join(fixtures_dir, "yagisawa_dam_anomalous.dat"),
+                encoding="shift_jis",
+                errors="replace",
+            ) as f:
+                text = f.read().replace("\n\n", "\n")
+                return MockResponse(text, encoding="shift_jis")
+        if "DspDamData.exe" in url:
+            return MockResponse('<a href="dummy_yagisawa_anomalous.dat">dummy</a>')
         return MockResponse("")
 
     with patch("src.scraper.requests.get", side_effect=side_effect) as mock_get:

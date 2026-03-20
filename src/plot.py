@@ -49,6 +49,9 @@ def plot_water_level(
     # ダムデータ
     # volume は千m³単位 → m³に変換
     dam_df["volume_m3"] = pd.to_numeric(dam_df["volume"], errors="coerce") * 1000
+    dam_df.loc[dam_df["volume_m3"] == 0, "volume_m3"] = float(
+        "nan"
+    )  # 異常値（#フラグ）を除外
     dam_df["inflow_m3s"] = pd.to_numeric(dam_df["inflow"], errors="coerce").fillna(0)
     dam_df["outflow_m3s"] = pd.to_numeric(dam_df["outflow"], errors="coerce").fillna(0)
 

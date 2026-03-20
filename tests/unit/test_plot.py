@@ -80,6 +80,38 @@ def test_plot_water_level_execution_and_data(test_config):
     plt.close(fig)  # メモリリーク防止
 
 
+def test_plot_skips_volume_zero(test_config):
+    """
+    volume=0 のレコード（矢木沢ダムで発生する#フラグ異常データ）が
+    グラフから除外されることを検証する。
+    """
+    dam_config = test_config.sites["yagisawa"].dam
+    base_time = pd.Timestamp("2026/03/18 21:00", tz="UTC")
+    times = [base_time + pd.Timedelta(minutes=10 * i) for i in range(6)]
+
+    # 実際の異常データパターン: 正常→0→0→0→正常→0
+    dam_data = {
+        "timestamp": times,
+        "volume": [34804, 0, 0, 0, 34779, 0],
+        "inflow": [8.79, 0, 0, 0, 9.2, 0],
+        "outflow": [157.13, 0, 0, 0, 0.0, 0],
+    }
+    dam_df = pd.DataFrame(dam_data)
+
+    fig = plot_water_level(dam_config, dam_df, None, pd.DataFrame())
+    axes = fig.get_axes()
+    ax1 = axes[0]
+
+    lines = ax1.get_lines()
+    assert len(lines) == 1
+    y_data = lines[0].get_ydata()
+
+    # volume=0 は除外されるので 2点だけプロットされるはず
+    assert len(y_data) == 2
+
+    plt.close(fig)
+
+
 def test_plot_japanese_font_warning(test_config, tmp_path):
     """
     グラフ描画時に日本語フォント(豆腐)に関する警告が出ないかを検証する。
