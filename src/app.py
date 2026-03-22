@@ -67,7 +67,7 @@ def main():
         # グラフの描画
         with st.spinner("グラフを描画中..."):
             fig = plot_water_level(
-                target_dam, dam_df.copy(), rain_station, rain_df.copy()
+                target_dam, dam_df.copy(), rain_station, rain_df.copy(), period
             )
             st.pyplot(fig)
             plt.close(fig)

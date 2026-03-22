@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import pytest
 
 from src.plot import plot_water_level
+from src.storage import DisplayPeriod
 
 
 def test_plot_water_level_execution_and_data(test_config):
@@ -156,3 +158,85 @@ def test_plot_japanese_font_warning(test_config, tmp_path):
         f"詳細: {glyph_encounters}"
     )
     assert len(glyph_encounters) == 0, error_msg
+
+
+def test_plot_aggregation_two_weeks_ylabel(test_config):
+    """
+    TWO_WEEKS期間では雨量Y軸ラベルが mm/h であることを検証する。
+    """
+    dam_config = test_config.sites["miyagase"].dam
+    rain_config = test_config.sites["miyagase"].rain
+
+    base_time = pd.Timestamp("2023-10-01T00:00:00Z")
+    times = [base_time + pd.Timedelta(minutes=10 * i) for i in range(2)]
+
+    dam_df = pd.DataFrame(
+        {
+            "timestamp": times,
+            "volume": [10000, 10010],
+            "inflow": [10.0, 10.0],
+            "outflow": [5.0, 5.0],
+        }
+    )
+    rain_df = pd.DataFrame({"timestamp": times, "rainfall": [1.0, 2.0]})
+
+    fig = plot_water_level(
+        dam_config, dam_df, rain_config, rain_df, period=DisplayPeriod.TWO_WEEKS
+    )
+    axes = fig.get_axes()
+    ax1, ax3, ax2 = axes
+
+    assert ax2.get_ylabel() == "雨量 (mm/h)"
+
+    plt.close(fig)
+
+
+@pytest.mark.parametrize("period", [DisplayPeriod.ONE_YEAR, DisplayPeriod.ALL])
+def test_plot_aggregation_daily(test_config, period):
+    """
+    ONE_YEAR/ALL期間では雨量が1日集約になり、Y軸ラベルが mm/日 になることを検証する。
+
+    データ設計:
+    - Day 1 (Oct 1): 3点、各 2.0, 3.0, 1.0mm → 日次合計 6.0mm
+    - Day 2 (Oct 2): 2点、各 4.0, 5.0mm → 日次合計 9.0mm
+    1時間集約では棒5本になるが、1日集約では棒2本（6.0, 9.0）になることを確認する。
+    """
+    dam_config = test_config.sites["miyagase"].dam
+    rain_config = test_config.sites["miyagase"].rain
+
+    # 2日分のデータ（各日複数点）
+    times = [
+        pd.Timestamp("2023-10-01T01:00:00Z"),  # Oct 1 10:00 JST
+        pd.Timestamp("2023-10-01T02:00:00Z"),  # Oct 1 11:00 JST
+        pd.Timestamp("2023-10-01T03:00:00Z"),  # Oct 1 12:00 JST
+        pd.Timestamp("2023-10-02T01:00:00Z"),  # Oct 2 10:00 JST
+        pd.Timestamp("2023-10-02T02:00:00Z"),  # Oct 2 11:00 JST
+    ]
+
+    dam_df = pd.DataFrame(
+        {
+            "timestamp": times,
+            "volume": [10000, 10010, 10020, 10030, 10040],
+            "inflow": [10.0] * 5,
+            "outflow": [5.0] * 5,
+        }
+    )
+    rain_df = pd.DataFrame(
+        {"timestamp": times, "rainfall": [2.0, 3.0, 1.0, 4.0, 5.0]}
+    )
+
+    fig = plot_water_level(dam_config, dam_df, rain_config, rain_df, period=period)
+    axes = fig.get_axes()
+    ax1, ax3, ax2 = axes
+
+    # Y軸ラベルが mm/日 であること
+    assert ax2.get_ylabel() == "雨量 (mm/日)"
+
+    # 棒グラフの高さが日次集約値と一致すること（1時間集約では5本になるが1日集約では2本）
+    # ax2.containers[0] でbar本体のみ取得（legend patch等を除外）
+    heights = sorted(
+        [p.get_height() for p in ax2.containers[0]], reverse=True
+    )
+    assert heights == [9.0, 6.0]
+
+    plt.close(fig)
