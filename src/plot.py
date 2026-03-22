@@ -1,6 +1,7 @@
 import pandas as pd
 
 from src.config import StationConfig
+from src.storage import DisplayPeriod
 
 
 def plot_water_level(
@@ -8,6 +9,7 @@ def plot_water_level(
     dam_df: pd.DataFrame,
     rain_station: StationConfig,
     rain_df: pd.DataFrame,
+    period: DisplayPeriod = DisplayPeriod.TWO_WEEKS,
 ):
     import japanize_matplotlib  # noqa: F401
     import matplotlib.dates as mdates
@@ -30,19 +32,25 @@ def plot_water_level(
     # --- データのパースと変換 ---
 
     # 雨量
+    if period == DisplayPeriod.TWO_WEEKS:
+        resample_rule = "1h"
+        rain_ylabel = "雨量 (mm/h)"
+        bar_width = 1 / 24
+    else:
+        resample_rule = "1D"
+        rain_ylabel = "雨量 (mm/日)"
+        bar_width = 1
+
     if not rain_df.empty:
         rain_df["rainfall_mm"] = pd.to_numeric(rain_df["rainfall"], errors="coerce")
         rain_df = rain_df.dropna(subset=["rainfall_mm"])
-        # 1時間積算雨量に集約（10分雨量は値が小さく棒グラフが潰れるため）
         rain_hourly = (
             rain_df.set_index("timestamp")["rainfall_mm"]
-            .resample("1h")
+            .resample(resample_rule)
             .sum()
             .reset_index()
         )
-        rain_hourly = rain_hourly[
-            rain_hourly["rainfall_mm"] > 0
-        ]  # 0mm の時間帯は非表示
+        rain_hourly = rain_hourly[rain_hourly["rainfall_mm"] > 0]
     else:
         rain_hourly = pd.DataFrame(columns=["timestamp", "rainfall_mm"])
 
@@ -88,12 +96,12 @@ def plot_water_level(
     ax2.bar(
         rain_hourly["timestamp"] if not rain_hourly.empty else [],
         rain_hourly["rainfall_mm"] if not rain_hourly.empty else [],
-        width=1 / 24,
+        width=bar_width,
         color="c",
         alpha=0.6,
-        label="雨量 (mm/h)",
+        label=rain_ylabel,
     )
-    ax2.set_ylabel("雨量 (mm/h)", color="c")
+    ax2.set_ylabel(rain_ylabel, color="c")
     ax2.tick_params(axis="y", labelcolor="c")
     rain_max = rain_hourly["rainfall_mm"].max() if not rain_hourly.empty else 10
     ax2.set_ylim(0, max(rain_max * 4, 5))

@@ -233,9 +233,9 @@ def test_plot_aggregation_daily(test_config, period):
     assert ax2.get_ylabel() == "雨量 (mm/日)"
 
     # 棒グラフの高さが日次集約値と一致すること（1時間集約では5本になるが1日集約では2本）
-    bars = [c for c in ax2.get_children() if isinstance(c, plt.Rectangle)]
+    # ax2.containers[0] でbar本体のみ取得（legend patch等を除外）
     heights = sorted(
-        [b.get_height() for b in bars if b.get_height() > 0], reverse=True
+        [p.get_height() for p in ax2.containers[0]], reverse=True
     )
     assert heights == [9.0, 6.0]
 
